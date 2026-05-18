@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoxLink — The CRM that gets out of your way</title>
+<meta name="description" content="FoxLink is a simple, fast, AI-powered CRM for small sales teams. 14-day free trial. No card needed.">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#E8720C;
+  --burnt:#C94A1A;
+  --amber:#F0A030;
+  --crimson:#8B2010;
+  --navy:#1E1A2E;
+  --navy2:#2A2540;
+  --cream:#FAF7F3;
+  --white:#FFFFFF;
+  --mid:#6B6580;
+  --stone:#A8A4B8;
+  --rule:rgba(30,26,46,0.09);
+  --success:#0E7A4E;
+  --ai:#FEF0E4;
+  --r:16px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--cream);overflow-x:hidden;line-height:1.6}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 64px;height:68px;
+  background:rgba(30,26,46,0.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.nav-wm{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#fff;letter-spacing:-.02em}
+.nav-wm em{color:var(--orange);font-style:normal}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:14px;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--orange);color:#fff;border:none;border-radius:8px;padding:9px 22px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:background .2s}
+.nav-cta:hover{background:var(--burnt)}
+
+/* ─── HERO ─── */
+.hero{
+  min-height:100vh;
+  background:var(--navy);
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:60px;
+  padding:120px 80px 80px;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 80% at 10% 50%, rgba(232,114,12,.13) 0%, transparent 60%),
+             radial-gradient(ellipse 40% 60% at 85% 20%, rgba(201,74,26,.09) 0%, transparent 55%);
+  pointer-events:none;
+}
+.hero-left{position:relative;z-index:2;animation:fadeUp .7s ease both}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(232,114,12,.12);border:1px solid rgba(232,114,12,.25);
+  border-radius:100px;padding:6px 14px;margin-bottom:28px;
+}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.hero-badge span{font-size:12px;font-weight:500;color:var(--orange);letter-spacing:.04em}
+.hero h1{
+  font-family:'Syne',sans-serif;font-size:clamp(42px,5vw,64px);
+  font-weight:800;line-height:1.08;color:#fff;
+  margin-bottom:22px;letter-spacing:-.03em;
+}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero-sub{
+  font-size:18px;color:rgba(255,255,255,.6);line-height:1.65;
+  max-width:480px;margin-bottom:36px;
+}
+.hero-sub strong{color:rgba(255,255,255,.9);font-weight:500}
+.hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn-hero{
+  background:var(--orange);color:#fff;border:none;
+  border-radius:10px;padding:14px 28px;
+  font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;
+  cursor:pointer;transition:all .2s;white-space:nowrap;
+}
+.btn-hero:hover{background:var(--burnt);transform:translateY(-1px);box-shadow:0 12px 40px rgba(232,114,12,.45)}
+.btn-ghost{
+  background:transparent;color:rgba(255,255,255,.6);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:10px;padding:14px 24px;
+  font-family:'DM Sans',sans-serif;font-size:15px;font-weight:400;
+  cursor:pointer;transition:all .2s;white-space:nowrap;
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.4);color:#fff}
+.hero-note{font-size:13px;color:rgba(255,255,255,.28);margin-top:16px}
+
+/* hero right — UI mockup */
+.hero-right{position:relative;z-index:2;animation:fadeUp .7s .15s ease both;opacity:0;animation-fill-mode:forwards}
+.ui-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;overflow:hidden;
+}
+.ui-topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 18px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.ui-topbar-title{font-size:13px;font-weight:600;color:rgba(255,255,255,.7)}
+.ui-topbar-badge{
+  font-size:11px;font-weight:500;
+  background:rgba(232,114,12,.2);color:var(--orange);
+  border-radius:6px;padding:3px 9px;
+}
+.pipeline{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:16px}
+.pipe-col-head{
+  font-size:11px;font-weight:600;color:rgba(255,255,255,.35);
+  letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.p-ct{
+  background:rgba(255,255,255,.08);color:rgba(255,255,255,.45);
+  border-radius:4px;padding:1px 6px;font-size:10px;
+}
+.p-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+  border-radius:8px;padding:10px 12px;margin-bottom:8px;
+}
+.p-card.hot{border-color:rgba(232,114,12,.3)}
+.p-card.won{border-color:rgba(14,122,78,.4)}
+.p-name{font-size:12px;font-weight:500;color:rgba(255,255,255,.8);margin-bottom:3px}
+.p-val{font-size:11px;color:rgba(255,255,255,.4)}
+.p-val.g{color:var(--success)}
+.ai-panel{
+  margin:0 16px 16px;
+  background:rgba(240,160,48,.08);border:1px solid rgba(240,160,48,.2);
+  border-radius:10px;padding:12px 14px;
+}
+.ai-panel-head{
+  font-size:11px;font-weight:600;color:var(--amber);
+  letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px;
+  display:flex;align-items:center;gap:5px;
+}
+.ai-panel-text{font-size:12px;color:rgba(255,255,255,.55);line-height:1.5}
+.ai-panel-text strong{color:rgba(255,255,255,.8)}
+
+/* ─── SECTION COMMONS ─── */
+.section{padding:100px 80px}
+.sec-eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:12px;
+}
+.section h2{
+  font-family:'Syne',sans-serif;font-size:clamp(32px,4vw,48px);
+  font-weight:800;line-height:1.1;color:var(--navy);
+  letter-spacing:-.025em;margin-bottom:20px;
+}
+.sec-sub{font-size:18px;color:var(--mid);line-height:1.65;max-width:580px;margin-bottom:60px}
+
+/* ─── FEATURES ─── */
+.feats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feat{
+  background:#fff;border-radius:var(--r);
+  border:1px solid var(--rule);
+  padding:32px;
+  transition:box-shadow .2s;
+}
+.feat:hover{box-shadow:0 8px 40px rgba(30,26,46,.08)}
+.feat-icon{
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin-bottom:20px;
+  background:rgba(232,114,12,.08);
+}
+.feat-name{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.feat-desc{font-size:14px;color:var(--mid);line-height:1.65}
+
+/* ─── AI FEATURES ─── */
+.ai-section{background:var(--navy);padding:100px 80px}
+.ai-section .sec-eyebrow{color:var(--amber)}
+.ai-section h2{color:#fff}
+.ai-section .sec-sub{color:rgba(255,255,255,.5)}
+.ai-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}
+.ai-feat{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;padding:28px 32px;
+  transition:border-color .2s;
+}
+.ai-feat:hover{border-color:rgba(240,160,48,.3)}
+.ai-feat-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(240,160,48,.1);border:1px solid rgba(240,160,48,.2);
+  border-radius:6px;padding:3px 10px;
+  font-size:10px;font-weight:600;color:var(--amber);
+  letter-spacing:.06em;text-transform:uppercase;
+  margin-bottom:14px;
+}
+.ai-feat-name{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:8px}
+.ai-feat-desc{font-size:14px;color:rgba(255,255,255,.5);line-height:1.65}
+
+/* ─── STATS ─── */
+.stats-section{
+  background:#fff;
+  padding:72px 80px;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:40px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+}
+.stat-item{text-align:center}
+.stat-num{
+  font-family:'Syne',sans-serif;font-size:48px;font-weight:800;
+  color:var(--navy);letter-spacing:-.04em;line-height:1;margin-bottom:8px;
+}
+.stat-num span{color:var(--orange)}
+.stat-label{font-size:14px;color:var(--mid);line-height:1.4}
+
+/* ─── PRICING ─── */
+.pricing-section{padding:100px 80px;text-align:center}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:960px;margin:0 auto}
+.pcard{
+  background:#fff;border:1px solid var(--rule);
+  border-radius:var(--r);padding:36px 32px;
+  text-align:left;position:relative;
+}
+.pcard.featured{
+  border-color:var(--orange);
+  box-shadow:0 0 0 1px var(--orange),0 20px 60px rgba(232,114,12,.12);
+}
+.pcard-badge{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--orange);color:#fff;
+  font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  border-radius:100px;padding:4px 14px;white-space:nowrap;
+}
+.pcard-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--mid);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.pcard-price{font-family:'Syne',sans-serif;font-size:48px;font-weight:800;color:var(--navy);line-height:1;margin-bottom:4px;letter-spacing:-.03em}
+.pcard-price sup{font-size:24px;vertical-align:super}
+.pcard-price sub{font-size:14px;font-weight:400;color:var(--mid)}
+.pcard-desc{font-size:14px;color:var(--mid);line-height:1.55;margin:16px 0 24px;padding-bottom:24px;border-bottom:1px solid var(--rule)}
+.pcard-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.pcard-features li{font-size:14px;color:var(--navy);display:flex;align-items:flex-start;gap:10px}
+.pcard-features li::before{content:'✓';color:var(--success);font-weight:700;flex-shrink:0;margin-top:1px}
+.pcard-cta{
+  width:100%;padding:13px;border-radius:8px;
+  font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;
+  cursor:pointer;transition:all .2s;border:none;
+  background:var(--orange);color:#fff;
+}
+.pcard-cta:hover{background:var(--burnt)}
+.pcard-cta.ghost{background:transparent;border:1px solid var(--rule);color:var(--navy)}
+.pcard-cta.ghost:hover{border-color:var(--navy)}
+.pricing-note{margin-top:32px;font-size:13px;color:var(--stone);text-align:center}
+
+/* ─── FAQ ─── */
+.faq-section{padding:100px 80px;background:#fff}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:960px;margin:0 auto}
+.faq-item{padding:28px 32px;border-bottom:1px solid var(--rule)}
+.faq-item:nth-child(odd){border-right:1px solid var(--rule)}
+.faq-q{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.faq-a{font-size:14px;color:var(--mid);line-height:1.65}
+
+/* ─── CTA ─── */
+.cta-section{
+  background:var(--navy);padding:120px 80px;
+  text-align:center;position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 90% at 50% 50%, rgba(232,114,12,.1) 0%, transparent 65%);
+  pointer-events:none;
+}
+.cta-inner{position:relative;z-index:2;max-width:600px;margin:0 auto}
+.cta-section h2{font-family:'Syne',sans-serif;font-size:clamp(36px,5vw,56px);font-weight:800;color:#fff;letter-spacing:-.03em;margin-bottom:20px}
+.cta-section p{font-size:18px;color:rgba(255,255,255,.55);margin-bottom:40px;line-height:1.65}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.cta-note{font-size:13px;color:rgba(255,255,255,.25)}
+
+/* ─── COOKIE BANNER ─── */
+.cookie-banner{
+  position:fixed;bottom:0;left:0;right:0;z-index:200;
+  background:var(--navy2);border-top:1px solid rgba(255,255,255,.08);
+  padding:16px 40px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  transform:translateY(100%);transition:transform .4s ease;
+}
+.cookie-banner.visible{transform:translateY(0)}
+.cookie-text{font-size:13px;color:rgba(255,255,255,.6);line-height:1.5;max-width:700px}
+.cookie-text a{color:var(--orange);text-decoration:none}
+.cookie-text a:hover{text-decoration:underline}
+.cookie-btns{display:flex;gap:10px;flex-shrink:0}
+.cookie-accept{
+  background:var(--orange);color:#fff;border:none;
+  border-radius:6px;padding:8px 18px;font-size:13px;font-weight:600;
+  cursor:pointer;white-space:nowrap;
+}
+.cookie-decline{
+  background:transparent;color:rgba(255,255,255,.5);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:6px;padding:8px 18px;font-size:13px;
+  cursor:pointer;white-space:nowrap;
+}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--navy);
+  padding:40px 80px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid rgba(255,255,255,.06);
+  flex-wrap:wrap;gap:20px;
+}
+.foot-logo{display:flex;align-items:center;gap:10px}
+.foot-wm{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff}
+.foot-wm em{color:var(--orange);font-style:normal}
+.foot-links{display:flex;gap:28px;flex-wrap:wrap}
+.foot-links a{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:rgba(255,255,255,.8)}
+.foot-copy{font-size:12px;color:rgba(255,255,255,.2)}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  nav{padding:0 24px}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:100px 24px 60px;gap:40px}
+  .hero-right{display:none}
+  .section{padding:60px 24px}
+  .feats-grid{grid-template-columns:1fr}
+  .ai-section{padding:60px 24px}
+  .ai-grid{grid-template-columns:1fr}
+  .stats-section{grid-template-columns:1fr 1fr;padding:48px 24px}
+  .pricing-section{padding:60px 24px}
+  .pricing-grid{grid-template-columns:1fr;max-width:420px}
+  .faq-section{padding:60px 24px}
+  .faq-grid{grid-template-columns:1fr}
+  .faq-item:nth-child(odd){border-right:none}
+  .cta-section{padding:80px 24px}
+  footer{padding:32px 24px;flex-direction:column;align-items:flex-start}
+  .cookie-banner{padding:16px 24px;flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="nav-wm">Fox<em>Link</em></span>
+  </a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#ai">AI</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <button class="nav-cta" onclick="window.location='https://app.foxlink.network'">Start free trial</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span>AI-powered CRM for sales teams</span>
+    </div>
+    <h1>The CRM that gets <em>out of your way.</em></h1>
+    <p class="hero-sub">
+      Simple. Fast. Built-in AI. FoxLink keeps your pipeline moving without the admin overhead.
+      <strong>Set up in an afternoon. Selling by end of day.</strong>
+    </p>
+    <div class="hero-actions">
+      <button class="btn-hero" onclick="window.location='https://app.foxlink.network'">Start free trial — no card needed</button>
+    </div>
+    <p class="hero-note">14-day free trial · Full access to every feature · No credit card required</p>
+  </div>
+  <div class="hero-right">
+    <div class="ui-card">
+      <div class="ui-topbar">
+        <span class="ui-topbar-title">Pipeline</span>
+        <span class="ui-topbar-badge">3 open deals</span>
+      </div>
+      <div class="pipeline">
+        <div>
+          <div class="pipe-col-head">Prospect <span class="p-ct">1</span></div>
+          <div class="p-card">
+            <div class="p-name">Acme Corp</div>
+            <div class="p-val">£10,000</div>
+          </div>
+        </div>
+        <div>
+          <div class="pipe-col-head">Qualified <span class="p-ct">1</span></div>
+          <div class="p-card hot">
+            <div class="p-name">BuildCo Ltd</div>
+            <div class="p-val">£24,000</div>
+          </div>
+        </div>
+        <div>
+          <div class="pipe-col-head">Commitment <span class="p-ct">1</span></div>
+          <div class="p-card won">
+            <div class="p-name">NorthTech</div>
+            <div class="p-val g">£15,000 ✓</div>
+          </div>
+        </div>
+      </div>
+      <div class="ai-panel">
+        <div class="ai-panel-head">✦ Today's priorities</div>
+        <div class="ai-panel-text"><strong>BuildCo Ltd</strong> — deal closes in 4 days, not contacted yet. Call today.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="sec-eyebrow">Features</div>
+  <h2>Everything your team needs.<br>Nothing they don't.</h2>
+  <p class="sec-sub">FoxLink is built for teams who sell, not teams who manage software. Every feature earns its place.</p>
+  <div class="feats-grid reveal">
+    <div class="feat">
+      <div class="feat-icon">📋</div>
+      <div class="feat-name">Kanban pipeline</div>
+      <div class="feat-desc">Drag-and-drop deal board with five stages — Prospect through to Commitment. Win or lose a deal in one click. Full history stays forever.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">👥</div>
+      <div class="feat-name">Contacts & companies</div>
+      <div class="feat-desc">Unlimited contacts linked to companies. Full activity history, notes, lead scores, and LinkedIn URLs. Import from CSV in minutes.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">📅</div>
+      <div class="feat-name">Activity logging</div>
+      <div class="feat-desc">Log calls, emails, meetings, and notes in seconds. Every interaction is timestamped and linked to the right contact or deal automatically.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">✅</div>
+      <div class="feat-name">Tasks</div>
+      <div class="feat-desc">Create tasks linked to contacts or deals. Assign to team members. Overdue alerts keep nothing slipping through.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">📬</div>
+      <div class="feat-name">Web intake forms</div>
+      <div class="feat-desc">Build a lead capture form and embed it on your site. Submissions land directly in your CRM as new contacts — no Zapier needed.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">👤</div>
+      <div class="feat-name">Team workspace</div>
+      <div class="feat-desc">Invite your team, assign account managers, and see shared pipeline and activity in one place. Role-based access included.</div>
+    </div>
+  </div>
+</section>
+
+<!-- AI FEATURES -->
+<section class="ai-section" id="ai">
+  <div class="sec-eyebrow">AI built-in</div>
+  <h2>AI that actually saves<br>time in the real world.</h2>
+  <p class="sec-sub">Every AI feature in FoxLink is optional, on-demand, and designed to give you back hours — not add complexity.</p>
+  <div class="ai-grid">
+    <div class="ai-feat">
+      <div class="ai-feat-badge">✦ AI</div>
+      <div class="ai-feat-name">Today's Priorities</div>
+      <div class="ai-feat-desc">Every morning, AI ranks your top 6 contacts by urgency — deal close dates, lead scores, and how long since last contact. Know exactly who to call before you open your inbox.</div>
+    </div>
+    <div class="ai-feat">
+      <div class="ai-feat-badge">✦ AI</div>
+      <div class="ai-feat-name">Lead Scorer</div>
+      <div class="ai-feat-desc">One click scores any contact out of 10 with a plain-English reason. Based on deal value, stage, close date, and activity history. No configuration required.</div>
+    </div>
+    <div class="ai-feat">
+      <div class="ai-feat-badge">✦ AI</div>
+      <div class="ai-feat-name">Email Drafter</div>
+      <div class="ai-feat-desc">Draft a personalised outreach email for any contact in seconds. Pulls from their history, company, and deal context. Edit or send as-is.</div>
+    </div>
+    <div class="ai-feat">
+      <div class="ai-feat-badge">✦ AI</div>
+      <div class="ai-feat-name">Contact Summariser</div>
+      <div class="ai-feat-desc">Get a one-paragraph summary of any contact before a call — their history, last interactions, open deals, and notes. Everything in one place, instantly.</div>
+    </div>
+    <div class="ai-feat">
+      <div class="ai-feat-badge">✦ AI</div>
+      <div class="ai-feat-name">Prospect Finder</div>
+      <div class="ai-feat-desc">Tell FoxLink what you're selling, your target industry, and location. Get ideal company types, decision-maker job titles, LinkedIn search strings, and a ready-made cold email opener.</div>
+    </div>
+    <div class="ai-feat">
+      <div class="ai-feat-badge">✦ AI</div>
+      <div class="ai-feat-name">Daily Agenda Email</div>
+      <div class="ai-feat-desc">A personalised briefing lands in your inbox every morning — deals closing soon, overdue tasks, yesterday's team activity, and your top contacts for the day.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-section reveal">
+  <div class="stat-item">
+    <div class="stat-num">14</div>
+    <div class="stat-label">Day free trial — full access, no card needed</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num"><span>£</span>19</div>
+    <div class="stat-label">Per seat, per month — everything included</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">&lt;1hr</div>
+    <div class="stat-label">Average time from signup to first deal logged</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">6</div>
+    <div class="stat-label">AI features built-in — no extra cost, ever</div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div style="margin-bottom:60px">
+    <div class="sec-eyebrow">Pricing</div>
+    <h2>Simple pricing.<br>No surprises.</h2>
+    <p class="sec-sub" style="margin:0 auto">One plan. Every feature. Cancel any time.</p>
+  </div>
+  <div class="pricing-grid reveal">
+    <div class="pcard">
+      <div class="pcard-name">Free Trial</div>
+      <div class="pcard-price">14 <sub>days</sub></div>
+      <div class="pcard-desc">Full access to every feature. No credit card required. See if FoxLink is right for your team.</div>
+      <ul class="pcard-features">
+        <li>Unlimited contacts and deals</li>
+        <li>All 6 AI features</li>
+        <li>Daily agenda email</li>
+        <li>Web intake forms</li>
+        <li>Team workspace</li>
+        <li>Data export</li>
+      </ul>
+      <button class="pcard-cta ghost" onclick="window.location='https://app.foxlink.network'">Start free trial</button>
+    </div>
+    <div class="pcard featured">
+      <div class="pcard-badge">Pro</div>
+      <div class="pcard-name">Pro</div>
+      <div class="pcard-price"><sup>£</sup>19<sub>/seat/mo</sub></div>
+      <div class="pcard-desc">Everything your team needs to close more deals. Billed monthly. Cancel any time.</div>
+      <ul class="pcard-features">
+        <li>Unlimited contacts and deals</li>
+        <li>All 6 AI features included</li>
+        <li>Today's Priorities + Lead Scorer</li>
+        <li>Email Drafter + Prospect Finder</li>
+        <li>Daily agenda email</li>
+        <li>Web intake forms</li>
+        <li>Tasks and calendar</li>
+        <li>Team management</li>
+        <li>Data export any time</li>
+      </ul>
+      <button class="pcard-cta" onclick="window.location='https://app.foxlink.network'">Start 14-day free trial</button>
+    </div>
+    <div class="pcard">
+      <div class="pcard-name">Enterprise</div>
+      <div class="pcard-price">Custom</div>
+      <div class="pcard-desc">For larger teams with specific requirements. Dedicated support and custom integrations included.</div>
+      <ul class="pcard-features">
+        <li>Everything in Pro</li>
+        <li>SSO / custom auth</li>
+        <li>Custom integrations</li>
+        <li>Dedicated CSM</li>
+        <li>SLA and priority support</li>
+        <li>Custom billing</li>
+      </ul>
+      <button class="pcard-cta ghost" onclick="window.location='mailto:hello@foxlink.network'">Talk to us</button>
+    </div>
+  </div>
+  <p class="pricing-note">All plans include a 14-day free trial with full access. No credit card required to start.</p>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div style="text-align:center;margin-bottom:60px">
+    <div class="sec-eyebrow">FAQ</div>
+    <h2>Questions? Answered.</h2>
+  </div>
+  <div class="faq-grid reveal">
+    <div class="faq-item">
+      <div class="faq-q">How does the free trial work?</div>
+      <div class="faq-a">Sign up with your email — no card needed. You get 14 days of full access to every feature including all AI tools. After the trial, upgrade to Pro or your data stays safe and you can come back any time.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long does setup take?</div>
+      <div class="faq-a">Most teams are up and running in under an hour. Create your workspace, import your contacts via CSV, and you're selling the same day. No consultant required.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the daily agenda email?</div>
+      <div class="faq-a">FoxLink's AI writes you a personalised briefing every morning — your top-priority contacts ranked by urgency, deals closing soon, overdue tasks, and what your team logged yesterday. Arrives before 7am.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do web intake forms work?</div>
+      <div class="faq-a">Create a form in FoxLink and embed it on your website. When someone fills it in, they're automatically added as a contact in your workspace — no Zapier, no manual import.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is my data safe and GDPR compliant?</div>
+      <div class="faq-a">Yes. FoxLink runs on EU-hosted infrastructure (London region) with row-level security — your workspace data is completely isolated. We comply with UK GDPR and do not sell or share your data. See our Privacy Policy for full details.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can it integrate with our other tools?</div>
+      <div class="faq-a">CSV import and export mean your data is never locked in. Zapier integration and calendar sync are on the roadmap. We build integrations based on what our customers actually use — get in touch to influence the roadmap.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">We already have a CRM.</div>
+      <div class="faq-a">Most teams do. The question is whether your team actually uses it. FoxLink is built to be the CRM your reps open every morning — not the one they update when they have to. Try it for 14 days and see.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What happens when my trial ends?</div>
+      <div class="faq-a">You can upgrade to Pro at any time from your account settings. If you don't upgrade, you'll move to read-only access — your data is safe and you can come back whenever you're ready.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="cta-inner">
+    <h2>Ready to close more deals?</h2>
+    <p>14-day free trial. Full access to every feature including all AI tools. No credit card required.</p>
+    <div class="cta-actions">
+      <button class="btn-hero" onclick="window.location='https://app.foxlink.network'">Start free trial — no card needed</button>
+    </div>
+    <p class="cta-note">Pro from £19/seat/mo · Cancel any time · EU-hosted · GDPR compliant</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">
+    <span class="foot-wm">Fox<em>Link</em></span>
+  </div>
+  <div class="foot-links">
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="mailto:hello@foxlink.network">Contact</a>
+  </div>
+  <span class="foot-copy">© 2026 PolyFox Studio Ltd · All rights reserved · Registered in England &amp; Wales</span>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">
+    We use essential cookies only to keep FoxLink working. We don't use advertising or tracking cookies.
+    <a href="/privacy.html">Privacy Policy</a>
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-decline" onclick="dismissCookie()">Decline optional</button>
+    <button class="cookie-accept" onclick="dismissCookie()">Got it</button>
+  </div>
+</div>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') })
+}, {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Cookie banner
+function dismissCookie(){
+  document.getElementById('cookieBanner').style.display='none';
+  localStorage.setItem('cookieAck','1');
+}
+window.addEventListener('DOMContentLoaded',()=>{
+  if(!localStorage.getItem('cookieAck')){
+    setTimeout(()=>document.getElementById('cookieBanner').classList.add('visible'),800);
+  }
+});
+</script>
+</body>
+</html>
