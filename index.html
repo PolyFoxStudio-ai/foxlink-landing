@@ -6,6 +6,12 @@
 <title>FoxLink — The CRM that gets out of your way</title>
 <meta name="description" content="FoxLink is a simple, fast, AI-powered CRM for small sales teams. 14-day free trial. No card needed.">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-143BVfa01u_jhtZOUt1oP.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -26,7 +32,7 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--cream);overflow-x:hidden;line-height:1.6}
-
+ 
 /* ─── NAV ─── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
@@ -44,7 +50,7 @@ nav{
 .nav-links a:hover{color:#fff}
 .nav-cta{background:var(--orange);color:#fff;border:none;border-radius:8px;padding:9px 22px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:background .2s}
 .nav-cta:hover{background:var(--burnt)}
-
+ 
 /* ─── HERO ─── */
 .hero{
   min-height:100vh;
@@ -96,7 +102,7 @@ nav{
 }
 .btn-ghost:hover{border-color:rgba(255,255,255,.4);color:#fff}
 .hero-note{font-size:13px;color:rgba(255,255,255,.28);margin-top:16px}
-
+ 
 /* hero right — UI mockup */
 .hero-right{position:relative;z-index:2;animation:fadeUp .7s .15s ease both;opacity:0;animation-fill-mode:forwards}
 .ui-card{
@@ -146,7 +152,7 @@ nav{
 }
 .ai-panel-text{font-size:12px;color:rgba(255,255,255,.55);line-height:1.5}
 .ai-panel-text strong{color:rgba(255,255,255,.8)}
-
+ 
 /* ─── SECTION COMMONS ─── */
 .section{padding:100px 80px}
 .sec-eyebrow{
@@ -159,7 +165,7 @@ nav{
   letter-spacing:-.025em;margin-bottom:20px;
 }
 .sec-sub{font-size:18px;color:var(--mid);line-height:1.65;max-width:580px;margin-bottom:60px}
-
+ 
 /* ─── FEATURES ─── */
 .feats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .feat{
@@ -177,7 +183,7 @@ nav{
 }
 .feat-name{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:var(--navy);margin-bottom:10px}
 .feat-desc{font-size:14px;color:var(--mid);line-height:1.65}
-
+ 
 /* ─── AI FEATURES ─── */
 .ai-section{background:var(--navy);padding:100px 80px}
 .ai-section .sec-eyebrow{color:var(--amber)}
@@ -200,7 +206,7 @@ nav{
 }
 .ai-feat-name{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:8px}
 .ai-feat-desc{font-size:14px;color:rgba(255,255,255,.5);line-height:1.65}
-
+ 
 /* ─── STATS ─── */
 .stats-section{
   background:#fff;
@@ -215,7 +221,7 @@ nav{
 }
 .stat-num span{color:var(--orange)}
 .stat-label{font-size:14px;color:var(--mid);line-height:1.4}
-
+ 
 /* ─── PRICING ─── */
 .pricing-section{padding:100px 80px;text-align:center}
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:960px;margin:0 auto}
@@ -252,7 +258,7 @@ nav{
 .pcard-cta.ghost{background:transparent;border:1px solid var(--rule);color:var(--navy)}
 .pcard-cta.ghost:hover{border-color:var(--navy)}
 .pricing-note{margin-top:32px;font-size:13px;color:var(--stone);text-align:center}
-
+ 
 /* ─── FAQ ─── */
 .faq-section{padding:100px 80px;background:#fff}
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:960px;margin:0 auto}
@@ -260,7 +266,7 @@ nav{
 .faq-item:nth-child(odd){border-right:1px solid var(--rule)}
 .faq-q{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px}
 .faq-a{font-size:14px;color:var(--mid);line-height:1.65}
-
+ 
 /* ─── CTA ─── */
 .cta-section{
   background:var(--navy);padding:120px 80px;
@@ -276,7 +282,7 @@ nav{
 .cta-section p{font-size:18px;color:rgba(255,255,255,.55);margin-bottom:40px;line-height:1.65}
 .cta-actions{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
 .cta-note{font-size:13px;color:rgba(255,255,255,.25)}
-
+ 
 /* ─── COOKIE BANNER ─── */
 .cookie-banner{
   position:fixed;bottom:0;left:0;right:0;z-index:200;
@@ -301,7 +307,7 @@ nav{
   border-radius:6px;padding:8px 18px;font-size:13px;
   cursor:pointer;white-space:nowrap;
 }
-
+ 
 /* ─── FOOTER ─── */
 footer{
   background:var(--navy);
@@ -317,12 +323,12 @@ footer{
 .foot-links a{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
 .foot-links a:hover{color:rgba(255,255,255,.8)}
 .foot-copy{font-size:12px;color:rgba(255,255,255,.2)}
-
+ 
 /* ─── ANIMATIONS ─── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:none}
-
+ 
 /* ─── RESPONSIVE ─── */
 @media(max-width:900px){
   nav{padding:0 24px}
@@ -346,7 +352,7 @@ footer{
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">
@@ -360,7 +366,7 @@ footer{
   </div>
   <button class="nav-cta" onclick="window.location='https://app.foxlink.network'">Start free trial</button>
 </nav>
-
+ 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
@@ -414,7 +420,7 @@ footer{
     </div>
   </div>
 </section>
-
+ 
 <!-- FEATURES -->
 <section class="section" id="features">
   <div class="sec-eyebrow">Features</div>
@@ -453,7 +459,7 @@ footer{
     </div>
   </div>
 </section>
-
+ 
 <!-- AI FEATURES -->
 <section class="ai-section" id="ai">
   <div class="sec-eyebrow">AI built-in</div>
@@ -492,7 +498,7 @@ footer{
     </div>
   </div>
 </section>
-
+ 
 <!-- STATS -->
 <div class="stats-section reveal">
   <div class="stat-item">
@@ -512,7 +518,7 @@ footer{
     <div class="stat-label">AI features built-in — no extra cost, ever</div>
   </div>
 </div>
-
+ 
 <!-- PRICING -->
 <section class="pricing-section" id="pricing">
   <div style="margin-bottom:60px">
@@ -570,7 +576,7 @@ footer{
   </div>
   <p class="pricing-note">All plans include a 14-day free trial with full access. No credit card required to start.</p>
 </section>
-
+ 
 <!-- FAQ -->
 <section class="faq-section" id="faq">
   <div style="text-align:center;margin-bottom:60px">
@@ -612,7 +618,7 @@ footer{
     </div>
   </div>
 </section>
-
+ 
 <!-- CTA -->
 <section class="cta-section" id="cta">
   <div class="cta-inner">
@@ -624,7 +630,7 @@ footer{
     <p class="cta-note">Pro from £19/seat/mo · Cancel any time · EU-hosted · GDPR compliant</p>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div class="foot-logo">
@@ -640,7 +646,7 @@ footer{
   </div>
   <span class="foot-copy">© 2026 PolyFox Studio Ltd · All rights reserved · Registered in England &amp; Wales</span>
 </footer>
-
+ 
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">
   <p class="cookie-text">
@@ -651,14 +657,14 @@ footer{
     <button class="cookie-accept" onclick="dismissCookie()">OK</button>
   </div>
 </div>
-
+ 
 <script>
 // Scroll reveal
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') })
 }, {threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
+ 
 // Cookie banner
 function dismissCookie(){
   document.getElementById('cookieBanner').style.display='none';
