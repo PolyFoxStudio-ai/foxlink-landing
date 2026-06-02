@@ -34,6 +34,9 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .nav-links a:hover{color:#fff}
 .nav-cta{background:var(--orange);color:#fff;padding:10px 22px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s}
 .nav-cta:hover{background:var(--burnt)}
+.nav-actions{display:flex;align-items:center;gap:22px}
+.nav-login{font-size:14px;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;transition:color .2s}
+.nav-login:hover{color:#fff}
  
 /* HERO */
 .hero{background:var(--navy);padding:100px 48px 0;position:relative;overflow:hidden}
@@ -238,7 +241,10 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
     <a href="#faq">FAQ</a>
     <a href="/blog/">Blog</a>
   </div>
-  <a href="https://app.foxlink.network/signup" class="nav-cta">Start free trial</a>
+  <div class="nav-actions">
+    <a href="https://app.foxlink.network/login" class="nav-login">Log in</a>
+    <a href="https://app.foxlink.network/signup" class="nav-cta">Start free trial</a>
+  </div>
 </nav>
  
 <!-- HERO -->
@@ -353,8 +359,8 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
     <div class="feature-grid">
       <div class="feature-card">
         <div class="feature-icon">📋</div>
-        <div class="feature-title">Kanban pipeline</div>
-        <div class="feature-body">Drag-and-drop deal board with configurable stages. Deal health indicators flag anything going quiet or slipping past close date. Win or lose in one click — full history stays forever.</div>
+        <div class="feature-title">Custom pipelines</div>
+        <div class="feature-body">Build up to four pipelines — name each one and define your own kanban columns. Run sales, renewals, and delivery side by side. Deal health indicators flag anything going quiet or slipping past close date.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">👥</div>
@@ -369,7 +375,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
       <div class="feature-card">
         <div class="feature-icon">✅</div>
         <div class="feature-title">Tasks</div>
-        <div class="feature-body">Create tasks linked to contacts, deals, or projects. Assign to team members. Overdue tasks surface at the top every morning so nothing gets missed. AI ranks your day around them.</div>
+        <div class="feature-body">Create tasks linked to contacts, deals, or pipeline cards. Assign to team members. Overdue tasks surface at the top every morning so nothing gets missed. AI ranks your day around them.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🗓️</div>
@@ -377,9 +383,9 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
         <div class="feature-body">A full calendar with day, week, month, and agenda views. Create events, invite contacts and team members, and see all your tasks alongside your meetings in one place.</div>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📁</div>
-        <div class="feature-title">Projects</div>
-        <div class="feature-body">Manage delivery work alongside your pipeline. Each project has its own task kanban, file attachments, and an AI health assessment that flags risk before it becomes a problem.</div>
+        <div class="feature-icon">🗂️</div>
+        <div class="feature-title">Card task boards & custom fields</div>
+        <div class="feature-body">Every pipeline card gets its own internal task kanban for the work behind the deal, plus custom fields to store exactly the information you need. AI gives each pipeline a health update based on a description you set.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📬</div>
@@ -651,6 +657,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
         <div class="pricing-desc">Full access to every feature. No credit card required. See if FoxLink fits the way your team sells.</div>
         <div class="pricing-features">
           <div class="pricing-feature">Unlimited contacts and deals</div>
+          <div class="pricing-feature">Up to 4 custom pipelines</div>
           <div class="pricing-feature">All 7 AI features included</div>
           <div class="pricing-feature">Calendar with events and tasks</div>
           <div class="pricing-feature">Team workspace</div>
@@ -671,7 +678,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
           <div class="pricing-feature">Today's Priorities + Lead Scorer</div>
           <div class="pricing-feature">Call Notes Cleaner + Email Drafter</div>
           <div class="pricing-feature">Prospect Finder + Daily Agenda</div>
-          <div class="pricing-feature">Calendar + Projects + Tasks</div>
+          <div class="pricing-feature">Up to 4 custom pipelines + Tasks</div>
           <div class="pricing-feature">Team management + Audit log</div>
           <div class="pricing-feature">Reports, PDF and CSV export</div>
           <div class="pricing-feature">Web intake forms</div>
