@@ -35,7 +35,7 @@ _Highest conversion, lowest competition. This is the wedge._
 5. ⬜ **CRM for consultants & agencies (that you'll actually keep using)** — `crm for consultants` / `crm for agencies`
 
 ### Cluster 2 — Category / problem-aware (middle-funnel)
-6. ⬜ **Sales pipeline stages explained (with a template)** — `sales pipeline stages`
+6. ✅ **Sales pipeline stages explained (with a template)** — `sales pipeline stages` _(pillar)_
 7. ⬜ **What is lead scoring? A plain-English guide** — `what is lead scoring`
 8. ⬜ **Spreadsheet vs CRM: when to make the switch** — `spreadsheet vs crm`
 9. ⬜ **How to manage a sales pipeline without a full-time admin** — `how to manage a sales pipeline`
