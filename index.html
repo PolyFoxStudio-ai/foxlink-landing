@@ -245,6 +245,43 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
 }
 </style>
 <script defer data-domain="foxlink.network" src="https://plausible.io/js/script.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://foxlink.network/#organization",
+      "name": "FoxLink",
+      "legalName": "PolyFox Studio Ltd",
+      "url": "https://foxlink.network/",
+      "logo": "https://foxlink.network/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://foxlink.network/#website",
+      "url": "https://foxlink.network/",
+      "name": "FoxLink",
+      "publisher": { "@id": "https://foxlink.network/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "FoxLink",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://foxlink.network/",
+      "description": "A CRM built for small sales teams. AI lead scoring, deals pipeline, custom workflows and boards, calendar, and 6 AI features built in.",
+      "publisher": { "@id": "https://foxlink.network/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "price": "19",
+        "priceCurrency": "GBP",
+        "description": "Pro plan, per seat per month. 14-day free trial, no card needed."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
  

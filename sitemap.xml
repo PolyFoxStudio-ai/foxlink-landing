@@ -21,7 +21,17 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://foxlink.network/blog/simple-crm-small-sales-teams</loc>
+    <loc>https://foxlink.network/blog/simple-crm-small-sales-teams.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://foxlink.network/blog/best-crm-for-small-sales-teams.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://foxlink.network/blog/how-to-log-sales-calls.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
