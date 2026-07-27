@@ -21,6 +21,32 @@ consistently (**~1 post/week**) and interlink.
 
 ---
 
+## Publishing cadence (drip)
+
+Publish **~1 post/week**, not all at once. There's no algorithmic penalty for
+batching, but a steady drip produces better posts, signals an active site, avoids
+a new domain's "discovered – not indexed" backlog, and lets GSC data steer which
+topics to expand. Suggested schedule (also on the Marketing board cards):
+
+| Week of | Post | Cluster |
+|---|---|---|
+| 4 Aug 2026  | HubSpot alternatives for small teams        | 1 |
+| 11 Aug 2026 | Pipedrive alternatives (less admin)         | 1 |
+| 18 Aug 2026 | Affordable CRM — what £19/seat gets you      | 1 |
+| 25 Aug 2026 | CRM for consultants & agencies              | 1 |
+| 1 Sep 2026  | What is lead scoring?                       | 2 |
+| 8 Sep 2026  | Spreadsheet vs CRM — when to switch         | 2 |
+| 15 Sep 2026 | How to manage a sales pipeline (no admin)   | 2 |
+| 22 Sep 2026 | 7 follow-up email templates after a call    | 3 |
+| 29 Sep 2026 | Building a simple daily sales routine       | 3 |
+| 6 Oct 2026  | AI in CRM — hype vs the 6 features          | 4 |
+| 13 Oct 2026 | AI lead scoring — how it works              | 4 |
+
+Dates are targets, not deadlines. After ~4–8 weeks, check GSC and reorder/expand
+based on what's actually landing.
+
+---
+
 ## Post backlog (priority order)
 
 Status key: ✅ published · ⬜ to write
