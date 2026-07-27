@@ -222,6 +222,16 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
 .cookie-ok:hover{background:var(--burnt)}
  
 /* RESPONSIVE */
+/* FROM THE BLOG */
+.blog-teaser-section{padding:96px 48px;background:var(--cream2)}
+.blog-teaser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.blog-teaser-card{display:flex;flex-direction:column;background:#fff;border-radius:14px;padding:28px;border:1px solid var(--rule);text-decoration:none;transition:border-color .2s,transform .2s}
+.blog-teaser-card:hover{border-color:var(--rule2);transform:translateY(-2px)}
+.blog-teaser-meta{font-size:12px;color:var(--light);margin-bottom:12px}
+.blog-teaser-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--navy);line-height:1.25;margin-bottom:10px;letter-spacing:-.01em}
+.blog-teaser-excerpt{font-size:14px;color:var(--mid);line-height:1.6;margin-bottom:16px;flex:1}
+.blog-teaser-link{font-size:14px;font-weight:600;color:var(--orange)}
+.blog-teaser-all{display:inline-block;margin-top:32px;font-size:14px;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--rule2);padding-bottom:2px}
 @media(max-width:900px){
   nav{padding:0 24px}
   .nav-links{display:none}
@@ -238,6 +248,8 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   .ai-card-wide{grid-column:span 1}
   .pricing-grid{grid-template-columns:1fr}
   .faq-grid{grid-template-columns:1fr}
+  .blog-teaser-section{padding:64px 24px}
+  .blog-teaser-grid{grid-template-columns:1fr}
   footer{padding:20px 24px;flex-direction:column;align-items:flex-start}
   .cookie-bar{padding:14px 24px;flex-direction:column;align-items:flex-start}
   .trust-grid{grid-template-columns:1fr}
@@ -804,6 +816,38 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   </div>
 </section>
  
+<!-- FROM THE BLOG -->
+<section class="blog-teaser-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">From the blog</div>
+    <h2 class="section-title">Practical advice for small sales teams</h2>
+    <p class="section-body">Short, no-fluff reads on CRMs, pipelines, and getting more out of your sales day.</p>
+    <div class="blog-teaser-grid">
+      <!-- BLOG_TEASER_START -->
+      <a href="/blog/sales-pipeline-stages.html" class="blog-teaser-card">
+        <div class="blog-teaser-meta">27 July 2026</div>
+        <h3 class="blog-teaser-title">Sales Pipeline Stages Explained (With a Free Template)</h3>
+        <p class="blog-teaser-excerpt">What each pipeline stage actually means, how many you need, and a simple 6-stage template you can copy — built for small sales teams, not enterprise sales ops.</p>
+        <span class="blog-teaser-link">Read →</span>
+      </a>
+      <a href="/blog/best-crm-for-small-sales-teams.html" class="blog-teaser-card">
+        <div class="blog-teaser-meta">27 July 2026</div>
+        <h3 class="blog-teaser-title">Best CRM for Small Sales Teams (UK, 2026): How to Choose</h3>
+        <p class="blog-teaser-excerpt">A no-hype guide to choosing a CRM your team will actually use — what to shortlist, what to ignore, and the questions that predict adoption.</p>
+        <span class="blog-teaser-link">Read →</span>
+      </a>
+      <a href="/blog/how-to-log-sales-calls.html" class="blog-teaser-card">
+        <div class="blog-teaser-meta">25 July 2026</div>
+        <h3 class="blog-teaser-title">How to Log Sales Calls So the Notes Are Actually Useful</h3>
+        <p class="blog-teaser-excerpt">A one-minute system for logging calls fast — what to capture, a copy-paste template, and how to keep notes useful instead of a wall of text.</p>
+        <span class="blog-teaser-link">Read →</span>
+      </a>
+      <!-- BLOG_TEASER_END -->
+    </div>
+    <a href="/blog/" class="blog-teaser-all">All articles →</a>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-section">
   <div class="cta-section-inner">

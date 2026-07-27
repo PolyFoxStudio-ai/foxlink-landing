@@ -23,6 +23,9 @@ jobs:
       - name: Promote due posts
         run: node scripts/publish-due.mjs
 
+      - name: Sync homepage "From the blog" section
+        run: node scripts/sync-homepage-blog.mjs
+
       - name: Commit & push if anything changed
         run: |
           if [ -n "$(git status --porcelain)" ]; then
