@@ -1,0 +1,36 @@
+name: Drip-publish blog posts
+
+# Promotes any queued blog post whose scheduled date has arrived, then commits
+# (which auto-deploys the static site). Runs daily; also triggerable by hand.
+on:
+  schedule:
+    - cron: '0 8 * * *'   # 08:00 UTC daily
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Promote due posts
+        run: node scripts/publish-due.mjs
+
+      - name: Commit & push if anything changed
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name  "Michael"
+            git config user.email "info@polyfox.studio"
+            git add -A
+            git commit -m "Auto-publish scheduled blog post(s) [drip]"
+            git push
+          else
+            echo "Nothing to publish today."
+          fi
