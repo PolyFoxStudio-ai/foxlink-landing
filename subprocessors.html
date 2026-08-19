@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sub-processors — FoxLink</title>
+<link rel="canonical" href="https://foxlink.network/subprocessors.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FoxLink">
+<meta property="og:title" content="Sub-processors — FoxLink">
+<meta property="og:url" content="https://foxlink.network/subprocessors.html">
+<meta property="og:image" content="https://foxlink.network/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://foxlink.network/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--orange:#E8720C;--navy:#1E1A2E;--cream:#FAF7F3;--mid:#6B6580;--rule:rgba(30,26,46,0.09)}
+body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--cream);line-height:1.7}
+nav{background:var(--navy);padding:0 64px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-wm{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;text-decoration:none}
+.nav-wm em{color:var(--orange);font-style:normal}
+.nav-back{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none}
+.nav-back:hover{color:#fff}
+.container{max-width:760px;margin:0 auto;padding:60px 24px 100px}
+h1{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--navy);margin-bottom:8px;letter-spacing:-.02em}
+.meta{font-size:13px;color:var(--mid);margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--rule)}
+h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--navy);margin:40px 0 12px}
+p{font-size:15px;color:#444;margin-bottom:16px;line-height:1.75}
+ul{margin:0 0 16px 20px}
+ul li{font-size:15px;color:#444;margin-bottom:6px;line-height:1.65}
+a{color:var(--orange);text-decoration:none}
+a:hover{text-decoration:underline}
+.highlight{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:20px 24px;margin:24px 0}
+.highlight p{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:'Syne',sans-serif;font-weight:700;color:var(--navy);font-size:13px}
+td{color:#444}
+td strong{color:var(--navy)}
+footer{background:var(--navy);padding:28px 64px;text-align:center}
+footer p{font-size:12px;color:rgba(255,255,255,.3)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-wm">Fox<em>Link</em></a>
+  <a href="/" class="nav-back">← Back to foxlink.network</a>
+</nav>
+
+<div class="container">
+  <h1>Sub-processors</h1>
+  <p class="meta">Last updated: August 2026 · Polyfox Studio Ltd · Registered in England &amp; Wales</p>
+
+  <div class="highlight">
+    <p><strong>In short:</strong> FoxLink uses a small, deliberate set of trusted service providers to run the product. Your account and CRM data are stored and processed in the United Kingdom. We keep this list current and give notice before it changes.</p>
+  </div>
+
+  <h2>What is a sub-processor?</h2>
+  <p>A sub-processor is a third-party service that Polyfox Studio Ltd uses to help deliver FoxLink and that may process personal data on our behalf. We only engage sub-processors that provide sufficient guarantees to protect your data, and we remain responsible to you for their performance.</p>
+
+  <h2>Our sub-processors</h2>
+  <table>
+    <thead>
+      <tr><th>Provider</th><th>Purpose</th><th>Data processed</th><th>Location</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Supabase</strong></td><td>Database, authentication and file storage</td><td>All account and CRM data</td><td>EU West (London), UK</td></tr>
+      <tr><td><strong>Vercel</strong></td><td>Application hosting and compute</td><td>Transient request data</td><td>London (lhr1), UK</td></tr>
+      <tr><td><strong>Anthropic</strong></td><td>AI-assisted features (on-demand only)</td><td>CRM context sent per request; not used to train models</td><td>United States</td></tr>
+      <tr><td><strong>Resend</strong></td><td>Transactional and notification email</td><td>Email addresses and message content</td><td>United States</td></tr>
+      <tr><td><strong>Upstash</strong></td><td>Rate limiting and usage counters (Redis)</td><td>Workspace / user / API-key identifiers and counters</td><td>Global (edge)</td></tr>
+      <tr><td><strong>Stripe</strong></td><td>Payment processing</td><td>Billing and contact data (no card data stored by FoxLink)</td><td>United States / EU</td></tr>
+    </tbody>
+  </table>
+  <p>Where a sub-processor processes data outside the UK or EEA, we rely on appropriate safeguards such as the UK International Data Transfer Agreement and/or the European Commission's Standard Contractual Clauses.</p>
+
+  <h2>Changes to this list</h2>
+  <p>We will give at least <strong>30 days' notice</strong> before adding or replacing a sub-processor, by updating this page and notifying workspace owners. If you have a data processing agreement with us and object to a new sub-processor on reasonable data-protection grounds, you may raise it with us during that period.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about our sub-processors or data protection? Email <a href="mailto:privacy@foxlink.network">privacy@foxlink.network</a>.</p>
+</div>
+
+<footer>
+  <p>© 2026 Polyfox Studio Ltd · <a href="/" style="color:rgba(255,255,255,.4)">foxlink.network</a> · <a href="/privacy.html" style="color:rgba(255,255,255,.4)">Privacy Policy</a> · <a href="/terms.html" style="color:rgba(255,255,255,.4)">Terms of Service</a></p>
+</footer>
+
+</body>
+</html>
