@@ -111,7 +111,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
   <h2>6. International transfers</h2>
   <p class="clause"><span class="n">6.1.</span> FoxLink shall not transfer Customer Personal Data outside the United Kingdom or the European Economic Area except where an appropriate safeguard under Data Protection Laws is in place.</p>
   <p class="clause"><span class="n">6.2.</span> Where a transfer requires it, the Parties agree that the applicable Standard Contractual Clauses (including the UK IDTA where the transfer is subject to UK GDPR) are incorporated into this DPA by reference and completed by reference to Annexes I–III. In the event of a conflict, the SCCs prevail over this DPA in respect of the transfer they govern.</p>
-  <p class="clause"><span class="n">6.3.</span> The primary storage and application-hosting locations are within the <strong>United Kingdom</strong> (database and file storage in EU West / London; application compute in London / lhr1). Certain Sub-processors process limited Personal Data outside the UK/EEA — specifically Anthropic (United States) for AI features and Stripe (United States / EU) for payment processing — under the safeguards referenced in clause 6.2. See Annex III for each Sub-processor's processing location.</p>
+  <p class="clause"><span class="n">6.3.</span> The primary storage and application-hosting locations are within the <strong>United Kingdom</strong> (database and file storage in EU West / London; application compute in London / lhr1). Certain Sub-processors process limited Personal Data outside the UK/EEA — specifically Anthropic (United States) for AI features, Resend (United States) for transactional email, Sentry (United States) for error monitoring, and Stripe (United States / EU) for payment processing — under the safeguards referenced in clause 6.2. See Annex III for each Sub-processor's processing location.</p>
 
   <h2>7. Liability and term</h2>
   <p class="clause"><span class="n">7.1.</span> Each Party's liability arising out of or related to this DPA is subject to the limitations and exclusions of liability set out in the Agreement.</p>
@@ -176,7 +176,8 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
       <tr><td><strong>Vercel</strong></td><td>Application hosting and compute</td><td>Transient request data</td><td>London (lhr1), UK</td></tr>
       <tr><td><strong>Anthropic</strong></td><td>AI-assisted features</td><td>CRM context sent per request; not used for training</td><td>United States</td></tr>
       <tr><td><strong>Resend</strong></td><td>Transactional and notification email</td><td>Email addresses, message content</td><td>United States</td></tr>
-      <tr><td><strong>Upstash</strong></td><td>Rate limiting and usage counters (Redis)</td><td>Workspace / user / API-key identifiers and counters</td><td>Global (edge)</td></tr>
+      <tr><td><strong>Upstash</strong></td><td>Rate limiting and usage counters (Redis)</td><td>Workspace / user / API-key identifiers and counters</td><td>EU (London), UK</td></tr>
+      <tr><td><strong>Sentry</strong></td><td>Error monitoring and diagnostics</td><td>Diagnostic and error context, which may include limited personal data</td><td>United States</td></tr>
       <tr><td><strong>Stripe</strong></td><td>Payment processing</td><td>Billing and contact data (no card data stored by FoxLink)</td><td>United States / EU</td></tr>
     </tbody>
   </table>

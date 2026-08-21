@@ -54,7 +54,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
   <p class="meta">Last updated: August 2026 · Polyfox Studio Ltd · Registered in England &amp; Wales</p>
 
   <div class="highlight">
-    <p><strong>Plain English summary:</strong> We collect only what we need to run FoxLink. We store your data in the EU (London). We never sell it. You can delete it any time. If you have questions, email <a href="mailto:privacy@foxlink.network">privacy@foxlink.network</a>.</p>
+    <p><strong>Plain English summary:</strong> We collect only what we need to run FoxLink. We store your data in the UK (London); a few vetted providers process some of it abroad (AI, email, error monitoring, payments) under data-protection safeguards. We never sell it. You can delete it any time. If you have questions, email <a href="mailto:privacy@foxlink.network">privacy@foxlink.network</a>.</p>
   </div>
 
   <h2>1. Who we are</h2>
@@ -124,11 +124,15 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
   <ul>
     <li><strong>Supabase</strong> — database and authentication (EU West, London)</li>
     <li><strong>Vercel</strong> — application hosting and compute (London)</li>
-    <li><strong>Resend</strong> — transactional email delivery</li>
-    <li><strong>Stripe</strong> — payment processing</li>
-    <li><strong>Anthropic</strong> — AI features (on-demand only)</li>
-    <li><strong>Upstash</strong> — rate limiting and usage counters (Redis)</li>
+    <li><strong>Upstash</strong> — rate limiting and usage counters (Redis) (EU, London)</li>
+    <li><strong>Resend</strong> — transactional email delivery (United States)</li>
+    <li><strong>Anthropic</strong> — AI features, on-demand only (United States)</li>
+    <li><strong>Sentry</strong> — error monitoring and diagnostics (United States)</li>
+    <li><strong>Stripe</strong> — payment processing (United States / EU)</li>
   </ul>
+
+  <h3>International transfers</h3>
+  <p>Your data is stored in the UK. Some sub-processors above process limited personal data outside the UK/EEA — Anthropic, Resend and Sentry (United States), and Stripe (United States / EU). Where data is processed outside the UK/EEA, we rely on appropriate safeguards, such as the UK International Data Transfer Agreement and/or the European Commission's Standard Contractual Clauses. The current, authoritative list is at <a href="/subprocessors.html">foxlink.network/subprocessors</a>.</p>
 
   <h2>7. How long we keep your data</h2>
   <ul>

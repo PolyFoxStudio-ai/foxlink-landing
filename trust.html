@@ -63,7 +63,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
   <p class="lede">FoxLink is a CRM for small sales teams — and your data is the most valuable thing in it. Here's how we keep it private, secure, and under your control.</p>
 
   <h2>Where your data lives</h2>
-  <p>Your account and CRM data are stored and processed entirely in the <strong>United Kingdom</strong>. Our database, authentication, and file storage run in Supabase's EU West (London) region, and our application compute runs in London. Data only leaves the UK/EEA for two narrow, safeguarded purposes: AI features (Anthropic, US) and payment processing (Stripe).</p>
+  <p>Your account and CRM data are <strong>stored</strong> entirely in the <strong>United Kingdom</strong>. Our database, authentication, and file storage run in Supabase's EU West (London) region, our application compute runs in London, and our rate-limiting cache (Upstash) runs in the EU. Some data is <strong>processed</strong> by a limited set of vetted providers outside the UK/EEA under appropriate safeguards: AI features (Anthropic, US), transactional email (Resend, US), error monitoring (Sentry, US), and payment processing (Stripe, US/EU). See our <a href="/subprocessors.html">sub-processor list</a> for the full picture.</p>
 
   <h2>How we protect it</h2>
   <div class="grid">
