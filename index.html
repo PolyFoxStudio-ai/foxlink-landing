@@ -54,7 +54,19 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .nav-actions{display:flex;align-items:center;gap:22px}
 .nav-login{font-size:14px;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;transition:color .2s}
 .nav-login:hover{color:#fff}
- 
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:9px;margin-right:-9px}
+.nav-toggle span{display:block;height:2px;width:100%;background:#fff;border-radius:2px;transition:transform .25s,opacity .25s}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--navy);border-bottom:1px solid rgba(255,255,255,0.08);flex-direction:column;padding:8px 24px 20px;z-index:99;box-shadow:0 14px 28px rgba(0,0,0,.28)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:rgba(255,255,255,0.78);text-decoration:none;font-size:16px;padding:14px 2px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.mobile-menu a:hover{color:#fff}
+.mobile-menu .mobile-login{border-bottom:none;padding-bottom:8px}
+.mobile-menu .mobile-cta{margin-top:12px;background:var(--orange);color:#fff;text-align:center;border-radius:8px;font-weight:600;padding:14px;border-bottom:none}
+.mobile-menu .mobile-cta:hover{background:var(--burnt)}
+
 /* HERO */
 .hero{background:var(--navy);padding:100px 48px 0;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(232,114,12,.12) 0%,transparent 65%);top:-200px;right:-100px;pointer-events:none}
@@ -154,9 +166,9 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .cal-views{display:flex;gap:4px}
 .cal-view-btn{font-size:11px;padding:4px 10px;border-radius:6px;border:1px solid var(--rule);background:#fff;color:var(--mid);cursor:pointer}
 .cal-view-btn.active{background:var(--orange);color:#fff;border-color:var(--orange)}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
 .cal-day-header{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--light);text-align:center;padding:6px 0}
-.cal-day{background:#fff;border-radius:8px;padding:8px;min-height:80px;border:1px solid var(--rule)}
+.cal-day{background:#fff;border-radius:8px;padding:8px;min-height:80px;border:1px solid var(--rule);min-width:0}
 .cal-day.today{background:rgba(232,114,12,0.05);border-color:rgba(232,114,12,0.3)}
 .cal-day-num{font-size:12px;font-weight:600;color:var(--navy);margin-bottom:4px}
 .cal-day.today .cal-day-num{color:var(--orange)}
@@ -235,6 +247,8 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
 @media(max-width:900px){
   nav{padding:0 24px}
   .nav-links{display:none}
+  .nav-actions{display:none}
+  .nav-toggle{display:flex}
   .hero{padding:64px 24px 0}
   .hero-inner{grid-template-columns:1fr;gap:48px}
   .hero-title{font-size:36px}
@@ -313,8 +327,22 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
     <a href="https://app.foxlink.network/login" class="nav-login">Log in</a>
     <a href="https://app.foxlink.network/signup" class="nav-cta">Start free trial</a>
   </div>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
- 
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#features">Features</a>
+  <a href="#ai">AI</a>
+  <a href="#calendar">Calendar</a>
+  <a href="#pricing">Pricing</a>
+  <a href="/trust.html">Trust</a>
+  <a href="#faq">FAQ</a>
+  <a href="/blog/">Blog</a>
+  <a href="https://app.foxlink.network/login" class="mobile-login">Log in</a>
+  <a href="https://app.foxlink.network/signup" class="mobile-cta">Start free trial</a>
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
@@ -906,6 +934,16 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
 <script>
 if(localStorage.getItem('fl_cookie_ok')){document.getElementById('cookieBar').style.display='none'}
 </script>
- 
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'),m=document.getElementById('mobile-menu');
+  if(!t||!m)return;
+  function set(open){t.setAttribute('aria-expanded',open);t.setAttribute('aria-label',open?'Close menu':'Open menu');m.classList.toggle('open',open)}
+  t.addEventListener('click',function(){set(t.getAttribute('aria-expanded')!=='true')});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+  window.addEventListener('resize',function(){if(window.innerWidth>900)set(false)});
+})();
+</script>
+
 </body>
 </html>
