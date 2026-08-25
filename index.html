@@ -54,6 +54,8 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .nav-actions{display:flex;align-items:center;gap:22px}
 .nav-login{font-size:14px;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;transition:color .2s}
 .nav-login:hover{color:#fff}
+.nav-founding{background:transparent;color:var(--orange);border:1px solid var(--orange);padding:9px 18px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s,color .2s;white-space:nowrap}
+.nav-founding:hover{background:var(--orange);color:#fff}
 .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:9px;margin-right:-9px}
 .nav-toggle span{display:block;height:2px;width:100%;background:#fff;border-radius:2px;transition:transform .25s,opacity .25s}
 .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -66,6 +68,8 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .mobile-menu .mobile-login{color:#fff;font-weight:600}
 .mobile-menu .mobile-cta{margin-top:12px;background:var(--orange);color:#fff;text-align:center;border-radius:8px;font-weight:600;padding:14px;border-bottom:none}
 .mobile-menu .mobile-cta:hover{background:var(--burnt)}
+.mobile-menu .mobile-founding{margin-top:12px;background:transparent;color:var(--orange);border:1px solid var(--orange);text-align:center;border-radius:8px;font-weight:600;padding:13px;border-bottom:none}
+.mobile-menu .mobile-founding:hover{background:var(--orange);color:#fff}
 
 /* HERO */
 .hero{background:var(--navy);padding:100px 48px 0;position:relative;overflow:hidden}
@@ -325,6 +329,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   </div>
   <div class="nav-actions">
     <a href="https://app.foxlink.network/login" class="nav-login">Log in</a>
+    <a href="/founding.html" class="nav-founding">Founding Members</a>
     <a href="https://app.foxlink.network/signup" class="nav-cta">Start free trial</a>
   </div>
   <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -340,6 +345,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   <a href="/trust.html">Trust</a>
   <a href="#faq">FAQ</a>
   <a href="/blog/">Blog</a>
+  <a href="/founding.html" class="mobile-founding">Founding Members</a>
   <a href="https://app.foxlink.network/signup" class="mobile-cta">Start free trial</a>
 </div>
 
