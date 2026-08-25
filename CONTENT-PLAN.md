@@ -83,7 +83,7 @@ _Highest conversion, lowest competition. This is the wedge._
   pages; link the how-tos up into them and back down. Internal links pass
   authority and help Google map the topic.
 - **Every post:** unique `<title>` ≤60 chars, meta description ≤155, one `<h1>`,
-  descriptive `<h2>`s that match sub-queries, a natural CTA to the 14-day trial,
+  descriptive `<h2>`s that match sub-queries, a natural CTA to the 30-day trial,
   and `BlogPosting` + `BreadcrumbList` JSON-LD (copy the pattern from any existing
   post `<head>`).
 - **New post checklist:**
