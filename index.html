@@ -109,7 +109,41 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .ai-insight-label{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:4px}
 .ai-insight-text{font-size:11px;color:var(--navy);line-height:1.5}
 .ai-insight-text strong{color:var(--orange)}
- 
+
+/* HERO POLISH — entrance, motion, depth (restrained; honoured by reduced-motion below) */
+@keyframes fx-fade-up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fx-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes fx-float-slow{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
+@keyframes fx-glow{0%,100%{box-shadow:0 0 0 0 rgba(232,114,12,0)}50%{box-shadow:0 0 0 4px rgba(232,114,12,.10)}}
+@keyframes fx-drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,24px) scale(1.08)}}
+/* staggered entrance on the left column */
+.hero-inner>div:first-child>*{opacity:0;animation:fx-fade-up .6s ease forwards}
+.hero-eyebrow{animation-delay:.05s}
+.hero-title{animation-delay:.15s}
+.hero-body{animation-delay:.28s}
+.hero-ctas{animation-delay:.40s}
+.hero-proof{animation-delay:.52s}
+/* atmosphere: faint dot-grid + slow-drifting glow */
+.hero{background-color:var(--navy);background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px}
+.hero::before{animation:fx-drift 20s ease-in-out infinite}
+/* the product mock breathes; the AI box gently glows */
+.hero-preview .app-window{animation:fx-float 6s ease-in-out infinite}
+.hero-preview .ai-insight-box{animation:fx-glow 3.2s ease-in-out infinite}
+/* floating accent chips overlapping the window for depth */
+.hero-float{position:absolute;z-index:3;background:#fff;border-radius:10px;padding:9px 12px;box-shadow:0 12px 34px rgba(0,0,0,.28);display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;color:var(--navy);border:1px solid var(--rule);white-space:nowrap}
+.hero-float-toast{top:30px;left:-26px;animation:fx-float 5s ease-in-out infinite}
+.hero-float-score{bottom:96px;right:-18px;animation:fx-float-slow 5.6s ease-in-out infinite}
+.hero-float-badge{font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);background:var(--ai);padding:3px 7px;border-radius:5px}
+.hero-float-score-val{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:6px;background:var(--ai);color:var(--orange);font-size:12px;font-weight:800}
+/* CTA weight */
+.hero-ctas .btn-primary{box-shadow:0 8px 24px rgba(232,114,12,.28);transition:background .2s,transform .2s,box-shadow .2s}
+.hero-ctas .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(232,114,12,.38)}
+.hero-ctas .btn-primary::after{content:' →';font-weight:700}
+@media(prefers-reduced-motion:reduce){
+  .hero-inner>div:first-child>*,.hero::before,.hero-preview .app-window,.hero-preview .ai-insight-box,.hero-float{animation:none!important}
+  .hero-inner>div:first-child>*{opacity:1!important}
+}
+
 /* TRUST BAR */
 .trust-bar{background:var(--cream2);border-bottom:1px solid var(--rule);padding:20px 48px}
 .trust-bar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
@@ -255,6 +289,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   .nav-toggle{display:flex}
   .hero{padding:64px 24px 0}
   .hero-inner{grid-template-columns:1fr;gap:48px}
+  .hero-float{display:none}
   .hero-title{font-size:36px}
   .hero-preview{display:none}
   .trust-bar{padding:20px 24px}
@@ -370,6 +405,8 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
     </div>
  
     <div class="hero-preview">
+      <div class="hero-float hero-float-toast"><span class="hero-float-badge">✦ AI</span><span>Drafted a follow-up to James</span></div>
+      <div class="hero-float hero-float-score"><span class="hero-float-score-val">9</span><span>Lead score&nbsp;↑</span></div>
       <div class="app-window">
         <div class="app-bar">
           <div class="app-bar-dot" style="background:#FF5F57"></div>
