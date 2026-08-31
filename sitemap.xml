@@ -56,6 +56,16 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://foxlink.network/blog/uk-small-business-crm.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://foxlink.network/blog/capsule-crm-alternatives.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://foxlink.network/blog/affordable-crm-small-business.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
