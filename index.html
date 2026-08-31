@@ -224,7 +224,7 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
  
 /* PRICING */
 .pricing-section{padding:96px 48px;background:var(--cream)}
-.pricing-grid{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:20px;margin-top:56px;align-items:start}
+.pricing-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:20px;margin:56px auto 0;max-width:780px;align-items:start}
 .pricing-card{background:#fff;border-radius:16px;padding:32px;border:1px solid var(--rule)}
 .pricing-card.featured{border:2px solid var(--orange);position:relative}
 .pricing-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:99px;white-space:nowrap}
@@ -489,7 +489,59 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
     </div>
   </div>
 </div>
- 
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="section-inner">
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-title">Simple pricing. No surprises.</h2>
+    <p class="section-body">One plan. Every feature. Cancel any time. The maths is straightforward because we made it that way.</p>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-plan">Free Trial</div>
+        <div class="pricing-price">30 <span>days</span></div>
+        <div class="pricing-desc">Full access to every feature. No credit card required. See if FoxLink fits the way your team sells.</div>
+        <div class="pricing-features">
+          <div class="pricing-feature">Unlimited contacts and deals</div>
+          <div class="pricing-feature">Deals pipeline + up to 4 custom workflows</div>
+          <div class="pricing-feature">Boards + Email-to-CRM (BCC)</div>
+          <div class="pricing-feature">All 6 AI features included</div>
+          <div class="pricing-feature">Calendar with events and tasks</div>
+          <div class="pricing-feature">Team workspace + Zapier/API</div>
+          <div class="pricing-feature">Reports and PDF export</div>
+          <div class="pricing-feature">Data export any time</div>
+        </div>
+        <a href="https://app.foxlink.network/signup" class="pricing-cta secondary">Start free trial</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most popular</div>
+        <div class="pricing-plan">Pro</div>
+        <div class="pricing-price">£19 <span>/seat/mo</span></div>
+        <div class="pricing-desc">Everything your team needs to close more deals. Billed monthly. Cancel any time.</div>
+        <div class="pricing-features">
+          <div class="pricing-feature">Unlimited contacts and deals</div>
+          <div class="pricing-feature">All 6 AI features included</div>
+          <div class="pricing-feature">Today's Priorities + Lead Scorer</div>
+          <div class="pricing-feature">Email Drafter + Call Notes Cleaner</div>
+          <div class="pricing-feature">Contact Summariser + Daily Agenda</div>
+          <div class="pricing-feature">Deals pipeline + up to 4 workflows + Tasks</div>
+          <div class="pricing-feature">Boards + Email-to-CRM (BCC)</div>
+          <div class="pricing-feature">Team roles + Audit log</div>
+          <div class="pricing-feature">Reports, PDF and CSV export</div>
+          <div class="pricing-feature">Web intake forms</div>
+          <div class="pricing-feature">Zapier, API &amp; webhooks</div>
+          <div class="pricing-feature">In-app help centre</div>
+        </div>
+        <a href="https://app.foxlink.network/signup" class="pricing-cta primary">Start 30-day free trial</a>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:13px;color:var(--mid);margin-top:28px">All plans include a 30-day free trial with full access. No credit card required to start.</p>
+    <p style="text-align:center;font-size:14px;color:var(--mid);margin-top:10px">Bigger team with custom needs — SSO, SLA, dedicated support? <a href="mailto:hello@foxlink.network" style="color:var(--orange);font-weight:600;text-decoration:none">Talk to us&nbsp;→</a></p>
+  </div>
+</section>
+
 <!-- FEATURES -->
 <section class="section" id="features">
   <div class="section-inner">
@@ -796,72 +848,6 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
         <div class="trust-card-body">Export everything — contacts, deals, activities, reports — as CSV or PDF at any time. No lock-in, no request process, no waiting. Your data leaves with you whenever you want.</div>
       </div>
     </div>
-  </div>
-</section>
- 
-<!-- PRICING -->
-<section class="pricing-section" id="pricing">
-  <div class="section-inner">
-    <div class="section-eyebrow">Pricing</div>
-    <h2 class="section-title">Simple pricing. No surprises.</h2>
-    <p class="section-body">One plan. Every feature. Cancel any time. The maths is straightforward because we made it that way.</p>
- 
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-plan">Free Trial</div>
-        <div class="pricing-price">30 <span>days</span></div>
-        <div class="pricing-desc">Full access to every feature. No credit card required. See if FoxLink fits the way your team sells.</div>
-        <div class="pricing-features">
-          <div class="pricing-feature">Unlimited contacts and deals</div>
-          <div class="pricing-feature">Deals pipeline + up to 4 custom workflows</div>
-          <div class="pricing-feature">Boards + Email-to-CRM (BCC)</div>
-          <div class="pricing-feature">All 6 AI features included</div>
-          <div class="pricing-feature">Calendar with events and tasks</div>
-          <div class="pricing-feature">Team workspace + Zapier/API</div>
-          <div class="pricing-feature">Reports and PDF export</div>
-          <div class="pricing-feature">Data export any time</div>
-        </div>
-        <a href="https://app.foxlink.network/signup" class="pricing-cta secondary">Start free trial</a>
-      </div>
- 
-      <div class="pricing-card featured">
-        <div class="pricing-badge">Most popular</div>
-        <div class="pricing-plan">Pro</div>
-        <div class="pricing-price">£19 <span>/seat/mo</span></div>
-        <div class="pricing-desc">Everything your team needs to close more deals. Billed monthly. Cancel any time.</div>
-        <div class="pricing-features">
-          <div class="pricing-feature">Unlimited contacts and deals</div>
-          <div class="pricing-feature">All 6 AI features included</div>
-          <div class="pricing-feature">Today's Priorities + Lead Scorer</div>
-          <div class="pricing-feature">Email Drafter + Call Notes Cleaner</div>
-          <div class="pricing-feature">Contact Summariser + Daily Agenda</div>
-          <div class="pricing-feature">Deals pipeline + up to 4 workflows + Tasks</div>
-          <div class="pricing-feature">Boards + Email-to-CRM (BCC)</div>
-          <div class="pricing-feature">Team roles + Audit log</div>
-          <div class="pricing-feature">Reports, PDF and CSV export</div>
-          <div class="pricing-feature">Web intake forms</div>
-          <div class="pricing-feature">Zapier, API &amp; webhooks</div>
-          <div class="pricing-feature">In-app help centre</div>
-        </div>
-        <a href="https://app.foxlink.network/signup" class="pricing-cta primary">Start 30-day free trial</a>
-      </div>
- 
-      <div class="pricing-card">
-        <div class="pricing-plan">Enterprise</div>
-        <div class="pricing-price" style="font-size:28px;padding-top:6px">Custom</div>
-        <div class="pricing-desc">For larger teams with specific requirements. Dedicated support and custom integrations available.</div>
-        <div class="pricing-features">
-          <div class="pricing-feature">Everything in Pro</div>
-          <div class="pricing-feature">SSO / custom authentication</div>
-          <div class="pricing-feature">Custom integrations</div>
-          <div class="pricing-feature">Dedicated customer success</div>
-          <div class="pricing-feature">SLA and priority support</div>
-          <div class="pricing-feature">Custom billing terms</div>
-        </div>
-        <a href="mailto:hello@foxlink.network" class="pricing-cta ghost">Talk to us</a>
-      </div>
-    </div>
-    <p style="text-align:center;font-size:13px;color:var(--mid);margin-top:24px">All plans include a 30-day free trial with full access. No credit card required to start.</p>
   </div>
 </section>
  
