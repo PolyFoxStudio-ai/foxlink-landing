@@ -39,6 +39,19 @@
 .dual-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
 .btn-ghost{display:inline-block;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.35);padding:14px 26px;border-radius:9px;font-weight:600;font-size:15px;text-decoration:none;transition:border-color .2s}
 .btn-ghost:hover{border-color:#fff}
+/* Above-the-fold hero CTA — paid-traffic conversion block (scoped to this LP) */
+.hero-lead{font-size:18px;line-height:1.6;color:rgba(255,255,255,0.82);max-width:600px;margin:0 0 26px}
+.hero-lead strong{color:#fff;font-weight:600}
+.hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hero-cta-row .btn-cta{padding:15px 34px;font-size:16px}
+.hero-proof{display:flex;gap:10px 22px;flex-wrap:wrap;margin-top:24px;font-size:13px;color:rgba(255,255,255,0.55)}
+.hero-proof span{display:inline-flex;align-items:center;gap:7px}
+.hero-proof span::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--orange);flex:none}
+@media(max-width:600px){
+  .hero-lead{font-size:16px;margin-bottom:22px}
+  .hero-cta-row .btn-cta{width:100%;text-align:center;padding:15px 24px}
+  .hero-proof{gap:8px 16px;margin-top:20px}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -83,8 +96,19 @@
 <header class="article-header">
   <div class="article-header-inner">
     <h1 class="article-title">CRM for UK Small Business: Simple, Affordable &amp; UK-Hosted</h1>
-    <div class="article-header-meta">
-      <span>31 August 2026</span>
+    <p class="hero-lead">The simple UK CRM your small business will actually use — pipeline, contacts and follow-ups without the admin overhead. <strong>£19 a seat</strong>, hosted in the UK and UK GDPR compliant by design, with AI that handles the daily busywork. <strong>30-day free trial, no card.</strong></p>
+    <div class="hero-cta-row">
+      <a href="https://app.foxlink.network/signup" class="btn-cta">Start free trial →</a>
+      <a href="https://app.foxlink.network/founding" class="btn-ghost">See the Founding Member offer</a>
+    </div>
+    <div class="hero-proof">
+      <span>UK-hosted</span>
+      <span>UK GDPR compliant</span>
+      <span>ICO-registered</span>
+      <span>We never sell your data</span>
+    </div>
+    <div class="article-header-meta" style="margin-top:28px">
+      <span>Guide · 31 August 2026</span>
       <span class="article-header-meta-sep">·</span>
       <span>~6 min read</span>
     </div>
