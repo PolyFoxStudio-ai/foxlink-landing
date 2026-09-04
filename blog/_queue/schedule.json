@@ -1,1 +1,152 @@
-[]
+[
+  {
+    "date": "2026-09-08",
+    "file": "what-is-lead-scoring.html",
+    "slug": "what-is-lead-scoring",
+    "displayDate": "8 September 2026",
+    "readTime": "6 min read",
+    "title": "What Is Lead Scoring? A Plain-English Guide",
+    "excerpt": "Ranking your leads sounds like enterprise jargon. Here is what lead scoring actually is, and a simple way to start.",
+    "priority": "0.6"
+  },
+  {
+    "date": "2026-09-15",
+    "file": "spreadsheet-vs-crm.html",
+    "slug": "spreadsheet-vs-crm",
+    "displayDate": "15 September 2026",
+    "readTime": "6 min read",
+    "title": "Spreadsheet vs CRM: When to Make the Switch",
+    "excerpt": "A spreadsheet is a perfectly good first CRM. Here are the honest signs you have outgrown it.",
+    "priority": "0.6"
+  },
+  {
+    "date": "2026-09-22",
+    "file": "how-to-manage-a-sales-pipeline.html",
+    "slug": "how-to-manage-a-sales-pipeline",
+    "displayDate": "22 September 2026",
+    "readTime": "6 min read",
+    "title": "How to Manage a Sales Pipeline Without a Full-Time Admin",
+    "excerpt": "You do not need an ops team to keep a pipeline healthy — you need fewer stages and one weekly habit.",
+    "priority": "0.6"
+  },
+  {
+    "date": "2026-09-29",
+    "file": "sales-follow-up-email-templates.html",
+    "slug": "sales-follow-up-email-templates",
+    "displayDate": "29 September 2026",
+    "readTime": "7 min read",
+    "title": "7 Follow-Up Email Templates for After a Sales Call",
+    "excerpt": "The deal is usually won or lost in the follow-up, not the call. Seven templates you can copy and send.",
+    "priority": "0.6"
+  },
+  {
+    "date": "2026-10-06",
+    "file": "daily-sales-routine.html",
+    "slug": "daily-sales-routine",
+    "displayDate": "6 October 2026",
+    "readTime": "5 min read",
+    "title": "Building a Simple Daily Sales Routine",
+    "excerpt": "Consistency beats intensity. A 15-minute morning routine that keeps deals moving without the admin.",
+    "priority": "0.6"
+  },
+  {
+    "date": "2026-10-13",
+    "file": "ai-in-crm.html",
+    "slug": "ai-in-crm",
+    "displayDate": "13 October 2026",
+    "readTime": "7 min read",
+    "title": "AI in CRM: Hype vs the 6 Features That Save Real Time",
+    "excerpt": "Every CRM claims AI now. Here are the six features that actually save time, and the ones that are noise.",
+    "priority": "0.7"
+  },
+  {
+    "date": "2026-10-20",
+    "file": "ai-lead-scoring.html",
+    "slug": "ai-lead-scoring",
+    "displayDate": "20 October 2026",
+    "readTime": "6 min read",
+    "title": "AI Lead Scoring: How It Works and When to Trust It",
+    "excerpt": "AI can score your leads automatically. Here is how it works, and when to trust the number.",
+    "priority": "0.6"
+  },
+  {
+    "date": "2026-10-27",
+    "file": "hubspot-pricing-uk.html",
+    "slug": "hubspot-pricing-uk",
+    "displayDate": "27 October 2026",
+    "readTime": "7 min read",
+    "title": "How Much Does HubSpot Really Cost a UK Small Business?",
+    "excerpt": "HubSpot starts free — but the real bill for a small UK team is a different number. How to work it out.",
+    "priority": "0.7"
+  },
+  {
+    "date": "2026-11-03",
+    "file": "free-crm-uk.html",
+    "slug": "free-crm-uk",
+    "displayDate": "3 November 2026",
+    "readTime": "6 min read",
+    "title": "Is There a Truly Free CRM for UK Small Business?",
+    "excerpt": "Free CRMs are real — but free has limits. When it is genuinely enough, and when it quietly costs you.",
+    "priority": "0.6"
+  },
+  {
+    "date": "2026-11-10",
+    "file": "uk-hosted-crm.html",
+    "slug": "uk-hosted-crm",
+    "displayDate": "10 November 2026",
+    "readTime": "6 min read",
+    "title": "UK-Hosted CRM: Where Your Customer Data Actually Lives",
+    "excerpt": "Where does your customer data actually live? Why UK hosting matters, and what to ask a vendor.",
+    "priority": "0.6"
+  },
+  {
+    "date": "2026-11-17",
+    "file": "crm-for-tradesmen.html",
+    "slug": "crm-for-tradesmen",
+    "displayDate": "17 November 2026",
+    "readTime": "6 min read",
+    "title": "CRM for Tradesmen: Quotes and Follow-Ups Without the Paperwork",
+    "excerpt": "Quotes sent and never chased are lost jobs. How a simple CRM helps trades win the work without the paperwork.",
+    "priority": "0.7"
+  },
+  {
+    "date": "2026-11-24",
+    "file": "crm-for-recruitment-agencies.html",
+    "slug": "crm-for-recruitment-agencies",
+    "displayDate": "24 November 2026",
+    "readTime": "6 min read",
+    "title": "CRM for Recruitment Agencies (Small UK Firms)",
+    "excerpt": "Recruitment is two pipelines at once — candidates and clients. How a simple CRM keeps both moving.",
+    "priority": "0.7"
+  },
+  {
+    "date": "2026-12-01",
+    "file": "crm-for-accountants.html",
+    "slug": "crm-for-accountants",
+    "displayDate": "1 December 2026",
+    "readTime": "6 min read",
+    "title": "CRM for Accountants and Bookkeepers (UK Practices)",
+    "excerpt": "Your practice software runs the compliance. A CRM runs the relationships and the growth. Why you need both.",
+    "priority": "0.7"
+  },
+  {
+    "date": "2026-12-08",
+    "file": "salesforce-alternatives-small-business.html",
+    "slug": "salesforce-alternatives-small-business",
+    "displayDate": "8 December 2026",
+    "readTime": "7 min read",
+    "title": "Salesforce Too Much? Simpler Alternatives for Small UK Teams",
+    "excerpt": "Salesforce is the enterprise standard — and usually far too much for a small team. What to use instead.",
+    "priority": "0.7"
+  },
+  {
+    "date": "2026-12-15",
+    "file": "best-crm-for-sole-traders.html",
+    "slug": "best-crm-for-sole-traders",
+    "displayDate": "15 December 2026",
+    "readTime": "6 min read",
+    "title": "Best CRM for Sole Traders (UK)",
+    "excerpt": "As a sole trader you are the whole business. Here is what to look for in a CRM — and what to ignore.",
+    "priority": "0.7"
+  }
+]
