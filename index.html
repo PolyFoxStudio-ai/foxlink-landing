@@ -247,10 +247,15 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
  
 /* FAQ */
 .faq-section{padding:96px 48px;background:#fff}
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:56px}
-.faq-item{background:var(--cream);border-radius:12px;padding:24px;border:1px solid var(--rule)}
-.faq-q{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:10px}
-.faq-a{font-size:14px;color:var(--mid);line-height:1.7}
+.faq-list{max-width:760px;margin:56px auto 0;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:var(--cream);border-radius:12px;border:1px solid var(--rule);overflow:hidden;transition:border-color .2s}
+.faq-item[open]{border-color:var(--rule2)}
+.faq-q{font-size:16px;font-weight:600;color:var(--navy);padding:20px 24px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q::after{content:'+';font-size:24px;font-weight:400;line-height:1;color:var(--orange);flex:none;transition:transform .2s}
+.faq-item[open] .faq-q::after{transform:rotate(45deg)}
+.faq-q:hover{color:var(--orange)}
+.faq-a{font-size:15px;color:var(--mid);line-height:1.7;padding:0 24px 22px}
  
 /* CTA FOOTER */
 .cta-section{background:var(--navy);padding:96px 48px;text-align:center;position:relative;overflow:hidden}
@@ -303,7 +308,8 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   .ai-grid{grid-template-columns:1fr 1fr}
   .ai-card-wide{grid-column:span 1}
   .pricing-grid{grid-template-columns:1fr}
-  .faq-grid{grid-template-columns:1fr}
+  .faq-q{font-size:15px;padding:18px 20px}
+  .faq-a{padding:0 20px 20px}
   .blog-teaser-section{padding:64px 24px}
   .blog-teaser-grid{grid-template-columns:1fr}
   footer{padding:20px 24px;flex-direction:column;align-items:flex-start}
@@ -862,43 +868,43 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
     <div class="section-eyebrow">FAQ</div>
     <h2 class="section-title">Questions answered.</h2>
  
-    <div class="faq-grid">
-      <div class="faq-item">
-        <div class="faq-q">How does the free trial work?</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">How does the free trial work?</summary>
         <div class="faq-a">Sign up with your email — no card needed. You get 30 days of full access to every feature including all AI tools. After the trial, upgrade to Pro or your data stays safe and you can come back any time.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How long does setup take?</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How long does setup take?</summary>
         <div class="faq-a">Most teams are up and running in under an hour. Import your contacts from CSV, configure your pipeline stages, and you're selling the same day. No consultant required, no lengthy onboarding.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">What is the daily agenda email?</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What is the daily agenda email?</summary>
         <div class="faq-a">FoxLink's AI writes you a personalised briefing every morning — your top-priority contacts ranked by urgency, deals closing soon, overdue tasks, and what your team logged yesterday. Arrives before 7am. Toggle it off any time in Settings.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How do web intake forms work?</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How do web intake forms work?</summary>
         <div class="faq-a">Build a form in FoxLink and embed it on your website. When someone fills it in, they're automatically added as a contact in your workspace — no Zapier, no manual import, no delay.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Is my data safe and GDPR compliant?</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is my data safe and GDPR compliant?</summary>
         <div class="faq-a">Yes. FoxLink runs on UK-hosted infrastructure in the London region with row-level security — your workspace data is completely isolated. We're registered with the ICO and comply fully with UK GDPR. We never sell or share your data.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Why BCC instead of connecting my whole inbox?</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Why BCC instead of connecting my whole inbox?</summary>
         <div class="faq-a">By design, for privacy. Full-inbox integrations pull in every email you send and receive — including messages about people who never agreed to sit in a CRM. FoxLink only sees the emails you deliberately BCC or forward, so nothing lands in your workspace without a conscious decision — data minimisation built in, not bolted on. There's also no mailbox password or OAuth token for us to store.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">We already have a CRM.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">We already have a CRM.</summary>
         <div class="faq-a">Most teams do. The question is whether your team actually uses it. FoxLink is built to be the CRM your reps open every morning — not the one they update when they have to. Try it for 30 days and see.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can it integrate with our other tools?</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can it integrate with our other tools?</summary>
         <div class="faq-a">Yes. Connect FoxLink to thousands of apps through our Zapier integration, or build directly against our REST API with signed webhooks for real-time events — generate an API key in Settings to get started. CSV import and export are always available too, so your data is never locked in. (Native calendar sync is still on the roadmap — tell us what you need and you'll influence what comes next.)</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">What happens when my trial ends?</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What happens when my trial ends?</summary>
         <div class="faq-a">You can upgrade to Pro at any time from Settings → Billing. If you don't upgrade, you'll move to read-only access — your data is safe and you can come back whenever you're ready.</div>
-      </div>
+      </details>
     </div>
   </div>
 </section>
