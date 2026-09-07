@@ -96,6 +96,8 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .app-bar-dot{width:10px;height:10px;border-radius:50%}
 .app-bar-title{font-size:11px;color:rgba(255,255,255,0.35);margin-left:8px;font-weight:500}
 .app-content{padding:20px}
+.app-shot{padding:0;background:var(--cream2)}
+.app-shot img{display:block;width:100%;height:auto}
 .app-section-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
 .pipeline-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
 .pipeline-col{background:var(--cream);border-radius:8px;padding:10px}
@@ -291,7 +293,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   .hero-inner{grid-template-columns:1fr;gap:48px}
   .hero-float{display:none}
   .hero-title{font-size:36px}
-  .hero-preview{display:none}
+  .hero-preview{padding-bottom:0}
   .trust-bar{padding:20px 24px}
   .trust-divider{display:none}
   .section{padding:64px 24px}
@@ -308,6 +310,16 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   .trust-grid{grid-template-columns:1fr}
   .calendar-section{padding:64px 24px}
 }
+/* ─── COMPARISON TABLE ────────────────────────── */
+.compare-wrap{overflow-x:auto;margin-top:8px}
+.compare{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+.compare th,.compare td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--rule)}
+.compare thead th{font-family:'Syne',sans-serif;font-size:14px;color:var(--navy);border-bottom:2px solid var(--navy)}
+.compare thead th:nth-child(2){color:var(--orange)}
+.compare tbody td:first-child{font-weight:600;color:var(--navy);width:38%}
+.compare tbody tr:nth-child(even){background:var(--cream2)}
+.compare .yes{color:var(--success);font-weight:600}
+.compare-note{font-size:12px;color:var(--mid);margin-top:16px;text-align:center}
 </style>
 <script defer data-domain="foxlink.network" src="https://plausible.io/js/script.outbound-links.js"></script>
 <script type="application/ld+json">
@@ -414,46 +426,8 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
           <div class="app-bar-dot" style="background:#28C840"></div>
           <span class="app-bar-title">app.foxlink.network — Dashboard</span>
         </div>
-        <div class="app-content">
-          <div class="app-section-label">Live pipeline</div>
-          <div class="pipeline-cols">
-            <div class="pipeline-col">
-              <div class="pipeline-col-name">Prospect</div>
-              <div class="deal-card">
-                <div class="deal-card-name">Acme Corp</div>
-                <div class="deal-card-val">£10,000</div>
-                <div class="deal-card-meta">Sarah Chen · Close Jun 14<span class="deal-score">Score 6</span></div>
-              </div>
-            </div>
-            <div class="pipeline-col">
-              <div class="pipeline-col-name">Qualified</div>
-              <div class="deal-card">
-                <div class="deal-card-name">BuildCo Ltd</div>
-                <div class="deal-card-val">£24,000</div>
-                <div class="deal-card-meta">James Rowe · Close Jun 4<span class="deal-score">Score 9</span></div>
-              </div>
-            </div>
-            <div class="pipeline-col">
-              <div class="pipeline-col-name">Proposal</div>
-              <div class="deal-card">
-                <div class="deal-card-name">NorthTech Ltd</div>
-                <div class="deal-card-val">£15,000</div>
-                <div class="deal-card-meta">Ali Hassan · Close Jun 20<span class="deal-score">Score 7</span></div>
-              </div>
-            </div>
-            <div class="pipeline-col">
-              <div class="pipeline-col-name">Commitment</div>
-              <div class="deal-card">
-                <div class="deal-card-name">Harwood Legal</div>
-                <div class="deal-card-val">£8,500 ✓</div>
-                <div class="deal-card-meta">Helen D · Closing<span class="deal-score">Score 9</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="ai-insight-box">
-            <div class="ai-insight-label">✦ Today's priorities</div>
-            <div class="ai-insight-text"><strong>BuildCo Ltd</strong> — deal closes in 4 days, not contacted in 11 days. Call James today. <strong>NorthTech</strong> — proposal sent 6 days ago, no response. Chase Ali before end of day.</div>
-          </div>
+        <div class="app-content app-shot">
+          <img src="/img/foxlink-dashboard.png" width="3200" height="1800" alt="The FoxLink dashboard — sales pipeline with AI-ranked Today's Priorities" fetchpriority="high">
         </div>
       </div>
     </div>
@@ -578,12 +552,12 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
       <div class="feature-card">
         <div class="feature-icon">🗂️</div>
         <div class="feature-title">Workflows</div>
-        <div class="feature-body">Spin up to four custom Kanban boards for the work that isn't a sale — client onboarding, delivery, support cases, hiring, partnerships. Each workflow gets its own columns, custom fields, and a task board on every card. Describe what the workflow should achieve and AI tracks its progress against that, giving you a health update on each one. Workflow cards carry no deal value and stay out of your sales reports.</div>
+        <div class="feature-body">Up to four custom Kanban boards for the work that isn't a sale — onboarding, delivery, support, hiring. Each has its own columns and a task board per card, and AI tracks progress against the goal you set. Kept out of your sales reports.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🗃️</div>
         <div class="feature-title">Boards</div>
-        <div class="feature-body">Monday.com-style custom tables for the data a pipeline can't hold. Each board is a spreadsheet of typed columns — status, people, dates, links, numbers, plus AI columns that summarise or categorise each row — with colour-coded groups and subitems for the detail beneath. See the same board as a table, a Kanban, or a calendar. Ideal for projects, content plans, hiring, or inventory — right beside your deals and contacts.</div>
+        <div class="feature-body">Monday.com-style custom tables for the data a pipeline can't hold — typed columns, colour-coded groups, and AI columns that summarise or categorise each row. View any board as a table, Kanban, or calendar, right beside your deals and contacts.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📬</div>
@@ -593,12 +567,12 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
       <div class="feature-card">
         <div class="feature-icon">📨</div>
         <div class="feature-title">Email to CRM</div>
-        <div class="feature-body">Every user gets a private BCC address. BCC or forward a client email and FoxLink logs it against the right contact automatically — matched by email address and threaded into their activity history. Anything it can't match waits in a review queue for one-click assignment. No mailbox to connect, no browser extension to install.</div>
+        <div class="feature-body">Every user gets a private BCC address. Forward or BCC a client email and FoxLink logs it against the right contact automatically — anything it can't match waits in a review queue for one-click assignment. No mailbox to connect, no extension to install.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">👤</div>
         <div class="feature-title">Team workspace</div>
-        <div class="feature-body">Invite your team with roles — owner, admin, manager, or member — so the right people can manage settings and billing while everyone shares the same pipeline and activity. Assign account managers, and let the audit log track every change so nothing happens without a trace.</div>
+        <div class="feature-body">Invite your team with roles — owner, admin, manager, member — so the right people control settings and billing while everyone shares one pipeline. An audit log tracks every change.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📊</div>
@@ -608,7 +582,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
       <div class="feature-card">
         <div class="feature-icon">🔌</div>
         <div class="feature-title">Zapier, API & webhooks</div>
-        <div class="feature-body">Connect FoxLink to thousands of apps with our Zapier integration — create contacts, deals, activities and tasks from your other tools. Or build directly against the REST API, with signed webhooks that fire in real time when things change in FoxLink. Generate API keys in Settings and you're wired up in minutes.</div>
+        <div class="feature-body">Connect to thousands of apps via Zapier, or build directly against the REST API with signed webhooks that fire in real time. Generate a key in Settings and you're wired up in minutes.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📱</div>
@@ -618,7 +592,33 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
     </div>
   </div>
 </section>
- 
+
+<!-- COMPARISON -->
+<section class="section" id="compare">
+  <div class="section-inner">
+    <div class="section-eyebrow">How FoxLink compares</div>
+    <h2 class="section-title">Built for a UK small business.<br>Not a US enterprise.</h2>
+    <p class="section-body">Most big-name CRMs are priced in dollars, built for large teams, and host your data overseas. Here's how FoxLink lines up on what actually matters.</p>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>What matters for a UK small business</th><th>FoxLink</th><th>Typical big-name CRM</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Data hosted in the UK</td><td class="yes">Yes — London region</td><td>Often US / varies</td></tr>
+          <tr><td>UK GDPR compliant by design</td><td class="yes">Yes, ICO-registered</td><td>Varies</td></tr>
+          <tr><td>Priced in GBP</td><td class="yes">£19/seat, one plan</td><td>Often USD, tiered</td></tr>
+          <tr><td>AI built into the core</td><td class="yes">6 tools included</td><td>Higher tier / add-on</td></tr>
+          <tr><td>Set-up effort</td><td class="yes">An afternoon</td><td>Can be a project</td></tr>
+          <tr><td>Data export any time</td><td class="yes">CSV &amp; PDF, no lock-in</td><td>Varies</td></tr>
+          <tr><td>Free trial</td><td class="yes">30 days, no card</td><td>Varies</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="compare-note">Comparison reflects FoxLink's offering and common patterns among larger CRM platforms. Vendor plans, pricing and data-residency terms change — please check each vendor's own site before deciding.</p>
+  </div>
+</section>
+
 <!-- WORKFLOW SECTION -->
 <section class="workflow-section" id="workflow">
   <div class="workflow-grid">
@@ -876,11 +876,11 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
       </div>
       <div class="faq-item">
         <div class="faq-q">Is my data safe and GDPR compliant?</div>
-        <div class="faq-a">Yes. FoxLink runs on EU-hosted infrastructure in the London region with row-level security — your workspace data is completely isolated. We're registered with the ICO and comply fully with UK GDPR. We never sell or share your data.</div>
+        <div class="faq-a">Yes. FoxLink runs on UK-hosted infrastructure in the London region with row-level security — your workspace data is completely isolated. We're registered with the ICO and comply fully with UK GDPR. We never sell or share your data.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Why BCC instead of connecting my whole inbox?</div>
-        <div class="faq-a">By design, for privacy. Full-inbox integrations pull in every email you send and receive — including messages about people who never agreed to sit in a CRM. FoxLink only ever sees the emails you deliberately BCC or forward to your private address, so nothing lands in your workspace without a conscious decision. That's data minimisation — a core UK GDPR principle — built into how the feature works rather than bolted on afterwards. It also means there's no mailbox password or OAuth token for us to store, and nothing to revoke if you switch email providers.</div>
+        <div class="faq-a">By design, for privacy. Full-inbox integrations pull in every email you send and receive — including messages about people who never agreed to sit in a CRM. FoxLink only sees the emails you deliberately BCC or forward, so nothing lands in your workspace without a conscious decision — data minimisation built in, not bolted on. There's also no mailbox password or OAuth token for us to store.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">We already have a CRM.</div>
@@ -936,7 +936,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
     <h2 class="cta-title">Ready to close<br><em>more deals?</em></h2>
     <p class="cta-body">30-day free trial. Full access to every feature including all 6 AI tools. No credit card required. Set up in under an hour.</p>
     <a href="https://app.foxlink.network/signup" class="btn-primary" style="font-size:16px;padding:16px 36px">Start free trial — no card needed</a>
-    <div class="cta-proof">Pro from £19/seat/mo · Cancel any time · EU-hosted · UK GDPR compliant</div>
+    <div class="cta-proof">Pro from £19/seat/mo · Cancel any time · UK-hosted · UK GDPR compliant</div>
   </div>
 </section>
  
