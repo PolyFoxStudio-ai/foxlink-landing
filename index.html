@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
 <title>FoxLink — The CRM your small business will actually use</title>
 <meta name="description" content="A simple, AI-powered CRM built for UK small businesses. UK-hosted and UK GDPR compliant by design, £19 a seat. Pipeline, contacts, and 6 AI tools built in. 30-day free trial, no card needed.">
 <link rel="canonical" href="https://foxlink.network/">
@@ -39,7 +40,7 @@
   --success:#0E7A4E;
   --info:#1A5ECC;
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;color-scheme:light}
 body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--cream);line-height:1.7;overflow-x:hidden}
  
 /* NAV */
@@ -320,6 +321,10 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
 .compare tbody tr:nth-child(even){background:var(--cream2)}
 .compare .yes{color:var(--success);font-weight:600}
 .compare-note{font-size:12px;color:var(--mid);margin-top:16px;text-align:center}
+@media(max-width:600px){
+  .ai-grid{grid-template-columns:1fr}
+  .ai-card-wide{grid-column:span 1}
+}
 </style>
 <script defer data-domain="foxlink.network" src="https://plausible.io/js/script.outbound-links.js"></script>
 <script type="application/ld+json">
