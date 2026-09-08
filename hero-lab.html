@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="robots" content="noindex,nofollow">
-<title>Hero mockups V1-C (not live) — FoxLink</title>
+<title>Hero candidate (not live) — FoxLink</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -21,12 +21,17 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .nav-founding{color:var(--orange);border:1px solid var(--orange);padding:9px 18px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap}
 .nav-cta{background:var(--orange);color:#fff;padding:10px 22px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none}
 
-/* HERO shared */
-.hero{background:var(--navy);position:relative;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px}
+.hero{background:var(--navy);position:relative;overflow:visible;padding:56px 48px 0;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px}
+/* C3 scrim: dark on the text side, fading to reveal the screenshot on the right */
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(96deg, var(--navy) 0%, var(--navy) 24%, rgba(30,26,46,.5) 44%, rgba(30,26,46,0) 68%);z-index:2;pointer-events:none}
+.hero-inner{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:minmax(0,500px) minmax(0,1fr);gap:0;align-items:center;position:relative}
+.hero-text{position:relative;z-index:3;min-width:0}
+/* the whisper of C4 — a soft dark glow just behind the headline so the white punches through (not a panel) */
+.hero-text::before{content:'';position:absolute;inset:-46px -90px -24px -64px;background:radial-gradient(66% 70% at 32% 40%, rgba(0,0,0,.5), transparent 72%);filter:blur(18px);z-index:-1;pointer-events:none}
 .hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
-.hero-title{font-family:'Syne',sans-serif;font-size:50px;line-height:1.0;color:#fff;margin-bottom:22px;letter-spacing:-.03em}
+.hero-title{font-family:'Syne',sans-serif;font-size:52px;line-height:1.0;color:#fff;margin-bottom:22px;letter-spacing:-.03em}
 .hero-title em{color:var(--orange);font-style:normal}
-.hero-body{font-size:17px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:32px;max-width:480px}
+.hero-body{font-size:17px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:32px;max-width:470px}
 .hero-ctas{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .btn-primary{background:var(--orange);color:#fff;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;display:inline-block;box-shadow:0 8px 24px rgba(232,114,12,.28)}
 .btn-primary::after{content:' →';font-weight:700}
@@ -34,105 +39,44 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .hero-proof{display:flex;align-items:center;gap:12px 14px;margin-top:26px;flex-wrap:wrap}
 .hero-proof-item{font-size:14px;color:rgba(255,255,255,0.8);display:flex;align-items:center;gap:6px}
 .hero-proof-item::before{content:'✓';color:var(--orange);font-weight:700}
-.app-window{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,0.08)}
+/* big screenshot: rises into the top dead space and bleeds below the navy */
+.hero-preview{position:relative;justify-self:start;width:min(1000px,100%);min-width:0;margin-left:-60px;margin-top:-56px;margin-bottom:-170px;z-index:1;perspective:2800px}
+.app-window{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 50px 100px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,0.08);transform:rotateY(-8deg) rotateX(2deg);transform-origin:center}
 .app-window img{display:block;width:100%;height:auto}
+.shelf{background:var(--cream2);height:250px}
 
-/* ===== shared V1-C base: product enlarged, slides left BEHIND the text, bleeds below ===== */
-.vc .hero{overflow:visible;padding:92px 48px 0}
-.vc .hero-inner{max-width:1340px;margin:0 auto;display:grid;grid-template-columns:minmax(0,540px) minmax(0,1fr);gap:0;align-items:center;position:relative}
-.vc .hero-text{position:relative;z-index:3;min-width:0}
-.vc .hero-preview{position:relative;justify-self:start;width:min(860px,100%);min-width:0;margin-left:-60px;margin-bottom:-160px;z-index:1;perspective:2600px}
-.vc .app-window{transform:rotateY(-10deg) rotateX(2deg);transform-origin:right center}
-.vc-shelf{background:var(--cream2);height:230px}
-
-/* lab chrome */
 .lab-note{position:sticky;top:0;z-index:200;background:#111;color:#fff;padding:9px 16px;font:600 13px/1.4 'DM Sans',sans-serif;text-align:center}
-.lab-label{max-width:1240px;margin:0 auto;padding:34px 48px 6px}
-.lab-label b{font:800 16px/1.2 'Syne',sans-serif;color:var(--navy)}
-.lab-label span{display:block;font:500 13px/1.5 'DM Sans',sans-serif;color:var(--mid);margin-top:4px}
-.lab-variant{border-top:1px dashed var(--rule2)}
-
-/* C1 — frosted glass (translucent + blur), balanced */
-.c1 .hero-text{background:rgba(18,15,32,0.48);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.10);border-radius:20px;padding:30px 34px}
-
-/* C2 — frosted glass, more opaque + less blur (max readability) */
-.c2 .hero-text{background:rgba(18,15,32,0.74);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);border-radius:20px;padding:30px 34px}
-
-/* C3 — full-hero left→right gradient scrim, no panel on the text */
-.c3 .hero-preview{z-index:1}
-.c3 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(96deg, var(--navy) 0%, var(--navy) 30%, rgba(30,26,46,.55) 50%, rgba(30,26,46,0) 72%);z-index:2;pointer-events:none}
-.c3 .hero-text{z-index:3}
-
-/* C4 — large soft radial vignette behind the text (no blur) */
-.c4 .hero-text::before{content:'';position:absolute;inset:-56px -170px -80px -90px;background:radial-gradient(farthest-side at 42% 50%, rgba(18,15,32,.94) 0%, rgba(18,15,32,.78) 46%, rgba(18,15,32,0) 100%);z-index:-1;pointer-events:none}
-
-/* C5 — no backdrop, heavy text halo only (product fully visible) */
-.c5 .hero-eyebrow,.c5 .hero-title,.c5 .hero-body{text-shadow:0 2px 18px rgba(0,0,0,.92),0 1px 4px rgba(0,0,0,.85)}
-.c5 .hero-body{color:#fff}
-
-/* C6 — frosted panel with a feathered right edge (blends into the screenshot) */
-.c6 .hero-text{position:relative;z-index:3;padding:30px 46px 30px 0}
-.c6 .hero-text::before{content:'';position:absolute;inset:-28px -10px -28px -40px;background:rgba(18,15,32,0.62);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);-webkit-mask:linear-gradient(90deg,#000 58%,transparent 100%);mask:linear-gradient(90deg,#000 58%,transparent 100%);border-radius:20px;z-index:-1}
 
 @media(max-width:900px){
   nav{padding:0 24px}.nav-links,.nav-actions{display:none}
-  .vc .hero{padding:52px 24px 0}
-  .vc .hero-inner{grid-template-columns:1fr;gap:30px}
-  .vc .hero-preview{width:auto;margin:0;perspective:none}
-  .vc .app-window{transform:none}
-  .vc .hero-text{background:none!important;backdrop-filter:none!important;padding:0!important}
-  .c3 .hero::after,.c4 .hero-text::before,.c6 .hero-text::before{display:none}
-  .c5 .hero-eyebrow,.c5 .hero-title,.c5 .hero-body{text-shadow:none}
-  .vc-shelf{height:0}
+  .hero{padding:52px 24px 0}
+  .hero-inner{grid-template-columns:1fr;gap:30px}
+  .hero-text::before,.hero::after{display:none}
+  .hero-preview{width:auto;margin:0;perspective:none}
+  .app-window{transform:none}
+  .shelf{height:0}
 }
 </style>
 </head>
 <body>
-<div class="lab-note">🔧 V1-C — six ways to keep the text readable over the screenshot behind it. Homepage unchanged.</div>
+<div class="lab-note">🔧 Hero candidate: C3 scrim + subtle headline glow + much larger dashboard rising into the top space & bleeding below. Not live.</div>
 <nav>
   <a href="#" class="nav-logo">Fox<em>Link</em></a>
   <div class="nav-links"><a href="#">Features</a><a href="#">AI</a><a href="#">Pricing</a><a href="#">Blog</a></div>
   <div class="nav-actions"><a href="#" class="nav-login">Log in</a><a href="#" class="nav-founding">Founding Members</a><a href="#" class="nav-cta">Start free trial</a></div>
 </nav>
-
-<!-- macro repeated per variant -->
-<div class="lab-label"><b>C1 — frosted glass (translucent + blur)</b><span>Dark, semi-transparent panel with a blur behind the text. You still glimpse the (blurred) screenshot through it; text stays crisp.</span></div>
-<div class="lab-variant vc c1"><section class="hero"><div class="hero-inner">
-  <div class="hero-text"><div class="hero-eyebrow">CRM for UK small business</div><h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1><p class="hero-body">A simple, AI-powered CRM for UK small businesses — pipeline, contacts and follow-ups without the admin overhead. Hosted in the UK, £19 a seat.</p><div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div><div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div></div>
-  <div class="hero-preview"><div class="app-window"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
-</div></section><div class="vc-shelf"></div></div>
-
-<div class="lab-label"><b>C2 — frosted glass, more opaque</b><span>Same idea, darker and less blur — maximum readability, less of the screenshot shows through.</span></div>
-<div class="lab-variant vc c2"><section class="hero"><div class="hero-inner">
-  <div class="hero-text"><div class="hero-eyebrow">CRM for UK small business</div><h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1><p class="hero-body">A simple, AI-powered CRM for UK small businesses — pipeline, contacts and follow-ups without the admin overhead. Hosted in the UK, £19 a seat.</p><div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div><div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div></div>
-  <div class="hero-preview"><div class="app-window"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
-</div></section><div class="vc-shelf"></div></div>
-
-<div class="lab-label"><b>C3 — left→right gradient scrim (no panel)</b><span>A dark gradient over the whole hero: solid navy on the text side, fading to reveal the screenshot on the right. No visible box around the text.</span></div>
-<div class="lab-variant vc c3"><section class="hero"><div class="hero-inner">
-  <div class="hero-text"><div class="hero-eyebrow">CRM for UK small business</div><h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1><p class="hero-body">A simple, AI-powered CRM for UK small businesses — pipeline, contacts and follow-ups without the admin overhead. Hosted in the UK, £19 a seat.</p><div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div><div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div></div>
-  <div class="hero-preview"><div class="app-window"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
-</div></section><div class="vc-shelf"></div></div>
-
-<div class="lab-label"><b>C4 — large soft radial vignette</b><span>A big, feathered dark glow sitting behind the text (no hard edges, no blur). The screenshot shows through around it.</span></div>
-<div class="lab-variant vc c4"><section class="hero"><div class="hero-inner">
-  <div class="hero-text"><div class="hero-eyebrow">CRM for UK small business</div><h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1><p class="hero-body">A simple, AI-powered CRM for UK small businesses — pipeline, contacts and follow-ups without the admin overhead. Hosted in the UK, £19 a seat.</p><div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div><div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div></div>
-  <div class="hero-preview"><div class="app-window"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
-</div></section><div class="vc-shelf"></div></div>
-
-<div class="lab-label"><b>C5 — text halo only (screenshot fully visible)</b><span>No panel at all — just a strong shadow/halo on the text so it reads over the screenshot. Most immersive; relies on the shadow doing the work.</span></div>
-<div class="lab-variant vc c5"><section class="hero"><div class="hero-inner">
-  <div class="hero-text"><div class="hero-eyebrow">CRM for UK small business</div><h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1><p class="hero-body">A simple, AI-powered CRM for UK small businesses — pipeline, contacts and follow-ups without the admin overhead. Hosted in the UK, £19 a seat.</p><div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div><div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div></div>
-  <div class="hero-preview"><div class="app-window"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
-</div></section><div class="vc-shelf"></div></div>
-
-<div class="lab-label"><b>C6 — frosted panel with a feathered edge</b><span>Frosted-glass panel behind the text, but its right edge fades out so there's no hard box line where it meets the screenshot.</span></div>
-<div class="lab-variant vc c6"><section class="hero"><div class="hero-inner">
-  <div class="hero-text"><div class="hero-eyebrow">CRM for UK small business</div><h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1><p class="hero-body">A simple, AI-powered CRM for UK small businesses — pipeline, contacts and follow-ups without the admin overhead. Hosted in the UK, £19 a seat.</p><div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div><div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div></div>
-  <div class="hero-preview"><div class="app-window"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
-</div></section><div class="vc-shelf"></div></div>
-
-<div class="lab-label"><b>End</b><span>Tell me which reads best (and whether you want more/less of the screenshot showing behind the text) and I'll refine, then port to the live homepage.</span></div>
-<div style="height:80px"></div>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">CRM for UK small business</div>
+      <h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1>
+      <p class="hero-body">A simple, AI-powered CRM built for UK small businesses — pipeline, contacts and follow-ups without the admin overhead that kills most CRMs. Hosted in the UK, £19 a seat.</p>
+      <div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div>
+      <div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div>
+    </div>
+    <div class="hero-preview"><div class="app-window"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
+  </div>
+</section>
+<div class="shelf"></div>
 </body>
 </html>
