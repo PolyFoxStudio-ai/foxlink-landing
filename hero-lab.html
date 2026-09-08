@@ -26,7 +26,7 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
 .hero-title{font-family:'Syne',sans-serif;font-size:50px;line-height:1.0;color:#fff;margin-bottom:22px;letter-spacing:-.03em}
 .hero-title em{color:var(--orange);font-style:normal}
-.hero-body{font-size:17px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:32px;max-width:440px}
+.hero-body{font-size:17px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:32px;max-width:480px}
 .hero-ctas{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .btn-primary{background:var(--orange);color:#fff;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;display:inline-block;box-shadow:0 8px 24px rgba(232,114,12,.28)}
 .btn-primary::after{content:' →';font-weight:700}
@@ -39,9 +39,9 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 
 /* ===== shared V1-C base: product enlarged, slides left BEHIND the text, bleeds below ===== */
 .vc .hero{overflow:visible;padding:92px 48px 0}
-.vc .hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:0;align-items:center;position:relative}
+.vc .hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,544px) 1fr;gap:0;align-items:center;position:relative}
 .vc .hero-text{position:relative;z-index:3}
-.vc .hero-preview{position:relative;margin-left:-110px;margin-bottom:-80px;z-index:1;perspective:2200px}
+.vc .hero-preview{position:relative;justify-self:start;width:600px;margin-left:-90px;margin-bottom:-80px;z-index:1;perspective:2200px}
 .vc .app-window{transform:rotateY(-10deg) rotateX(2deg);transform-origin:right center}
 .vc-shelf{background:var(--cream2);height:150px}
 
@@ -78,7 +78,7 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
   nav{padding:0 24px}.nav-links,.nav-actions{display:none}
   .vc .hero{padding:52px 24px 0}
   .vc .hero-inner{grid-template-columns:1fr;gap:30px}
-  .vc .hero-preview{margin:0;perspective:none}
+  .vc .hero-preview{width:auto;margin:0;perspective:none}
   .vc .app-window{transform:none}
   .vc .hero-text{background:none!important;backdrop-filter:none!important;padding:0!important}
   .c3 .hero::after,.c4 .hero-text::before,.c6 .hero-text::before{display:none}
