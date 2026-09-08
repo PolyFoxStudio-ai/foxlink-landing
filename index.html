@@ -351,11 +351,12 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
 #showcase .section-inner{max-width:1260px}
 .showcase{margin-top:44px;display:flex;flex-direction:column;gap:36px}
 .showcase-row{display:grid;grid-template-columns:1.5fr 1fr;gap:44px;align-items:center}
+.showcase-row:nth-child(even){grid-template-columns:1fr 1.5fr}
 .showcase-row:nth-child(even) .showcase-media{order:2}
 /* branded panel; the screenshot floats and tips gently away on its outer edge */
 .showcase-media{position:relative;padding:34px 36px;border-radius:20px;border:1px solid var(--rule);background:radial-gradient(120% 90% at 85% 8%, rgba(232,114,12,.13), transparent 55%), linear-gradient(160deg,#fff, var(--cream));perspective:1500px}
-.showcase-media img{display:block;width:100%;height:auto;border-radius:9px;box-shadow:0 26px 52px rgba(30,26,46,.22);transform:rotateY(7deg) rotateX(2deg);transform-origin:left center}
-.showcase-row:nth-child(even) .showcase-media img{transform:rotateY(-7deg) rotateX(2deg);transform-origin:right center}
+.showcase-media img{display:block;width:100%;height:auto;border-radius:9px;box-shadow:0 26px 52px rgba(30,26,46,.22);transform:rotateY(11deg) rotateX(2deg);transform-origin:left center}
+.showcase-row:nth-child(even) .showcase-media img{transform:rotateY(-11deg) rotateX(2deg);transform-origin:right center}
 .showcase-tag{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
 .showcase-title{font-family:'Syne',sans-serif;font-size:26px;color:var(--navy);line-height:1.15;margin-bottom:12px;letter-spacing:-.01em}
 .showcase-lead{font-size:15px;color:var(--mid);line-height:1.6;margin-bottom:22px}
@@ -378,7 +379,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
 .ai-brief-regen{margin-top:11px;font-size:12px;font-weight:600;color:var(--orange)}
 @media(max-width:760px){
   .showcase{gap:24px}
-  .showcase-row{grid-template-columns:1fr;gap:8px}
+  .showcase-row,.showcase-row:nth-child(even){grid-template-columns:1fr;gap:8px}
   .showcase-row:nth-child(even) .showcase-media{order:0}
   .showcase-media{padding:20px;border-radius:16px}
   .showcase-media img{transform:none;box-shadow:0 14px 30px rgba(30,26,46,.16)}
