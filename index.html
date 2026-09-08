@@ -91,8 +91,8 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .hero-proof-item::before{content:'✓';color:var(--orange);font-weight:700}
  
 /* HERO APP PREVIEW */
-.hero-preview{position:relative;padding-bottom:60px}
-.app-window{background:#fff;border-radius:16px 16px 0 0;overflow:hidden;box-shadow:0 -4px 60px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.08)}
+.hero-preview{position:relative;padding-bottom:60px;perspective:1700px}
+.app-window{background:#fff;border-radius:16px 16px 0 0;overflow:hidden;box-shadow:0 -4px 60px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.08);transform:rotateY(-10deg) rotateX(1.5deg);transform-origin:right center}
 .app-bar{background:var(--navy);padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,0.08)}
 .app-bar-dot{width:10px;height:10px;border-radius:50%}
 .app-bar-title{font-size:11px;color:rgba(255,255,255,0.35);margin-left:8px;font-weight:500}
@@ -116,6 +116,7 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 /* HERO POLISH — entrance, motion, depth (restrained; honoured by reduced-motion below) */
 @keyframes fx-fade-up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fx-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes fx-float-tilt{0%,100%{transform:rotateY(-10deg) rotateX(1.5deg) translateY(0)}50%{transform:rotateY(-10deg) rotateX(1.5deg) translateY(-10px)}}
 @keyframes fx-float-slow{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
 @keyframes fx-glow{0%,100%{box-shadow:0 0 0 0 rgba(232,114,12,0)}50%{box-shadow:0 0 0 4px rgba(232,114,12,.10)}}
 @keyframes fx-drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,24px) scale(1.08)}}
@@ -130,7 +131,7 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .hero{background-color:var(--navy);background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px}
 .hero::before{animation:fx-drift 20s ease-in-out infinite}
 /* the product mock breathes; the AI box gently glows */
-.hero-preview .app-window{animation:fx-float 6s ease-in-out infinite}
+.hero-preview .app-window{animation:fx-float-tilt 6s ease-in-out infinite}
 .hero-preview .ai-insight-box{animation:fx-glow 3.2s ease-in-out infinite}
 /* floating accent chips overlapping the window for depth */
 .hero-float{position:absolute;z-index:3;background:#fff;border-radius:10px;padding:9px 12px;box-shadow:0 12px 34px rgba(0,0,0,.28);display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;color:var(--navy);border:1px solid var(--rule);white-space:nowrap}
@@ -300,6 +301,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   .hero-float{display:none}
   .hero-title{font-size:36px}
   .hero-preview{padding-bottom:0}
+  .app-window{transform:none;animation:none}
   .trust-bar{padding:20px 24px}
   .trust-divider{display:none}
   .section{padding:32px 24px}
