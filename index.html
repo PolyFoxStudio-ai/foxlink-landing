@@ -346,22 +346,32 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   .founding-banner-title{font-size:19px}
   .founding-banner-cta{width:100%;text-align:center}
 }
-/* ─── FEATURE SHOWCASE (alternating screenshot + text) ─── */
-#showcase{background:#fff}
+/* ─── FEATURE SHOWCASE — branded scene: angled screenshot + benefit points ─── */
+#showcase{background:var(--cream2)}
 #showcase .section-inner{max-width:1260px}
-.showcase{margin-top:40px;display:flex;flex-direction:column;gap:64px}
-.showcase-row{display:grid;grid-template-columns:1.6fr 1fr;gap:52px;align-items:center}
+.showcase{margin-top:44px;display:flex;flex-direction:column;gap:36px}
+.showcase-row{display:grid;grid-template-columns:1.5fr 1fr;gap:44px;align-items:center}
 .showcase-row:nth-child(even) .showcase-media{order:2}
-.showcase-media{border-radius:14px;overflow:hidden;border:1px solid var(--rule);box-shadow:0 24px 48px rgba(30,26,46,.12)}
-.showcase-media img{display:block;width:100%;height:auto}
+/* branded panel; the screenshot floats and tips gently away on its outer edge */
+.showcase-media{position:relative;padding:34px 36px;border-radius:20px;border:1px solid var(--rule);background:radial-gradient(120% 90% at 85% 8%, rgba(232,114,12,.13), transparent 55%), linear-gradient(160deg,#fff, var(--cream));perspective:1500px}
+.showcase-media img{display:block;width:100%;height:auto;border-radius:9px;box-shadow:0 26px 52px rgba(30,26,46,.22);transform:rotateY(7deg) rotateX(2deg);transform-origin:left center}
+.showcase-row:nth-child(even) .showcase-media img{transform:rotateY(-7deg) rotateX(2deg);transform-origin:right center}
 .showcase-tag{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
-.showcase-title{font-family:'Syne',sans-serif;font-size:24px;color:var(--navy);line-height:1.2;margin-bottom:12px;letter-spacing:-.01em}
-.showcase-body{font-size:15px;color:var(--mid);line-height:1.7}
+.showcase-title{font-family:'Syne',sans-serif;font-size:26px;color:var(--navy);line-height:1.15;margin-bottom:12px;letter-spacing:-.01em}
+.showcase-lead{font-size:15px;color:var(--mid);line-height:1.6;margin-bottom:22px}
+.showcase-points{list-style:none;display:flex;flex-direction:column;gap:15px}
+.showcase-point{display:flex;gap:13px;align-items:flex-start}
+.showcase-point-ic{flex:none;width:34px;height:34px;border-radius:9px;background:var(--ai);display:flex;align-items:center;justify-content:center;font-size:16px}
+.showcase-point b{display:block;color:var(--navy);font-size:14px;font-weight:600;margin-bottom:1px}
+.showcase-point span{font-size:13px;color:var(--mid);line-height:1.5}
 @media(max-width:760px){
-  .showcase{gap:32px}
-  .showcase-row{grid-template-columns:1fr;gap:20px}
+  .showcase{gap:24px}
+  .showcase-row{grid-template-columns:1fr;gap:8px}
   .showcase-row:nth-child(even) .showcase-media{order:0}
-  .showcase-title{font-size:21px}
+  .showcase-media{padding:20px;border-radius:16px}
+  .showcase-media img{transform:none;box-shadow:0 14px 30px rgba(30,26,46,.16)}
+  .showcase-row:nth-child(even) .showcase-media img{transform:none}
+  .showcase-title{font-size:22px}
 }
 </style>
 <script defer data-domain="foxlink.network" src="https://plausible.io/js/script.outbound-links.js"></script>
@@ -654,8 +664,13 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
         <div class="showcase-media"><img src="/img/foxlink-pipeline.png" width="1112" height="598" loading="lazy" alt="FoxLink sales pipeline — deals across Enquiry, Qualified, Quoted and Negotiation with values and lead scores"></div>
         <div class="showcase-text">
           <div class="showcase-tag">Deals</div>
-          <h3 class="showcase-title">Your whole pipeline on one board</h3>
-          <p class="showcase-body">Drag deals across your stages and watch the forecast update itself. Every card carries a value, close date and lead score — and FoxLink flags anything going quiet before it slips past its close date.</p>
+          <h3 class="showcase-title">See your deals from start to close</h3>
+          <p class="showcase-lead">Your whole sales pipeline on one drag-and-drop board.</p>
+          <ul class="showcase-points">
+            <li class="showcase-point"><span class="showcase-point-ic">📊</span><div><b>Visual pipeline</b><span>Move deals through your stages with a drag.</span></div></li>
+            <li class="showcase-point"><span class="showcase-point-ic">👀</span><div><b>Stay in control</b><span>See total value and what's at risk, at a glance.</span></div></li>
+            <li class="showcase-point"><span class="showcase-point-ic">⚡</span><div><b>Move faster</b><span>FoxLink flags deals going quiet before they slip.</span></div></li>
+          </ul>
         </div>
       </div>
       <div class="showcase-row">
@@ -663,7 +678,12 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
         <div class="showcase-text">
           <div class="showcase-tag">AI built in</div>
           <h3 class="showcase-title">Every deal, briefed by AI</h3>
-          <p class="showcase-body">Open a deal for an AI-written brief that pulls together the value, stage, timeline, open tasks and risk — plus a lead score with the reasoning behind it. You walk into every call knowing exactly where things stand and what to do next.</p>
+          <p class="showcase-lead">Open a deal and FoxLink briefs you in seconds.</p>
+          <ul class="showcase-points">
+            <li class="showcase-point"><span class="showcase-point-ic">✦</span><div><b>AI deal brief</b><span>Value, stage, risk and next steps, written for you.</span></div></li>
+            <li class="showcase-point"><span class="showcase-point-ic">🎯</span><div><b>Lead score</b><span>A score out of 10 with the reasoning behind it.</span></div></li>
+            <li class="showcase-point"><span class="showcase-point-ic">🗂️</span><div><b>Full context</b><span>Tasks, activity and files all in one place.</span></div></li>
+          </ul>
         </div>
       </div>
       <div class="showcase-row">
@@ -671,7 +691,12 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
         <div class="showcase-text">
           <div class="showcase-tag">Reports</div>
           <h3 class="showcase-title">Know exactly where you stand</h3>
-          <p class="showcase-body">Live pipeline value, a weighted forecast and revenue closed — broken down by stage and exportable to CSV or PDF in a click. No spreadsheets to maintain, and always up to date.</p>
+          <p class="showcase-lead">Your numbers, live and always up to date.</p>
+          <ul class="showcase-points">
+            <li class="showcase-point"><span class="showcase-point-ic">💷</span><div><b>Live pipeline value</b><span>Total and weighted forecast by stage.</span></div></li>
+            <li class="showcase-point"><span class="showcase-point-ic">📈</span><div><b>Revenue closed</b><span>See what you've won over time.</span></div></li>
+            <li class="showcase-point"><span class="showcase-point-ic">📄</span><div><b>One-click export</b><span>CSV or PDF — no spreadsheets to maintain.</span></div></li>
+          </ul>
         </div>
       </div>
     </div>
