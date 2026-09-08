@@ -5,49 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="robots" content="noindex,nofollow">
-<title>Hero mockups V1 (not live) — FoxLink</title>
+<title>Hero mockups V1-C (not live) — FoxLink</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --orange:#E8720C;--burnt:#C94A1A;--navy:#1E1A2E;--cream:#FAF7F3;--cream2:#F3EFE8;
-  --mid:#6B6580;--light:#9990A8;--rule:rgba(30,26,46,0.09);--rule2:rgba(30,26,46,0.15);
-  --ai:#FEF0E4;--success:#0E7A4E;
-}
+:root{--orange:#E8720C;--burnt:#C94A1A;--navy:#1E1A2E;--cream:#FAF7F3;--cream2:#F3EFE8;--mid:#6B6580;--light:#9990A8;--rule:rgba(30,26,46,0.09);--rule2:rgba(30,26,46,0.15);--ai:#FEF0E4}
 html{scroll-behavior:smooth;color-scheme:light}
 body{font-family:'DM Sans',sans-serif;color:var(--navy);background:#fff;line-height:1.7;overflow-x:hidden}
-
-/* NAV */
 nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.06)}
 .nav-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#fff;text-decoration:none;letter-spacing:-.02em}
 .nav-logo em{color:var(--orange);font-style:normal}
-.nav-links{display:flex;align-items:center;gap:32px}
-.nav-links a{font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:32px}.nav-links a{font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none}
 .nav-actions{display:flex;align-items:center;gap:22px}
-.nav-login{font-size:14px;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none}
-.nav-founding{background:transparent;color:var(--orange);border:1px solid var(--orange);padding:9px 18px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap}
+.nav-login{font-size:14px;color:rgba(255,255,255,0.7);text-decoration:none}
+.nav-founding{color:var(--orange);border:1px solid var(--orange);padding:9px 18px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap}
 .nav-cta{background:var(--orange);color:#fff;padding:10px 22px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none}
 
-/* HERO (shared base — mirrors the live site) */
-.hero{background:var(--navy);padding:100px 48px 0;position:relative;overflow:hidden;background-color:var(--navy);background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px}
-.hero::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(232,114,12,.12) 0%,transparent 65%);top:-200px;right:-100px;pointer-events:none}
-.hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1.28fr;gap:40px;align-items:center;position:relative}
+/* HERO shared */
+.hero{background:var(--navy);position:relative;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px}
 .hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
-.hero-title{font-family:'Syne',sans-serif;font-size:52px;line-height:1.0;color:#fff;margin-bottom:24px;letter-spacing:-.03em}
+.hero-title{font-family:'Syne',sans-serif;font-size:50px;line-height:1.0;color:#fff;margin-bottom:22px;letter-spacing:-.03em}
 .hero-title em{color:var(--orange);font-style:normal}
-.hero-body{font-size:17px;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:36px;max-width:480px}
+.hero-body{font-size:17px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:32px;max-width:440px}
 .hero-ctas{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .btn-primary{background:var(--orange);color:#fff;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;display:inline-block;box-shadow:0 8px 24px rgba(232,114,12,.28)}
 .btn-primary::after{content:' →';font-weight:700}
-.hero-cta-note{font-size:13px;color:rgba(255,255,255,0.5)}
-.hero-proof{display:flex;align-items:center;justify-content:flex-start;gap:12px 14px;margin-top:28px;flex-wrap:wrap}
-.hero-proof-item{font-size:14px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:6px}
+.hero-cta-note{font-size:13px;color:rgba(255,255,255,0.6)}
+.hero-proof{display:flex;align-items:center;gap:12px 14px;margin-top:26px;flex-wrap:wrap}
+.hero-proof-item{font-size:14px;color:rgba(255,255,255,0.8);display:flex;align-items:center;gap:6px}
 .hero-proof-item::before{content:'✓';color:var(--orange);font-weight:700}
-.hero-preview{position:relative;padding-bottom:60px;perspective:1900px}
-.app-window{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.08);transform:rotateY(-10deg) rotateX(1.5deg);transform-origin:right center}
-.app-content{padding:20px}
-.app-shot{padding:0;background:var(--cream2)}
+.app-window{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,0.08)}
 .app-shot img{display:block;width:100%;height:auto}
+
+/* ===== shared V1-C base: product enlarged, slides left BEHIND the text, bleeds below ===== */
+.vc .hero{overflow:visible;padding:92px 48px 0}
+.vc .hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1.5fr;gap:0;align-items:center;position:relative}
+.vc .hero-text{position:relative;z-index:3;max-width:520px}
+.vc .hero-preview{position:relative;margin-left:-190px;margin-bottom:-90px;z-index:1;perspective:2200px}
+.vc .app-window{transform:rotateY(-10deg) rotateX(2deg);transform-origin:right center}
+.vc-shelf{background:var(--cream2);height:150px}
 
 /* lab chrome */
 .lab-note{position:sticky;top:0;z-index:200;background:#111;color:#fff;padding:9px 16px;font:600 13px/1.4 'DM Sans',sans-serif;text-align:center}
@@ -56,112 +52,87 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .lab-label span{display:block;font:500 13px/1.5 'DM Sans',sans-serif;color:var(--mid);margin-top:4px}
 .lab-variant{border-top:1px dashed var(--rule2)}
 
-/* ===== shared V1 family: bigger product, bleeding below the navy band ===== */
-.v1 .hero{overflow:visible;padding:88px 48px 0}
-.v1 .hero-inner{grid-template-columns:1fr 1.45fr;align-items:center}
-.v1 .hero-preview{padding-bottom:0;margin-bottom:-90px;z-index:2;perspective:2200px}
-.v1-shelf{background:var(--cream2);height:150px}
+/* C1 — frosted glass (translucent + blur), balanced */
+.c1 .hero-text{background:rgba(18,15,32,0.48);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.10);border-radius:20px;padding:30px 34px}
 
-/* A — branded gradient panel behind the dashboard (showcase-style) */
-.vA .hero-panel{position:relative;border-radius:22px;padding:26px;background:radial-gradient(120% 95% at 82% 2%, rgba(232,114,12,.24), transparent 52%), linear-gradient(155deg,#fff,var(--cream));border:1px solid rgba(255,255,255,.16);box-shadow:0 46px 90px rgba(0,0,0,.5)}
-.vA .app-window{transform:rotateY(-8deg) rotateX(2deg);box-shadow:0 20px 46px rgba(30,26,46,.22)}
+/* C2 — frosted glass, more opaque + less blur (max readability) */
+.c2 .hero-text{background:rgba(18,15,32,0.74);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);border-radius:20px;padding:30px 34px}
 
-/* B — ambient orange glow behind the dashboard, on the navy */
-.vB .hero-preview::before{content:'';position:absolute;inset:-10% -14% 6% -14%;background:radial-gradient(58% 60% at 58% 42%, rgba(232,114,12,.38), rgba(232,114,12,0) 70%);filter:blur(16px);z-index:-1;pointer-events:none}
-.vB .app-window{transform:rotateY(-9deg) rotateX(2deg);box-shadow:0 44px 90px rgba(0,0,0,.55)}
+/* C3 — full-hero left→right gradient scrim, no panel on the text */
+.c3 .hero-preview{z-index:1}
+.c3 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(96deg, var(--navy) 0%, var(--navy) 30%, rgba(30,26,46,.55) 50%, rgba(30,26,46,0) 72%);z-index:2;pointer-events:none}
+.c3 .hero-text{z-index:3}
 
-/* C — product tucks behind the hero text (with a scrim so copy stays readable) */
-.vC .hero-inner{grid-template-columns:1fr 1.55fr;gap:0}
-.vC .hero-text{position:relative;z-index:3}
-.vC .hero-text::before{content:'';position:absolute;inset:-40px -120px -40px -50px;background:radial-gradient(closest-side at 38% 50%, rgba(30,26,46,.94), rgba(30,26,46,0) 80%);z-index:-1;pointer-events:none}
-.vC .hero-preview{margin-left:-150px;z-index:1;margin-bottom:-90px}
-.vC .hero-preview::before{content:'';position:absolute;inset:-12% -14% 6% -6%;background:radial-gradient(58% 60% at 62% 42%, rgba(232,114,12,.30), rgba(232,114,12,0) 70%);filter:blur(16px);z-index:-1;pointer-events:none}
-.vC .app-window{transform:rotateY(-10deg) rotateX(2deg)}
+/* C4 — large soft radial vignette behind the text (no blur) */
+.c4 .hero-text::before{content:'';position:absolute;inset:-56px -170px -80px -90px;background:radial-gradient(farthest-side at 42% 50%, rgba(18,15,32,.94) 0%, rgba(18,15,32,.78) 46%, rgba(18,15,32,0) 100%);z-index:-1;pointer-events:none}
+
+/* C5 — no backdrop, heavy text halo only (product fully visible) */
+.c5 .hero-eyebrow,.c5 .hero-title,.c5 .hero-body{text-shadow:0 2px 18px rgba(0,0,0,.92),0 1px 4px rgba(0,0,0,.85)}
+.c5 .hero-body{color:#fff}
+
+/* C6 — frosted panel with a feathered right edge (blends into the screenshot) */
+.c6 .hero-text{position:relative;z-index:3;padding:30px 46px 30px 0}
+.c6 .hero-text::before{content:'';position:absolute;inset:-28px -10px -28px -40px;background:rgba(18,15,32,0.62);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);-webkit-mask:linear-gradient(90deg,#000 58%,transparent 100%);mask:linear-gradient(90deg,#000 58%,transparent 100%);border-radius:20px;z-index:-1}
 
 @media(max-width:900px){
   nav{padding:0 24px}.nav-links,.nav-actions{display:none}
-  .v1 .hero{padding:56px 24px 0}
-  .hero-inner,.v1 .hero-inner,.vC .hero-inner{grid-template-columns:1fr;gap:34px}
-  .hero-preview,.v1 .hero-preview,.vC .hero-preview{padding-bottom:0;margin:0;perspective:none}
-  .app-window,.vA .app-window,.vB .app-window,.vC .app-window{transform:none}
-  .vA .hero-panel{padding:16px}
-  .vC .hero-text::before,.vB .hero-preview::before,.vC .hero-preview::before{display:none}
-  .v1-shelf{height:0}
+  .vc .hero{padding:52px 24px 0}
+  .vc .hero-inner{grid-template-columns:1fr;gap:30px}
+  .vc .hero-preview{margin:0;perspective:none}
+  .vc .app-window{transform:none}
+  .vc .hero-text{background:none!important;backdrop-filter:none!important;padding:0!important}
+  .c3 .hero::after,.c4 .hero-text::before,.c6 .hero-text::before{display:none}
+  .c5 .hero-eyebrow,.c5 .hero-title,.c5 .hero-body{text-shadow:none}
+  .vc-shelf{height:0}
 }
 </style>
 </head>
 <body>
-
-<div class="lab-note">🔧 HERO MOCKUPS — V1 family (not live). Homepage unchanged. Tell me which treatment (or mix) to build.</div>
-
+<div class="lab-note">🔧 V1-C — six ways to keep the text readable over the screenshot behind it. Homepage unchanged.</div>
 <nav>
   <a href="#" class="nav-logo">Fox<em>Link</em></a>
   <div class="nav-links"><a href="#">Features</a><a href="#">AI</a><a href="#">Pricing</a><a href="#">Blog</a></div>
   <div class="nav-actions"><a href="#" class="nav-login">Log in</a><a href="#" class="nav-founding">Founding Members</a><a href="#" class="nav-cta">Start free trial</a></div>
 </nav>
 
-<!-- A: BRANDED PANEL -->
-<div class="lab-label"><b>V1-A — dashboard on a branded gradient panel</b><span>Same cream/orange-tinted panel as the "See it in action" screenshots — adds depth so the dashboard doesn't look flat. Bleeds below the navy band.</span></div>
-<div class="lab-variant v1 vA">
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <div class="hero-eyebrow">CRM for UK small business</div>
-        <h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1>
-        <p class="hero-body">A simple, AI-powered CRM built for UK small businesses — pipeline, contacts and follow-ups without the admin overhead that kills most CRMs. Hosted in the UK, UK GDPR compliant by design. £19 a seat.</p>
-        <div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div>
-        <div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div>
-      </div>
-      <div class="hero-preview">
-        <div class="hero-panel"><div class="app-window"><div class="app-content app-shot"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div></div>
-      </div>
-    </div>
-  </section>
-  <div class="v1-shelf"></div>
-</div>
+<!-- macro repeated per variant -->
+<div class="lab-label"><b>C1 — frosted glass (translucent + blur)</b><span>Dark, semi-transparent panel with a blur behind the text. You still glimpse the (blurred) screenshot through it; text stays crisp.</span></div>
+<div class="lab-variant vc c1"><section class="hero"><div class="hero-inner">
+  <div class="hero-text"><div class="hero-eyebrow">CRM for UK small business</div><h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1><p class="hero-body">A simple, AI-powered CRM for UK small businesses — pipeline, contacts and follow-ups without the admin overhead. Hosted in the UK, £19 a seat.</p><div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div><div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div></div>
+  <div class="hero-preview"><div class="app-window"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
+</div></section><div class="vc-shelf"></div></div>
 
-<!-- B: AMBIENT GLOW -->
-<div class="lab-label"><b>V1-B — ambient glow behind the dashboard</b><span>No light panel; instead a soft orange glow behind the product on the navy. Keeps the hero dark and immersive while adding depth. Bleeds below.</span></div>
-<div class="lab-variant v1 vB">
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <div class="hero-eyebrow">CRM for UK small business</div>
-        <h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1>
-        <p class="hero-body">A simple, AI-powered CRM built for UK small businesses — pipeline, contacts and follow-ups without the admin overhead that kills most CRMs. Hosted in the UK, UK GDPR compliant by design. £19 a seat.</p>
-        <div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div>
-        <div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div>
-      </div>
-      <div class="hero-preview">
-        <div class="app-window"><div class="app-content app-shot"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
-      </div>
-    </div>
-  </section>
-  <div class="v1-shelf"></div>
-</div>
+<div class="lab-label"><b>C2 — frosted glass, more opaque</b><span>Same idea, darker and less blur — maximum readability, less of the screenshot shows through.</span></div>
+<div class="lab-variant vc c2"><section class="hero"><div class="hero-inner">
+  <div class="hero-text"><div class="hero-eyebrow">CRM for UK small business</div><h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1><p class="hero-body">A simple, AI-powered CRM for UK small businesses — pipeline, contacts and follow-ups without the admin overhead. Hosted in the UK, £19 a seat.</p><div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div><div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div></div>
+  <div class="hero-preview"><div class="app-window"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
+</div></section><div class="vc-shelf"></div></div>
 
-<!-- C: BEHIND THE TEXT -->
-<div class="lab-label"><b>V1-C — product tucked behind the hero text</b><span>The dashboard is larger and slides left, behind the headline/CTA, with a soft scrim so the text stays readable. Most immersive. Bleeds below.</span></div>
-<div class="lab-variant v1 vC">
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <div class="hero-eyebrow">CRM for UK small business</div>
-        <h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1>
-        <p class="hero-body">A simple, AI-powered CRM built for UK small businesses — pipeline, contacts and follow-ups without the admin overhead that kills most CRMs. Hosted in the UK, UK GDPR compliant by design. £19 a seat.</p>
-        <div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div>
-        <div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div>
-      </div>
-      <div class="hero-preview">
-        <div class="app-window"><div class="app-content app-shot"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
-      </div>
-    </div>
-  </section>
-  <div class="v1-shelf"></div>
-</div>
+<div class="lab-label"><b>C3 — left→right gradient scrim (no panel)</b><span>A dark gradient over the whole hero: solid navy on the text side, fading to reveal the screenshot on the right. No visible box around the text.</span></div>
+<div class="lab-variant vc c3"><section class="hero"><div class="hero-inner">
+  <div class="hero-text"><div class="hero-eyebrow">CRM for UK small business</div><h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1><p class="hero-body">A simple, AI-powered CRM for UK small businesses — pipeline, contacts and follow-ups without the admin overhead. Hosted in the UK, £19 a seat.</p><div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div><div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div></div>
+  <div class="hero-preview"><div class="app-window"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
+</div></section><div class="vc-shelf"></div></div>
 
-<div class="lab-label"><b>End of mockups</b><span>Reply with the treatment you like (A panel / B glow / C behind-text) or a mix, plus any tweaks (bleed depth, angle, glow strength), and I'll refine here.</span></div>
+<div class="lab-label"><b>C4 — large soft radial vignette</b><span>A big, feathered dark glow sitting behind the text (no hard edges, no blur). The screenshot shows through around it.</span></div>
+<div class="lab-variant vc c4"><section class="hero"><div class="hero-inner">
+  <div class="hero-text"><div class="hero-eyebrow">CRM for UK small business</div><h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1><p class="hero-body">A simple, AI-powered CRM for UK small businesses — pipeline, contacts and follow-ups without the admin overhead. Hosted in the UK, £19 a seat.</p><div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div><div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div></div>
+  <div class="hero-preview"><div class="app-window"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
+</div></section><div class="vc-shelf"></div></div>
+
+<div class="lab-label"><b>C5 — text halo only (screenshot fully visible)</b><span>No panel at all — just a strong shadow/halo on the text so it reads over the screenshot. Most immersive; relies on the shadow doing the work.</span></div>
+<div class="lab-variant vc c5"><section class="hero"><div class="hero-inner">
+  <div class="hero-text"><div class="hero-eyebrow">CRM for UK small business</div><h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1><p class="hero-body">A simple, AI-powered CRM for UK small businesses — pipeline, contacts and follow-ups without the admin overhead. Hosted in the UK, £19 a seat.</p><div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div><div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div></div>
+  <div class="hero-preview"><div class="app-window"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
+</div></section><div class="vc-shelf"></div></div>
+
+<div class="lab-label"><b>C6 — frosted panel with a feathered edge</b><span>Frosted-glass panel behind the text, but its right edge fades out so there's no hard box line where it meets the screenshot.</span></div>
+<div class="lab-variant vc c6"><section class="hero"><div class="hero-inner">
+  <div class="hero-text"><div class="hero-eyebrow">CRM for UK small business</div><h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1><p class="hero-body">A simple, AI-powered CRM for UK small businesses — pipeline, contacts and follow-ups without the admin overhead. Hosted in the UK, £19 a seat.</p><div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div><div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div></div>
+  <div class="hero-preview"><div class="app-window"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
+</div></section><div class="vc-shelf"></div></div>
+
+<div class="lab-label"><b>End</b><span>Tell me which reads best (and whether you want more/less of the screenshot showing behind the text) and I'll refine, then port to the live homepage.</span></div>
 <div style="height:80px"></div>
-
 </body>
 </html>
