@@ -129,10 +129,7 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .hero-proof{animation-delay:.52s}
 /* atmosphere: faint dot-grid + slow-drifting glow */
 .hero{background-color:var(--navy);background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px}
-.hero::before{animation:fx-drift 20s ease-in-out infinite}
-/* the product mock breathes; the AI box gently glows */
-.hero-preview .app-window{animation:fx-float-tilt 6s ease-in-out infinite}
-.hero-preview .ai-insight-box{animation:fx-glow 3.2s ease-in-out infinite}
+/* hero motion paused for now — the window keeps its static angle */
 /* floating accent chips overlapping the window for depth */
 .hero-float{position:absolute;z-index:3;background:#fff;border-radius:10px;padding:9px 12px;box-shadow:0 12px 34px rgba(0,0,0,.28);display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;color:var(--navy);border:1px solid var(--rule);white-space:nowrap}
 .hero-float-toast{top:30px;left:-26px;animation:fx-float 5s ease-in-out infinite}
@@ -486,8 +483,6 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
     </div>
  
     <div class="hero-preview">
-      <div class="hero-float hero-float-toast"><span class="hero-float-badge">✦ AI</span><span>Drafted a follow-up to James</span></div>
-      <div class="hero-float hero-float-score"><span class="hero-float-score-val">9</span><span>Lead score&nbsp;↑</span></div>
       <div class="app-window">
         <div class="app-content app-shot">
           <img src="/img/foxlink-dashboard.png" width="1703" height="890" alt="The FoxLink dashboard — AI daily brief, AI-ranked Today's Priorities and your calendar" fetchpriority="high">
