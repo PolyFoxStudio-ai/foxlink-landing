@@ -364,6 +364,18 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
 .showcase-point-ic{flex:none;width:34px;height:34px;border-radius:9px;background:var(--ai);display:flex;align-items:center;justify-content:center;font-size:16px}
 .showcase-point b{display:block;color:var(--navy);font-size:14px;font-weight:600;margin-bottom:1px}
 .showcase-point span{font-size:13px;color:var(--mid);line-height:1.5}
+/* Recreated AI deal brief (crisp HTML in the app's style, replaces a shrunk screenshot) */
+.ai-brief{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:20px 22px;box-shadow:0 24px 50px rgba(30,26,46,.18);text-align:left}
+.ai-brief-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.ai-brief-deal{font-family:'Syne',sans-serif;font-weight:700;color:var(--navy);font-size:15px}
+.ai-brief-meta{display:flex;align-items:center;gap:10px;flex:none}
+.ai-brief-val{font-weight:700;color:var(--orange);font-size:15px}
+.ai-brief-stage{font-size:11px;font-weight:600;color:var(--burnt);background:var(--ai);border-radius:20px;padding:3px 10px}
+.ai-brief-box{background:var(--ai);border:1px solid rgba(232,114,12,.28);border-radius:10px;padding:15px 17px}
+.ai-brief-chip{font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--burnt);margin-bottom:9px}
+.ai-brief-text{font-size:13.5px;line-height:1.65;color:var(--body-text);margin:0}
+.ai-brief-text b{color:var(--navy);font-weight:600}
+.ai-brief-regen{margin-top:11px;font-size:12px;font-weight:600;color:var(--orange)}
 @media(max-width:760px){
   .showcase{gap:24px}
   .showcase-row{grid-template-columns:1fr;gap:8px}
@@ -674,7 +686,19 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
         </div>
       </div>
       <div class="showcase-row">
-        <div class="showcase-media"><img src="/img/foxlink-deal-brief.png" width="1136" height="782" loading="lazy" alt="A FoxLink deal with an AI-written brief, lead score and reasoning, tasks and activity"></div>
+        <div class="showcase-media">
+          <div class="ai-brief">
+            <div class="ai-brief-head">
+              <div class="ai-brief-deal">Hydraulik Nord — OEM torque tooling</div>
+              <div class="ai-brief-meta"><span class="ai-brief-val">£210,000</span><span class="ai-brief-stage">Negotiation</span></div>
+            </div>
+            <div class="ai-brief-box">
+              <div class="ai-brief-chip">✦ AI BRIEF</div>
+              <p class="ai-brief-text">Hydraulik Nord is a <b>£210,000</b> deal in Negotiation, closing <b>20 Sep</b> — little runway left. The last contact was a call on 1 Sep about annual volume pricing. There's <b>one overdue task</b> — revised pricing, due 4 Sep — still open, so the deal is <b>at risk of slipping</b>. Get the revised pricing to Klaus today, then call to walk him through the figures before the window closes.</p>
+              <div class="ai-brief-regen">✦ Regenerate</div>
+            </div>
+          </div>
+        </div>
         <div class="showcase-text">
           <div class="showcase-tag">AI built in</div>
           <h3 class="showcase-title">Every deal, briefed by AI</h3>
