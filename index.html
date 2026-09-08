@@ -73,14 +73,17 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .mobile-menu .mobile-founding:hover{background:var(--orange);color:#fff}
 
 /* HERO */
-.hero{background:var(--navy);padding:100px 48px 0;position:relative;overflow:hidden}
+.hero{background:var(--navy);padding:56px 48px 0;position:relative;overflow:visible}
 .hero::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(232,114,12,.12) 0%,transparent 65%);top:-200px;right:-100px;pointer-events:none}
-.hero::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(240,160,48,.06) 0%,transparent 65%);bottom:100px;left:-80px;pointer-events:none}
-.hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1.28fr;gap:40px;align-items:center;position:relative}
+/* left→right scrim: dark on the text side, fading to reveal the screenshot */
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(96deg, var(--navy) 0%, var(--navy) 24%, rgba(30,26,46,.5) 44%, rgba(30,26,46,0) 68%);z-index:2;pointer-events:none}
+.hero-inner{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:minmax(0,500px) minmax(0,1fr);gap:0;align-items:center;position:relative}
+.hero-text{position:relative;z-index:3;min-width:0}
+.hero-text::before{content:'';position:absolute;inset:-46px -90px -24px -64px;background:radial-gradient(66% 70% at 32% 40%, rgba(0,0,0,.66), transparent 74%);filter:blur(18px);z-index:-1;pointer-events:none}
 .hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
 .hero-title{font-family:'Syne',sans-serif;font-size:52px;line-height:1.0;color:#fff;margin-bottom:24px;letter-spacing:-.03em}
 .hero-title em{color:var(--orange);font-style:normal}
-.hero-body{font-size:17px;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:36px;max-width:480px}
+.hero-body{font-size:17px;color:rgba(255,255,255,0.72);line-height:1.75;margin-bottom:36px;max-width:480px}
 .hero-ctas{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .btn-primary{background:var(--orange);color:#fff;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s;display:inline-block}
 .btn-primary:hover{background:var(--burnt)}
@@ -92,8 +95,8 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 .hero-proof-item::before{content:'✓';color:var(--orange);font-weight:700}
  
 /* HERO APP PREVIEW */
-.hero-preview{position:relative;padding-bottom:60px;perspective:1700px}
-.app-window{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.08);transform:rotateY(-10deg) rotateX(1.5deg);transform-origin:right center}
+.hero-preview{position:relative;justify-self:start;width:min(1000px,100%);min-width:0;margin-left:-60px;margin-top:-56px;margin-bottom:-170px;z-index:1;perspective:2800px}
+.app-window{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 50px 100px rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.08);transform:rotateY(-8deg) rotateX(2deg);transform-origin:center}
 .app-bar{background:var(--navy);padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,0.08)}
 .app-bar-dot{width:10px;height:10px;border-radius:50%}
 .app-bar-title{font-size:11px;color:rgba(255,255,255,0.35);margin-left:8px;font-weight:500}
@@ -147,7 +150,7 @@ nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:c
 }
 
 /* TRUST BAR */
-.trust-bar{background:#fff;border-bottom:1px solid var(--rule);padding:20px 48px}
+.trust-bar{background:#fff;border-bottom:1px solid var(--rule);padding:130px 48px 22px}
 .trust-bar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
 .trust-stat{text-align:center}
 .trust-stat-val{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--orange);line-height:1}
@@ -298,9 +301,10 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   .hero-inner{grid-template-columns:1fr;gap:48px}
   .hero-float{display:none}
   .hero-title{font-size:36px}
-  .hero-preview{padding-bottom:0}
+  .hero-preview{margin:0;padding-bottom:0;perspective:none}
   .app-window{transform:none;animation:none}
-  .trust-bar{padding:20px 24px}
+  .hero-text::before,.hero::after{display:none}
+  .trust-bar{padding:24px 24px}
   .trust-divider{display:none}
   .section{padding:32px 24px}
   .feature-grid{grid-template-columns:1fr 1fr}
@@ -467,7 +471,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div>
+    <div class="hero-text">
       <div class="hero-eyebrow">CRM for UK small business</div>
       <h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1>
       <p class="hero-body">A simple, AI-powered CRM built for UK small businesses — pipeline, contacts and follow-ups without the admin overhead that kills most CRMs. Hosted in the UK, UK GDPR compliant by design. £19 a seat.</p>
