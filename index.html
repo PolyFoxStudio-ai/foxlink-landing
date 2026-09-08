@@ -351,11 +351,8 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
 .showcase{margin-top:40px;display:flex;flex-direction:column;gap:56px}
 .showcase-row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .showcase-row:nth-child(even) .showcase-media{order:2}
-/* The source images are G2 listing composites (navy caption panel on the left +
-   browser-framed app UI on the right). Clip the left ~20% so only the clean app
-   screenshot shows — the aspect-ratio controls how much is cropped. */
-.showcase-media{aspect-ratio:2550/1800;border-radius:14px;overflow:hidden;border:1px solid var(--rule);box-shadow:0 24px 48px rgba(30,26,46,.12)}
-.showcase-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:right center}
+.showcase-media{border-radius:14px;overflow:hidden;border:1px solid var(--rule);box-shadow:0 24px 48px rgba(30,26,46,.12)}
+.showcase-media img{display:block;width:100%;height:auto}
 .showcase-tag{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
 .showcase-title{font-family:'Syne',sans-serif;font-size:24px;color:var(--navy);line-height:1.2;margin-bottom:12px;letter-spacing:-.01em}
 .showcase-body{font-size:15px;color:var(--mid);line-height:1.7}
@@ -472,7 +469,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
           <span class="app-bar-title">app.foxlink.network — Dashboard</span>
         </div>
         <div class="app-content app-shot">
-          <img src="/img/foxlink-dashboard.png" width="3200" height="1800" alt="The FoxLink dashboard — sales pipeline with AI-ranked Today's Priorities" fetchpriority="high">
+          <img src="/img/foxlink-dashboard.png" width="1917" height="938" alt="The FoxLink dashboard — AI daily brief, AI-ranked Today's Priorities and your calendar" fetchpriority="high">
         </div>
       </div>
     </div>
@@ -653,7 +650,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
     <p class="section-body">No demo call required — here's what you'd actually be working in every day.</p>
     <div class="showcase">
       <div class="showcase-row">
-        <div class="showcase-media"><img src="/img/foxlink-pipeline.png" width="3200" height="1800" loading="lazy" alt="FoxLink sales pipeline — deals across stages with values, close dates and lead scores"></div>
+        <div class="showcase-media"><img src="/img/foxlink-pipeline.png" width="1913" height="944" loading="lazy" alt="FoxLink sales pipeline — deals across Enquiry, Qualified, Quoted and Negotiation with values and lead scores"></div>
         <div class="showcase-text">
           <div class="showcase-tag">Deals</div>
           <h3 class="showcase-title">Your whole pipeline on one board</h3>
@@ -661,19 +658,19 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
         </div>
       </div>
       <div class="showcase-row">
-        <div class="showcase-media"><img src="/img/foxlink-deal-detail.png" width="3200" height="1800" loading="lazy" alt="FoxLink deal detail — activity history, linked tasks and an AI summary in one view"></div>
+        <div class="showcase-media"><img src="/img/foxlink-deal-brief.png" width="1136" height="876" loading="lazy" alt="A FoxLink deal with an AI-written brief, lead score and reasoning, tasks and activity"></div>
         <div class="showcase-text">
-          <div class="showcase-tag">Contacts &amp; deals</div>
-          <h3 class="showcase-title">Everything about a deal, in one view</h3>
-          <p class="showcase-body">Open any deal or contact to see the full activity history, linked tasks, an AI summary and a lead score — so you walk into every call ready, without digging through your inbox.</p>
+          <div class="showcase-tag">AI built in</div>
+          <h3 class="showcase-title">Every deal, briefed by AI</h3>
+          <p class="showcase-body">Open a deal for an AI-written brief that pulls together the value, stage, timeline, open tasks and risk — plus a lead score with the reasoning behind it. You walk into every call knowing exactly where things stand and what to do next.</p>
         </div>
       </div>
       <div class="showcase-row">
-        <div class="showcase-media"><img src="/img/foxlink-clean-notes.png" width="3200" height="1800" loading="lazy" alt="FoxLink AI turning rough call notes into a structured summary with action items"></div>
+        <div class="showcase-media"><img src="/img/foxlink-reports.png" width="1906" height="945" loading="lazy" alt="FoxLink pipeline report — total and weighted pipeline value, average deal value and a stage breakdown"></div>
         <div class="showcase-text">
-          <div class="showcase-tag">AI built in</div>
-          <h3 class="showcase-title">Let AI handle the admin</h3>
-          <p class="showcase-body">Paste rough call notes and get a tidy summary with action items. Draft a follow-up in a click, score a lead, or read your daily brief — six AI tools included on every plan, at no extra cost.</p>
+          <div class="showcase-tag">Reports</div>
+          <h3 class="showcase-title">Know exactly where you stand</h3>
+          <p class="showcase-body">Live pipeline value, a weighted forecast and revenue closed — broken down by stage and exportable to CSV or PDF in a click. No spreadsheets to maintain, and always up to date.</p>
         </div>
       </div>
     </div>
