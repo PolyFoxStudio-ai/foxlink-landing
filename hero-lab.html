@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex,nofollow">
+<title>Hero mockups (not live) — FoxLink</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#E8720C;--burnt:#C94A1A;--navy:#1E1A2E;--cream:#FAF7F3;--cream2:#F3EFE8;
+  --mid:#6B6580;--light:#9990A8;--rule:rgba(30,26,46,0.09);--rule2:rgba(30,26,46,0.15);
+  --ai:#FEF0E4;--success:#0E7A4E;--info:#1A5ECC;
+}
+html{scroll-behavior:smooth;color-scheme:light}
+body{font-family:'DM Sans',sans-serif;color:var(--navy);background:#fff;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{background:var(--navy);padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#fff;text-decoration:none;letter-spacing:-.02em}
+.nav-logo em{color:var(--orange);font-style:normal}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none}
+.nav-actions{display:flex;align-items:center;gap:22px}
+.nav-login{font-size:14px;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none}
+.nav-founding{background:transparent;color:var(--orange);border:1px solid var(--orange);padding:9px 18px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap}
+.nav-cta{background:var(--orange);color:#fff;padding:10px 22px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none}
+
+/* HERO (shared base — mirrors the live site) */
+.hero{background:var(--navy);padding:100px 48px 0;position:relative;overflow:hidden;background-color:var(--navy);background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px}
+.hero::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(232,114,12,.12) 0%,transparent 65%);top:-200px;right:-100px;pointer-events:none}
+.hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1.28fr;gap:40px;align-items:center;position:relative}
+.hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+.hero-title{font-family:'Syne',sans-serif;font-size:52px;line-height:1.0;color:#fff;margin-bottom:24px;letter-spacing:-.03em}
+.hero-title em{color:var(--orange);font-style:normal}
+.hero-body{font-size:17px;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:36px;max-width:480px}
+.hero-ctas{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn-primary{background:var(--orange);color:#fff;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;display:inline-block;box-shadow:0 8px 24px rgba(232,114,12,.28)}
+.btn-primary::after{content:' →';font-weight:700}
+.hero-cta-note{font-size:13px;color:rgba(255,255,255,0.5)}
+.hero-proof{display:flex;align-items:center;justify-content:flex-start;gap:12px 14px;margin-top:28px;flex-wrap:wrap}
+.hero-proof-item{font-size:14px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:6px}
+.hero-proof-item::before{content:'✓';color:var(--orange);font-weight:700}
+.hero-preview{position:relative;padding-bottom:60px;perspective:1700px}
+.app-window{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.08);transform:rotateY(-10deg) rotateX(1.5deg);transform-origin:right center}
+.app-content{padding:20px}
+.app-shot{padding:0;background:var(--cream2)}
+.app-shot img{display:block;width:100%;height:auto}
+
+/* ---- lab chrome ---- */
+.lab-note{position:sticky;top:0;z-index:200;background:#111;color:#fff;padding:9px 16px;font:600 13px/1.4 'DM Sans',sans-serif;text-align:center}
+.lab-label{max-width:1240px;margin:0 auto;padding:30px 48px 6px}
+.lab-label b{font:800 16px/1.2 'Syne',sans-serif;color:var(--navy);letter-spacing:.01em}
+.lab-label span{display:block;font:500 13px/1.5 'DM Sans',sans-serif;color:var(--mid);margin-top:4px}
+.lab-variant{border-top:1px dashed var(--rule2)}
+
+/* ---- V1: same layout, bigger product bleeding below the hero ---- */
+.lab-v1 .hero{overflow:visible;padding:88px 48px 0}
+.lab-v1 .hero-inner{grid-template-columns:1fr 1.45fr;align-items:center}
+.lab-v1 .hero-preview{padding-bottom:0;margin-bottom:-90px;perspective:2200px;z-index:2}
+.lab-v1 .app-window{transform:rotateY(-9deg) rotateX(2deg);box-shadow:0 40px 80px rgba(0,0,0,.45)}
+.lab-v1-shelf{background:var(--cream2);height:150px}
+
+/* ---- V2: centred headline, large product straddling the fold ---- */
+.lab-v2 .hero{overflow:visible;padding:84px 24px 0;text-align:center}
+.lab-v2 .hero-inner{grid-template-columns:1fr;max-width:860px;justify-items:center}
+.lab-v2 .hero-body{max-width:600px;margin-left:auto;margin-right:auto}
+.lab-v2 .hero-ctas,.lab-v2 .hero-proof{justify-content:center}
+.lab-v2-product{position:relative;max-width:1080px;margin:46px auto -100px;padding:0 24px;z-index:2}
+.lab-v2-product .app-window{transform:none;box-shadow:0 44px 90px rgba(0,0,0,.5)}
+.lab-v2-shelf{background:var(--cream2);height:160px}
+
+@media(max-width:900px){
+  nav{padding:0 24px}.nav-links,.nav-actions{display:none}
+  .hero,.lab-v1 .hero,.lab-v2 .hero{padding:56px 24px 0}
+  .hero-inner,.lab-v1 .hero-inner{grid-template-columns:1fr;gap:36px}
+  .hero-title{font-size:34px}
+  .hero-preview,.lab-v1 .hero-preview{padding-bottom:0;margin-bottom:0;perspective:none}
+  .app-window,.lab-v1 .app-window,.lab-v2-product .app-window{transform:none}
+  .lab-v1-shelf,.lab-v2-shelf{height:0}
+  .lab-v2-product{margin:28px auto 0}
+}
+</style>
+</head>
+<body>
+
+<div class="lab-note">🔧 HERO MOCKUPS — not live. Compare the options below; homepage is unchanged. Tell me which direction (or mix) to build.</div>
+
+<nav>
+  <a href="#" class="nav-logo">Fox<em>Link</em></a>
+  <div class="nav-links"><a href="#">Features</a><a href="#">AI</a><a href="#">Pricing</a><a href="#">Blog</a></div>
+  <div class="nav-actions"><a href="#" class="nav-login">Log in</a><a href="#" class="nav-founding">Founding Members</a><a href="#" class="nav-cta">Start free trial</a></div>
+</nav>
+
+<!-- ============ V0: CURRENT (reference) ============ -->
+<div class="lab-label"><b>Current hero (reference)</b><span>What's live now — text left, angled dashboard right, contained within the navy band.</span></div>
+<div class="lab-variant lab-v0">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">CRM for UK small business</div>
+        <h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1>
+        <p class="hero-body">A simple, AI-powered CRM built for UK small businesses — pipeline, contacts and follow-ups without the admin overhead that kills most CRMs. Hosted in the UK, UK GDPR compliant by design. £19 a seat.</p>
+        <div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div>
+        <div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div>
+      </div>
+      <div class="hero-preview">
+        <div class="app-window"><div class="app-content app-shot"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ V1: BIGGER PRODUCT, BLEEDS BELOW ============ -->
+<div class="lab-label"><b>Variation 1 — bigger product, bleeding below the fold</b><span>Same left-text / right-product layout, but the dashboard is larger and spills out of the navy band onto the section below (modern SaaS).</span></div>
+<div class="lab-variant lab-v1">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">CRM for UK small business</div>
+        <h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1>
+        <p class="hero-body">A simple, AI-powered CRM built for UK small businesses — pipeline, contacts and follow-ups without the admin overhead that kills most CRMs. Hosted in the UK, UK GDPR compliant by design. £19 a seat.</p>
+        <div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div>
+        <div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div>
+      </div>
+      <div class="hero-preview">
+        <div class="app-window"><div class="app-content app-shot"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
+      </div>
+    </div>
+  </section>
+  <div class="lab-v1-shelf"></div>
+</div>
+
+<!-- ============ V2: CENTRED HEADLINE, LARGE PRODUCT STRADDLING FOLD ============ -->
+<div class="lab-label"><b>Variation 2 — centred headline, large product straddling the fold</b><span>Headline + CTA centred, then a big dashboard bleeding out of the navy band onto the section below (Linear / Vercel style).</span></div>
+<div class="lab-variant lab-v2">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">CRM for UK small business</div>
+        <h1 class="hero-title">The CRM your small business will <em>actually use.</em></h1>
+        <p class="hero-body">A simple, AI-powered CRM built for UK small businesses — pipeline, contacts and follow-ups without the admin overhead that kills most CRMs. £19 a seat, hosted in the UK.</p>
+        <div class="hero-ctas"><a href="#" class="btn-primary">Start your 30-day free trial</a><span class="hero-cta-note">No credit card required</span></div>
+        <div class="hero-proof"><span class="hero-proof-item">UK-hosted</span><span class="hero-proof-item">UK GDPR</span><span class="hero-proof-item">ICO-registered</span><span class="hero-proof-item">Never sell your data</span></div>
+      </div>
+    </div>
+    <div class="lab-v2-product">
+      <div class="app-window"><div class="app-content app-shot"><img src="/img/foxlink-dashboard.png" width="1677" height="890" alt="FoxLink dashboard"></div></div>
+    </div>
+  </section>
+  <div class="lab-v2-shelf"></div>
+</div>
+
+<div class="lab-label"><b>End of mockups</b><span>Reply with which variation (or a mix — e.g. "V1 layout but centred proof") and I'll refine here, then port the winner into the live homepage.</span></div>
+<div style="height:80px"></div>
+
+</body>
+</html>
