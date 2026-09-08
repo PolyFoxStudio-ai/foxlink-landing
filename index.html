@@ -346,6 +346,22 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
   .founding-banner-title{font-size:19px}
   .founding-banner-cta{width:100%;text-align:center}
 }
+/* ─── FEATURE SHOWCASE (alternating screenshot + text) ─── */
+#showcase{background:#fff}
+.showcase{margin-top:40px;display:flex;flex-direction:column;gap:56px}
+.showcase-row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.showcase-row:nth-child(even) .showcase-media{order:2}
+.showcase-media{border-radius:14px;overflow:hidden;border:1px solid var(--rule);box-shadow:0 20px 44px rgba(30,26,46,.10)}
+.showcase-media img{display:block;width:100%;height:auto}
+.showcase-tag{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+.showcase-title{font-family:'Syne',sans-serif;font-size:24px;color:var(--navy);line-height:1.2;margin-bottom:12px;letter-spacing:-.01em}
+.showcase-body{font-size:15px;color:var(--mid);line-height:1.7}
+@media(max-width:760px){
+  .showcase{gap:32px}
+  .showcase-row{grid-template-columns:1fr;gap:20px}
+  .showcase-row:nth-child(even) .showcase-media{order:0}
+  .showcase-title{font-size:21px}
+}
 </style>
 <script defer data-domain="foxlink.network" src="https://plausible.io/js/script.outbound-links.js"></script>
 <script type="application/ld+json">
@@ -621,6 +637,41 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);paddin
         <div class="feature-icon">📱</div>
         <div class="feature-title">Desktop & mobile</div>
         <div class="feature-body">Full-featured on desktop, with a focused mobile experience for logging calls, checking today's priorities, and tapping to call or email while you're on the road. Light and dark themes throughout — pick whichever suits your day.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEE IT IN ACTION -->
+<section class="section" id="showcase">
+  <div class="section-inner">
+    <div class="section-eyebrow">See it in action</div>
+    <h2 class="section-title">Everything in one tidy place.</h2>
+    <p class="section-body">No demo call required — here's what you'd actually be working in every day.</p>
+    <div class="showcase">
+      <div class="showcase-row">
+        <div class="showcase-media"><img src="/img/foxlink-pipeline.png" width="3200" height="1800" loading="lazy" alt="FoxLink sales pipeline — deals across stages with values, close dates and lead scores"></div>
+        <div class="showcase-text">
+          <div class="showcase-tag">Deals</div>
+          <h3 class="showcase-title">Your whole pipeline on one board</h3>
+          <p class="showcase-body">Drag deals across your stages and watch the forecast update itself. Every card carries a value, close date and lead score — and FoxLink flags anything going quiet before it slips past its close date.</p>
+        </div>
+      </div>
+      <div class="showcase-row">
+        <div class="showcase-media"><img src="/img/foxlink-deal-detail.png" width="3200" height="1800" loading="lazy" alt="FoxLink deal detail — activity history, linked tasks and an AI summary in one view"></div>
+        <div class="showcase-text">
+          <div class="showcase-tag">Contacts &amp; deals</div>
+          <h3 class="showcase-title">Everything about a deal, in one view</h3>
+          <p class="showcase-body">Open any deal or contact to see the full activity history, linked tasks, an AI summary and a lead score — so you walk into every call ready, without digging through your inbox.</p>
+        </div>
+      </div>
+      <div class="showcase-row">
+        <div class="showcase-media"><img src="/img/foxlink-clean-notes.png" width="3200" height="1800" loading="lazy" alt="FoxLink AI turning rough call notes into a structured summary with action items"></div>
+        <div class="showcase-text">
+          <div class="showcase-tag">AI built in</div>
+          <h3 class="showcase-title">Let AI handle the admin</h3>
+          <p class="showcase-body">Paste rough call notes and get a tidy summary with action items. Draft a follow-up in a click, score a lead, or read your daily brief — six AI tools included on every plan, at no extra cost.</p>
+        </div>
       </div>
     </div>
   </div>
