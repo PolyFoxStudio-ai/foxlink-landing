@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--orange:#E8720C;--navy:#1E1A2E;--cream:#FAF7F3;--mid:#6B6580;--rule:rgba(30,26,46,0.09)}
+:root{--orange:#A8480C;--navy:#1E1A2E;--cream:#FAF7F3;--mid:#6B6580;--rule:rgba(30,26,46,0.09)}
 body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--cream);line-height:1.7}
 nav{background:var(--navy);padding:0 64px;height:64px;display:flex;align-items:center;justify-content:space-between}
 .nav-wm{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;text-decoration:none}
@@ -34,6 +34,7 @@ p{font-size:15px;color:#444;margin-bottom:16px;line-height:1.75}
 ul{margin:0 0 16px 20px}
 ul li{font-size:15px;color:#444;margin-bottom:6px;line-height:1.65}
 a{color:var(--orange);text-decoration:none}
+    .container p a,.container li a{text-decoration:underline;text-underline-offset:2px}
 a:hover{text-decoration:underline}
 .highlight{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:20px 24px;margin:24px 0}
 .highlight p{margin-bottom:0}
@@ -45,15 +46,23 @@ td strong{color:var(--navy)}
 footer{background:var(--navy);padding:28px 64px;text-align:center}
 footer p{font-size:12px;color:rgba(255,255,255,.3)}
 </style>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
-<nav>
-  <a href="/" class="nav-wm">Fox<em>Link</em></a>
-  <a href="/" class="nav-back">← Back to foxlink.network</a>
+<nav class="site-nav">
+  <a href="/" class="nav-logo">Fox<em>Link</em></a>
+  <div class="nav-links" id="navmenu">
+    <a href="/#think">How it works</a><a href="/#features">Features</a><a href="/#security">Security</a><a href="/#pricing">Pricing</a><a href="/founding.html">Founding&nbsp;10</a><a href="https://app.foxlink.network" class="nav-only-mobile">Log in</a>
+  </div>
+  <div class="nav-actions">
+    <a href="https://app.foxlink.network" class="nav-login">Log in</a>
+    <a href="https://app.foxlink.network/signup" class="nav-cta">Start free trial</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu"><span></span><span></span><span></span></button>
+  </div>
 </nav>
 
-<div class="container">
+<div class="container" role="main">
   <h1>Sub-processors</h1>
   <p class="meta">Last updated: August 2026 · Polyfox Studio Ltd · Registered in England &amp; Wales</p>
 
@@ -88,9 +97,21 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
   <p>Questions about our sub-processors or data protection? Email <a href="mailto:privacy@foxlink.network">privacy@foxlink.network</a>.</p>
 </div>
 
-<footer>
-  <p>© 2026 Polyfox Studio Ltd · <a href="/" style="color:rgba(255,255,255,.4)">foxlink.network</a> · <a href="/privacy.html" style="color:rgba(255,255,255,.4)">Privacy Policy</a> · <a href="/terms.html" style="color:rgba(255,255,255,.4)">Terms of Service</a></p>
+<footer class="site-footer">
+  <div class="site-wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="nav-logo">Fox<em>Link</em></span>
+        <p>The UK small-business CRM that tells you who needs you next — and does the admin so you don't have to.</p>
+      </div>
+      <div class="foot-col"><h3>Product</h3><a href="/#think">How it works</a><a href="/#features">Features</a><a href="/#security">Security</a><a href="/#pricing">Pricing</a><a href="/founding.html">Founding 10</a></div>
+      <div class="foot-col"><h3>Company</h3><a href="/blog/">Blog</a><a href="/trust.html">Trust &amp; security</a><a href="mailto:hello@foxlink.network">Contact</a><a href="https://app.foxlink.network">Log in</a></div>
+      <div class="foot-col"><h3>Legal</h3><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/dpa.html">DPA</a><a href="/subprocessors.html">Subprocessors</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Polyfox Studio Ltd · Registered in England &amp; Wales</span><span>Made in the UK 🇬🇧</span></div>
+  </div>
 </footer>
 
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
