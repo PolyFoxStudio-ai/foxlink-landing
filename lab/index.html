@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>FoxLink — landing redesign preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#E8720C; --burnt:#C94A1A; --navy:#1E1A2E;
+    --cream:#FAF7F3; --cream2:#F3EFE8; --ink:#1E1A2E;
+    --muted:#6B6577;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--cream);line-height:1.7;overflow-x:hidden}
+  h1,h2,h3{font-family:'Syne',sans-serif;letter-spacing:-.02em;line-height:1.08}
+  a{text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+
+  /* nav */
+  nav{background:var(--navy);padding:0 32px;height:68px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+  .nav-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#fff;letter-spacing:-.02em}
+  .nav-logo em{color:var(--orange);font-style:normal}
+  .nav-links{display:flex;gap:30px}
+  .nav-links a{font-size:14px;color:rgba(255,255,255,.55)}
+  .nav-links a:hover{color:#fff}
+  .nav-actions{display:flex;align-items:center;gap:20px}
+  .nav-login{font-size:14px;color:rgba(255,255,255,.7)}
+  .nav-cta{background:var(--orange);color:#fff;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600}
+  .nav-cta:hover{background:var(--burnt)}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  /* buttons */
+  .btn-primary{display:inline-block;background:var(--orange);color:#fff;padding:14px 28px;border-radius:10px;font-weight:600;font-size:15px}
+  .btn-primary:hover{background:var(--burnt)}
+  .btn-secondary{display:inline-block;color:var(--navy);padding:14px 22px;font-weight:600;font-size:15px}
+  .btn-secondary:hover{color:var(--orange)}
+
+  .eyebrow{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:18px}
+  .accent{color:var(--orange)}
+
+  /* annotation (handwritten) */
+  .annot{position:absolute;font-family:'Caveat',cursive;font-size:24px;line-height:1.15;color:var(--orange);z-index:6;max-width:190px;transform:rotate(-4deg)}
+  .annot svg{position:absolute;stroke:var(--orange);fill:none;stroke-width:2.2;stroke-linecap:round}
+
+  /* app window frame + light/dark crossfade */
+  .app-window{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.08)}
+  .app-shot{position:relative;font-size:0}
+  .app-shot img{display:block;width:100%;height:auto}
+  .app-shot .app-shot-dark{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+  @media (prefers-reduced-motion: no-preference){
+    .app-shot .app-shot-light{animation:dashLight 12s ease-in-out infinite}
+    .app-shot .app-shot-dark{animation:dashDark 12s ease-in-out infinite}
+  }
+  @keyframes dashLight{0%,42%{opacity:1}50%,92%{opacity:0}100%{opacity:1}}
+  @keyframes dashDark{0%,42%{opacity:0}50%,92%{opacity:1}100%{opacity:0}}
+
+  /* ── HERO ── */
+  .hero{position:relative;background:var(--cream);overflow:hidden}
+  .hero::before{content:'';position:absolute;top:0;right:0;bottom:0;width:52%;background:var(--navy);clip-path:polygon(22% 0,100% 0,100% 100%,0 100%);z-index:0}
+  .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:center;padding:70px 0 84px}
+  .hero h1{font-size:56px;font-weight:800;margin-bottom:22px}
+  .hero-sub{font-size:18px;color:var(--muted);max-width:440px;margin-bottom:30px}
+  .hero-ctas{display:flex;align-items:center;gap:10px;margin-bottom:26px}
+  .hero-trust{display:flex;gap:22px;flex-wrap:wrap}
+  .hero-trust span{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:7px}
+  .hero-trust span::before{content:'✓';color:var(--orange);font-weight:700}
+  .hero-visual{position:relative}
+  .hero-visual .app-window{transform:perspective(1600px) rotateY(-9deg) rotateX(2deg);transform-origin:left center}
+  .hero-annot{right:-6px;bottom:-30px}
+  .hero-annot svg{width:60px;height:44px;left:-52px;top:-6px}
+
+  /* ── STEPS BAND ── */
+  .band{background:var(--navy);color:#fff;padding:88px 0}
+  .band .eyebrow{color:var(--orange);opacity:.9}
+  .band-inner{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+  .band h2{font-size:40px;color:#fff;margin-bottom:16px}
+  .band-sub{color:rgba(255,255,255,.6);font-size:16px;max-width:400px;margin-bottom:34px}
+  .steps{display:flex;flex-direction:column;gap:22px}
+  .step{display:flex;gap:16px;align-items:flex-start}
+  .step-badge{flex-shrink:0;width:44px;height:44px;border-radius:12px;background:rgba(232,114,12,.14);border:1px solid rgba(232,114,12,.3);display:flex;align-items:center;justify-content:center}
+  .step-badge svg{width:20px;height:20px;stroke:var(--orange);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .step-num{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--orange)}
+  .step-title{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;color:#fff;margin:2px 0 3px}
+  .step-text{font-size:14px;color:rgba(255,255,255,.55);line-height:1.55}
+  .band-visual{position:relative}
+  .band-visual .app-window{transform:perspective(1500px) rotateY(8deg) rotateX(2deg);transform-origin:right center}
+  .band-annot{left:-14px;top:-34px;color:#fff}
+  .band-annot svg{width:56px;height:40px;right:-46px;bottom:-30px;stroke:#fff}
+
+  /* ── EVERYTHING SECTION ── */
+  .feat{background:var(--cream2);padding:90px 0}
+  .feat-inner{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center}
+  .feat h2{font-size:42px;margin-bottom:16px}
+  .feat-sub{font-size:17px;color:var(--muted);max-width:420px;margin-bottom:24px}
+  .feat-link{color:var(--orange);font-weight:600;font-size:15px}
+  .collage{position:relative;min-height:360px}
+  .collage .c-main{width:86%;border-radius:12px;box-shadow:0 26px 54px rgba(30,26,46,.22);border:1px solid rgba(30,26,46,.06);display:block}
+  .collage .c-float{position:absolute;right:0;bottom:-24px;width:46%;border-radius:10px;box-shadow:0 20px 44px rgba(30,26,46,.28);border:1px solid rgba(30,26,46,.06)}
+  .feat-annot{left:40%;top:-30px}
+  .feat-annot svg{width:54px;height:40px;left:-46px;top:6px}
+
+  /* trust strip */
+  .trust{background:var(--navy);padding:26px 0}
+  .trust-inner{display:flex;justify-content:center;gap:44px;flex-wrap:wrap}
+  .trust-inner span{font-size:13px;font-weight:600;letter-spacing:.03em;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:8px}
+  .trust-inner span b{color:var(--orange)}
+
+  @media(max-width:860px){
+    .hero-inner,.band-inner,.feat-inner{grid-template-columns:1fr;gap:36px}
+    .hero::before{display:none}
+    .hero{background:var(--navy)}
+    .hero-inner{padding:48px 0 56px}
+    .hero h1{font-size:40px;color:#fff}
+    .hero-sub{color:rgba(255,255,255,.65)}
+    .hero-trust span{color:rgba(255,255,255,.65)}
+    .hero-visual .app-window,.band-visual .app-window{transform:none}
+    .band h2,.feat h2{font-size:30px}
+    .annot{display:none}
+    .collage .c-float{position:static;width:70%;margin:14px 0 0 auto}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Fox<em>Link</em></a>
+  <div class="nav-links">
+    <a href="#">Features</a><a href="#">AI</a><a href="#">Pricing</a><a href="#">Trust</a><a href="#">FAQ</a>
+  </div>
+  <div class="nav-actions">
+    <a href="#" class="nav-login">Log in</a>
+    <a href="#" class="nav-cta">Start free trial</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">CRM for UK small business</div>
+      <h1>Know what to do next.<br><span class="accent">Close more deals.</span></h1>
+      <p class="hero-sub">FoxLink keeps your pipeline organised and uses AI to tell you which customers need your attention — without the admin headache of old-school CRMs.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary">Start your free trial</a>
+        <a href="#" class="btn-secondary">See how it works →</a>
+      </div>
+      <div class="hero-trust"><span>No credit card</span><span>UK GDPR</span><span>UK-based</span></div>
+    </div>
+    <div class="hero-visual">
+      <div class="app-window">
+        <div class="app-shot">
+          <img class="app-shot-light" src="/img/foxlink-dashboard.png" alt="The FoxLink dashboard — daily brief and AI-ranked priorities">
+          <img class="app-shot-dark" src="/img/foxlink-dashboard-dark.png" alt="" aria-hidden="true">
+        </div>
+      </div>
+      <div class="annot hero-annot">
+        <svg viewBox="0 0 60 44"><path d="M56 4 C 30 6, 8 18, 6 40"/><path d="M6 40 l 12 -6 M6 40 l 2 -13"/></svg>
+        Light &amp; dark mode
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS BAND -->
+<section class="band">
+  <div class="wrap band-inner">
+    <div>
+      <div class="eyebrow">How FoxLink works</div>
+      <h2>Your CRM shouldn't create work.</h2>
+      <p class="band-sub">Most CRMs are digital filing cabinets — you put data in, and get nothing back. FoxLink does the thinking, so you always know the next right move.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-badge"><svg viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div><div class="step-num">01 · SEE</div><div class="step-title">Your whole pipeline, organised</div><div class="step-text">Deals, contacts and companies in one tidy place your whole team can see.</div></div>
+        </div>
+        <div class="step">
+          <div class="step-badge"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2a7 7 0 0 0-4-12z"/></svg></div>
+          <div><div class="step-num">02 · KNOW</div><div class="step-title">AI tells you who needs you</div><div class="step-text">A daily brief and ranked priorities surface the deals going quiet and the leads worth chasing.</div></div>
+        </div>
+        <div class="step">
+          <div class="step-badge"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+          <div><div class="step-num">03 · ACT</div><div class="step-title">Close more, admin less</div><div class="step-text">Log a call, draft a follow-up, move a deal on — in a couple of clicks.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="band-visual">
+      <div class="app-window"><img src="/lab/img/contact-detail.png" alt="A FoxLink contact with AI lead score and next actions" style="display:block;width:100%;height:auto"></div>
+      <div class="annot band-annot">Let AI find your next action
+        <svg viewBox="0 0 56 40"><path d="M2 4 C 26 8, 46 16, 52 36"/><path d="M52 36 l -13 2 M52 36 l -3 -12"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVERYTHING -->
+<section class="feat">
+  <div class="wrap feat-inner">
+    <div>
+      <div class="eyebrow">Built for small business</div>
+      <h2>Everything you need,<br>in one place.</h2>
+      <p class="feat-sub">From managing contacts to tracking deals, FoxLink brings your customer relationships, sales pipeline and everyday tasks together — with the power of AI to keep you moving forward.</p>
+      <a href="#" class="feat-link">Explore all features →</a>
+    </div>
+    <div class="collage">
+      <img class="c-main" src="/lab/img/deals-page.png" alt="FoxLink deals pipeline">
+      <img class="c-float" src="/lab/img/tasks-page.png" alt="FoxLink tasks">
+      <div class="annot feat-annot">Your whole business, in one view
+        <svg viewBox="0 0 54 40"><path d="M2 4 C 24 8, 44 16, 50 36"/><path d="M50 36 l -12 2 M50 36 l -3 -12"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust">
+  <div class="wrap trust-inner">
+    <span>🇬🇧 UK-hosted</span>
+    <span>GDPR-ready</span>
+    <span>Integrates with Zapier</span>
+    <span>From <b>£19</b>/month</span>
+  </div>
+</section>
+
+</body>
+</html>
