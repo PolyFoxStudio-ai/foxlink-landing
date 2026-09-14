@@ -66,7 +66,8 @@
   .hero-trust span{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:7px}
   .hero-trust span::before{content:'✓';color:var(--orange);font-weight:700}
   .hero-visual{position:relative;margin-right:-30px}
-  .hero-backdrop{position:absolute;top:34px;right:-26px;width:80%;height:82%;background:var(--navy);border-radius:22px;transform:perspective(1900px) rotateY(14deg) rotateX(4deg);z-index:0}
+  /* large navy corner wedge behind the screenshot (bleeds off top-right) */
+  .hero-corner{position:absolute;top:0;bottom:-40px;right:0;width:54%;background:var(--navy);z-index:0;clip-path:polygon(24% 0, 100% 0, 100% 100%, 0 42%)}
   .hero-visual .app-window{position:relative;z-index:1;transform:perspective(1900px) rotateY(14deg) rotateX(4deg);transform-origin:center}
   .hero-float{position:absolute;left:-40px;bottom:26px;width:250px;border-radius:12px;box-shadow:0 26px 54px rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.10);z-index:5;transform:rotate(-2deg)}
   .hero-annot{right:-6px;bottom:-30px}
@@ -114,6 +115,7 @@
   @media(max-width:860px){
     .hero-inner,.band-inner,.feat-inner{grid-template-columns:1fr;gap:36px}
     .hero-float{display:none}
+    .hero-corner{display:none}
     .hero-inner{padding:44px 0 52px}
     .hero h1{font-size:40px}
     .hero-visual .app-window,.band-visual .app-window{transform:none}
@@ -140,6 +142,7 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-corner" aria-hidden="true"></div>
   <div class="wrap hero-inner">
     <div class="hero-copy">
       <div class="eyebrow">CRM for UK small business</div>
@@ -152,7 +155,6 @@
       <div class="hero-trust"><span>No credit card</span><span>UK GDPR</span><span>UK-based</span></div>
     </div>
     <div class="hero-visual">
-      <div class="hero-backdrop" aria-hidden="true"></div>
       <div class="app-window">
         <div class="app-shot">
           <img class="app-shot-light" src="/img/foxlink-dashboard.png" alt="The FoxLink dashboard — daily brief and AI-ranked priorities">
