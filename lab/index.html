@@ -190,6 +190,15 @@
   /* gutter annotations need the side room; hide them once it gets tight */
   @media(max-width:1150px){.band-annot,.feat-annot{display:none}}
 
+  /* laptop: ease the hero before it stacks so the copy isn't cramped */
+  @media(max-width:1100px){
+    .hero-inner{grid-template-columns:1fr 1.02fr;gap:36px;padding:60px 0 80px}
+    .hero h1{font-size:44px}
+    .hero-sub{font-size:17px}
+    .hero-visual{margin-right:-40px}
+    .hero-float{left:-40px;bottom:14px;transform:rotate(-2deg) scale(0.72)}
+  }
+
   @media(max-width:860px){
     .hero-inner,.band-inner,.feat-inner{grid-template-columns:1fr;gap:36px}
     .hero-visual{margin-right:0}
