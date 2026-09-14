@@ -111,7 +111,12 @@
   .feat{background:var(--cream);padding:90px 0}
   .feat-inner{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center}
   .feat h2{font-size:42px;margin-bottom:16px}
-  .feat-sub{font-size:17px;color:var(--muted);max-width:420px;margin-bottom:24px}
+  .feat-sub{font-size:17px;color:var(--muted);max-width:420px;margin-bottom:26px}
+  .feat-list{display:grid;grid-template-columns:1fr 1fr;gap:14px 22px;max-width:440px;margin-bottom:28px}
+  .feat-item{display:flex;gap:11px;align-items:flex-start}
+  .feat-item svg{flex-shrink:0;width:19px;height:19px;stroke:var(--orange);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+  .feat-item b{font-family:'Syne',sans-serif;font-weight:700;font-size:14.5px;color:var(--navy);display:block}
+  .feat-item span{font-size:13px;color:var(--muted);line-height:1.4}
   .feat-link{color:var(--orange);font-weight:600;font-size:15px}
   .collage{position:relative;min-height:360px}
   .collage .c-main{width:86%;border-radius:12px;box-shadow:0 26px 54px rgba(30,26,46,.22);border:1px solid rgba(30,26,46,.06);display:block}
@@ -136,6 +141,7 @@
     .band-wave{height:64px}
     .band h2,.feat h2{font-size:30px}
     .annot{display:none}
+    .feat-list{grid-template-columns:1fr}
     .collage .c-float{position:static;width:70%;margin:14px 0 0 auto}
   }
 </style>
@@ -227,6 +233,14 @@
       <div class="eyebrow">Built for small business</div>
       <h2>Everything you need,<br>in one place.</h2>
       <p class="feat-sub">From managing contacts to tracking deals, FoxLink brings your customer relationships, sales pipeline and everyday tasks together — with the power of AI to keep you moving forward.</p>
+      <div class="feat-list">
+        <div class="feat-item"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg><div><b>Contacts &amp; companies</b><span>Every relationship in one tidy place</span></div></div>
+        <div class="feat-item"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg><div><b>Deal pipeline</b><span>Track every deal from enquiry to close</span></div></div>
+        <div class="feat-item"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2a7 7 0 0 0-4-12z"/><path d="M9 21h6"/></svg><div><b>AI priorities</b><span>A daily brief on who needs you next</span></div></div>
+        <div class="feat-item"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><div><b>Tasks &amp; follow-ups</b><span>Nothing slips through the cracks</span></div></div>
+        <div class="feat-item"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg><div><b>Email &amp; forms</b><span>Capture leads and log conversations</span></div></div>
+        <div class="feat-item"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg><div><b>Reports &amp; export</b><span>Your data, always yours to take</span></div></div>
+      </div>
       <a href="#" class="feat-link">Explore all features →</a>
     </div>
     <div class="collage">
