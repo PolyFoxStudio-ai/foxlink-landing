@@ -9,7 +9,7 @@
 <style>
   :root{
     --orange:#E8720C; --burnt:#C94A1A; --navy:#1E1A2E;
-    --cream:#FAF7F3; --cream2:#F3EFE8; --ink:#1E1A2E;
+    --cream:#FAF7F3; --cream2:#F3EFE8;
     --muted:#6B6577;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -29,7 +29,7 @@
   .nav-login{font-size:14px;color:rgba(255,255,255,.7)}
   .nav-cta{background:var(--orange);color:#fff;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600}
   .nav-cta:hover{background:var(--burnt)}
-  @media(max-width:820px){.nav-links{display:none}}
+  @media(max-width:860px){.nav-links{display:none}}
 
   /* buttons */
   .btn-primary{display:inline-block;background:var(--orange);color:#fff;padding:14px 28px;border-radius:10px;font-weight:600;font-size:15px}
@@ -44,17 +44,10 @@
   .annot{position:absolute;font-family:'Caveat',cursive;font-size:24px;line-height:1.15;color:var(--orange);z-index:6;max-width:190px;transform:rotate(-4deg)}
   .annot svg{position:absolute;stroke:var(--orange);fill:none;stroke-width:2.2;stroke-linecap:round}
 
-  /* app window frame + light/dark crossfade */
+  /* app window frame */
   .app-window{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.08)}
   .app-shot{position:relative;font-size:0}
   .app-shot img{display:block;width:100%;height:auto}
-  .app-shot .app-shot-dark{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
-  @media (prefers-reduced-motion: no-preference){
-    .app-shot .app-shot-light{animation:dashLight 12s ease-in-out infinite}
-    .app-shot .app-shot-dark{animation:dashDark 12s ease-in-out infinite}
-  }
-  @keyframes dashLight{0%,42%{opacity:1}50%,92%{opacity:0}100%{opacity:1}}
-  @keyframes dashDark{0%,42%{opacity:0}50%,92%{opacity:1}100%{opacity:0}}
 
   /* ── HERO ── */
   .hero{position:relative;background:var(--cream);overflow:hidden}
@@ -120,7 +113,8 @@
   .cc-fval{font-size:11px;color:var(--navy);line-height:1.35}
   .cc-fval.link{color:var(--orange);word-break:break-all}
   .cc-conns{display:flex;gap:6px}
-  .cc-conn{width:23px;height:23px;border-radius:6px;border:1px solid rgba(30,26,46,.14);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted)}
+  .cc-conn{width:23px;height:23px;border-radius:6px;border:1px solid rgba(30,26,46,.14);display:flex;align-items:center;justify-content:center;color:var(--muted)}
+  .cc-conn svg{width:12px;height:12px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   .cc-main{display:flex;flex-direction:column;gap:11px}
   .cc-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
   .cc-stat{border:1px solid rgba(30,26,46,.10);border-radius:9px;padding:8px 9px}
@@ -173,7 +167,8 @@
   .snip-task.done span{text-decoration:line-through;color:var(--muted)}
   /* integrations card */
   .snip-int{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:11px;color:var(--navy)}
-  .int-ic{width:18px;height:18px;border-radius:5px;background:rgba(232,114,12,.12);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0}
+  .int-ic{width:18px;height:18px;border-radius:5px;background:rgba(232,114,12,.12);color:var(--orange);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .int-ic svg{width:11px;height:11px;stroke:var(--orange);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   .int-on{margin-left:auto;font-size:8px;font-weight:700;color:#1f9d55;background:rgba(31,157,85,.12);padding:2px 7px;border-radius:99px}
   /* note / message cards */
   .snip-note{font-size:11px;line-height:1.45;color:#3f3a4c}
@@ -192,8 +187,12 @@
   .trust-item b{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--navy);display:block;line-height:1.2}
   .trust-item small{font-size:11.5px;color:var(--muted)}
 
+  /* gutter annotations need the side room; hide them once it gets tight */
+  @media(max-width:1150px){.band-annot,.feat-annot{display:none}}
+
   @media(max-width:860px){
     .hero-inner,.band-inner,.feat-inner{grid-template-columns:1fr;gap:36px}
+    .hero-visual{margin-right:0}
     .hero-float{display:none}
     .hero-corner{display:none}
     .hero-inner{padding:44px 0 52px}
@@ -253,7 +252,7 @@
         <div class="pc-row"><span class="pc-num three">3</span><div><div class="pc-name">David Whitmore <span class="pc-co">· Rocky Mountain Fluid Systems</span></div><div class="pc-reason">Confirm £38,000 crimping-machine quote ahead of 30 Sept close.</div></div></div>
       </div>
       <div class="annot hero-annot">
-        <svg viewBox="0 0 56 48"><path d="M6 4 C 24 10, 44 18, 50 44"/><path d="M50 44 l -12 -1 M50 44 l 1 -12"/></svg>
+        <svg viewBox="0 0 56 48" aria-hidden="true"><path d="M6 4 C 24 10, 44 18, 50 44"/><path d="M50 44 l -12 -1 M50 44 l 1 -12"/></svg>
         Every deal, at a glance
       </div>
     </div>
@@ -271,15 +270,15 @@
       <p class="band-sub">Most CRMs are digital filing cabinets — you put data in, and get nothing back. FoxLink does the thinking, so you always know the next right move.</p>
       <div class="steps">
         <div class="step">
-          <div class="step-badge"><svg viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div class="step-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
           <div><div class="step-num">01 · SEE</div><div class="step-title">Your whole pipeline, organised</div><div class="step-text">Deals, contacts and companies in one tidy place your whole team can see.</div></div>
         </div>
         <div class="step">
-          <div class="step-badge"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2a7 7 0 0 0-4-12z"/></svg></div>
+          <div class="step-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2a7 7 0 0 0-4-12z"/></svg></div>
           <div><div class="step-num">02 · KNOW</div><div class="step-title">AI tells you who needs you</div><div class="step-text">A daily brief and ranked priorities surface the deals going quiet and the leads worth chasing.</div></div>
         </div>
         <div class="step">
-          <div class="step-badge"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+          <div class="step-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
           <div><div class="step-num">03 · ACT</div><div class="step-title">Close more, admin less</div><div class="step-text">Log a call, draft a follow-up, move a deal on — in a couple of clicks.</div></div>
         </div>
       </div>
@@ -294,13 +293,17 @@
               <div class="cc-co">Hydraulik Nord GmbH</div>
             </div>
             <div class="cc-btns">
-              <span class="cc-btn call"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>Call</span>
-              <span class="cc-btn email"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>Email</span>
+              <span class="cc-btn call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>Call</span>
+              <span class="cc-btn email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>Email</span>
             </div>
             <div class="cc-field"><div class="cc-flabel">Email</div><div class="cc-fval link">klaus.berger@hydraulik-nord.de</div></div>
             <div class="cc-field"><div class="cc-flabel">Phone</div><div class="cc-fval">+49 30 5468 2210</div></div>
             <div class="cc-field"><div class="cc-flabel">Last contacted</div><div class="cc-fval">6 days ago</div></div>
-            <div class="cc-field"><div class="cc-flabel">Connections</div><div class="cc-conns"><span class="cc-conn">in</span><span class="cc-conn">◍</span><span class="cc-conn">𝕏</span></div></div>
+            <div class="cc-field"><div class="cc-flabel">Connections</div><div class="cc-conns">
+              <span class="cc-conn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+              <span class="cc-conn" aria-label="Website"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></span>
+              <span class="cc-conn" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+            </div></div>
           </div>
           <div class="cc-main">
             <div class="cc-stats">
@@ -333,7 +336,7 @@
         </div>
       </div>
       <div class="annot band-annot">AI sums up every account
-        <svg viewBox="0 0 60 46"><path d="M58 6 C 34 10, 14 22, 4 42"/><path d="M4 42 l 14 -2 M4 42 l 1 -13"/></svg>
+        <svg viewBox="0 0 60 46" aria-hidden="true"><path d="M58 6 C 34 10, 14 22, 4 42"/><path d="M4 42 l 14 -2 M4 42 l 1 -13"/></svg>
       </div>
     </div>
   </div>
@@ -347,17 +350,17 @@
       <h2>Everything you need,<br>in one place.</h2>
       <p class="feat-sub">From managing contacts to tracking deals, FoxLink brings your customer relationships, sales pipeline and everyday tasks together — with the power of AI to keep you moving forward.</p>
       <div class="feat-list">
-        <div class="feat-item"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg><div><b>Contacts &amp; companies</b><span>Every relationship in one tidy place</span></div></div>
-        <div class="feat-item"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg><div><b>Deal pipeline</b><span>Track every deal from enquiry to close</span></div></div>
-        <div class="feat-item"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2a7 7 0 0 0-4-12z"/><path d="M9 21h6"/></svg><div><b>AI priorities</b><span>A daily brief on who needs you next</span></div></div>
-        <div class="feat-item"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><div><b>Tasks &amp; follow-ups</b><span>Nothing slips through the cracks</span></div></div>
-        <div class="feat-item"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg><div><b>Email &amp; forms</b><span>Capture leads and log conversations</span></div></div>
-        <div class="feat-item"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg><div><b>Reports &amp; export</b><span>Your data, always yours to take</span></div></div>
+        <div class="feat-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg><div><b>Contacts &amp; companies</b><span>Every relationship in one tidy place</span></div></div>
+        <div class="feat-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg><div><b>Deal pipeline</b><span>Track every deal from enquiry to close</span></div></div>
+        <div class="feat-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2a7 7 0 0 0-4-12z"/><path d="M9 21h6"/></svg><div><b>AI priorities</b><span>A daily brief on who needs you next</span></div></div>
+        <div class="feat-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><div><b>Tasks &amp; follow-ups</b><span>Nothing slips through the cracks</span></div></div>
+        <div class="feat-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg><div><b>Email &amp; forms</b><span>Capture leads and log conversations</span></div></div>
+        <div class="feat-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg><div><b>Reports &amp; export</b><span>Your data, always yours to take</span></div></div>
       </div>
       <a href="#" class="feat-link">Explore all features →</a>
     </div>
     <div class="collage">
-      <img class="c-main" src="/lab/img/dashboard-light.png" alt="FoxLink dashboard overview">
+      <img class="c-main" src="/lab/img/dashboard-light.png" alt="FoxLink dashboard overview" loading="lazy">
       <div class="snip tl">
         <div class="snip-head"><span class="spark">✦</span>AI Insight</div>
         <div class="snip-note"><b>3 deals</b> worth £142k have gone quiet — worth a nudge this week.</div>
@@ -375,12 +378,12 @@
       </div>
       <div class="snip br">
         <div class="snip-head">Integrations<span class="snip-on">3 active</span></div>
-        <div class="snip-int"><span class="int-ic">✉</span>Email<span class="int-on">On</span></div>
-        <div class="snip-int"><span class="int-ic">⚡</span>Zapier<span class="int-on">On</span></div>
-        <div class="snip-int"><span class="int-ic">◇</span>Webhooks<span class="int-on">On</span></div>
+        <div class="snip-int"><span class="int-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>Email<span class="int-on">On</span></div>
+        <div class="snip-int"><span class="int-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>Zapier<span class="int-on">On</span></div>
+        <div class="snip-int"><span class="int-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></span>Webhooks<span class="int-on">On</span></div>
       </div>
       <div class="annot feat-annot">Your whole business, in one view
-        <svg viewBox="0 0 60 46"><path d="M58 6 C 34 10, 14 22, 4 42"/><path d="M4 42 l 14 -2 M4 42 l 1 -13"/></svg>
+        <svg viewBox="0 0 60 46" aria-hidden="true"><path d="M58 6 C 34 10, 14 22, 4 42"/><path d="M4 42 l 14 -2 M4 42 l 1 -13"/></svg>
       </div>
     </div>
   </div>
@@ -390,19 +393,19 @@
 <section class="trust">
   <div class="wrap trust-inner">
     <div class="trust-item">
-      <span class="trust-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>
+      <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>
       <div><b>UK hosted</b><small>Your data stays in the UK</small></div>
     </div>
     <div class="trust-item">
-      <span class="trust-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span>
+      <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span>
       <div><b>ICO registered</b><small>Registered data controller</small></div>
     </div>
     <div class="trust-item">
-      <span class="trust-ic"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
+      <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
       <div><b>Integrates with Zapier</b><small>Connect 6,000+ apps</small></div>
     </div>
     <div class="trust-item">
-      <span class="trust-ic"><svg viewBox="0 0 24 24"><path d="M20.6 13.4 12 22l-9-9V3h10z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span>
+      <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 12 22l-9-9V3h10z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span>
       <div><b>From £19/month</b><small>No credit card to start</small></div>
     </div>
   </div>
