@@ -103,7 +103,41 @@
   .step-title{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;color:#fff;margin:2px 0 3px}
   .step-text{font-size:14px;color:rgba(255,255,255,.55);line-height:1.55}
   .band-visual{position:relative}
-  .band-visual .app-window{transform:perspective(2400px) rotateY(4deg) rotateX(1deg);transform-origin:right center;backface-visibility:hidden}
+  .band-visual .app-window{transform:perspective(2200px) rotateY(6deg) rotateX(2deg);transform-origin:right center;backface-visibility:hidden}
+  /* ── Crisp HTML contact card (razor-sharp at any tilt) ── */
+  .cc{background:#fff;display:grid;grid-template-columns:33% 1fr;gap:16px;padding:16px;text-align:left;color:var(--navy)}
+  .cc-side{display:flex;flex-direction:column;gap:11px}
+  .cc-avatar{width:42px;height:42px;border-radius:10px;background:#2f8f86;color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+  .cc-name{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;line-height:1.1}
+  .cc-co{color:var(--orange);font-size:11px;font-weight:600;margin-top:2px}
+  .cc-btns{display:flex;gap:7px}
+  .cc-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:7px 0;border-radius:8px;font-size:10.5px;font-weight:600}
+  .cc-btn.call{background:var(--navy);color:#fff}
+  .cc-btn.email{border:1px solid rgba(30,26,46,.16);color:var(--navy)}
+  .cc-btn svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .cc-flabel{font-size:8px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+  .cc-fval{font-size:11px;color:var(--navy);line-height:1.35}
+  .cc-fval.link{color:var(--orange);word-break:break-all}
+  .cc-conns{display:flex;gap:6px}
+  .cc-conn{width:23px;height:23px;border-radius:6px;border:1px solid rgba(30,26,46,.14);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted)}
+  .cc-main{display:flex;flex-direction:column;gap:11px}
+  .cc-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+  .cc-stat{border:1px solid rgba(30,26,46,.10);border-radius:9px;padding:8px 9px}
+  .cc-slabel{font-size:7px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+  .cc-sval{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;margin:3px 0 1px;letter-spacing:-.01em}
+  .cc-sval.o{color:var(--orange)} .cc-sval.g{color:#1f9d55}
+  .cc-ssub{font-size:8px;color:var(--muted)}
+  .cc-card{border:1px solid rgba(30,26,46,.10);border-radius:11px;padding:11px 13px}
+  .cc-clabel{font-size:8px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .cc-ai{background:rgba(232,114,12,.07);border:1px solid rgba(232,114,12,.18);border-radius:9px;padding:10px 11px;display:flex;gap:8px}
+  .cc-ai .spark{color:var(--orange);flex-shrink:0;font-size:11px;line-height:1.5}
+  .cc-ai p{font-size:10.5px;line-height:1.5;color:#4a4557}
+  .cc-lead{display:flex;gap:13px;align-items:flex-start}
+  .cc-score{text-align:center;flex-shrink:0;padding-top:2px}
+  .cc-score b{font-family:'Syne',sans-serif;font-weight:800;font-size:32px;color:var(--orange);line-height:1;display:block}
+  .cc-score span{font-size:8px;color:var(--muted)}
+  .cc-leadbox{background:rgba(30,26,46,.03);border-radius:8px;padding:9px 11px;font-size:10px;font-style:italic;color:#4a4557;line-height:1.5}
+  .cc-cf{display:grid;grid-template-columns:1fr 1fr;gap:9px 14px}
   .band-annot{left:30%;top:-48px;color:#fff}
   .band-annot svg{width:56px;height:40px;right:-30px;bottom:-34px;stroke:#fff}
 
@@ -141,6 +175,7 @@
     .band-wave{height:64px}
     .band h2,.feat h2{font-size:30px}
     .annot{display:none}
+    .cc-stats{grid-template-columns:repeat(2,1fr)}
     .feat-list{grid-template-columns:1fr}
     .collage .c-float{position:static;width:70%;margin:14px 0 0 auto}
   }
@@ -218,7 +253,53 @@
       </div>
     </div>
     <div class="band-visual">
-      <div class="app-window"><img src="/lab/img/contact-klaus-new.png" alt="A FoxLink contact record with AI summary, lead score and pipeline stats" style="display:block;width:100%;height:auto"></div>
+      <div class="app-window">
+        <div class="cc">
+          <div class="cc-side">
+            <div class="cc-avatar">KB</div>
+            <div>
+              <div class="cc-name">Klaus Berger</div>
+              <div class="cc-co">Hydraulik Nord GmbH</div>
+            </div>
+            <div class="cc-btns">
+              <span class="cc-btn call"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>Call</span>
+              <span class="cc-btn email"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>Email</span>
+            </div>
+            <div class="cc-field"><div class="cc-flabel">Email</div><div class="cc-fval link">klaus.berger@hydraulik-nord.de</div></div>
+            <div class="cc-field"><div class="cc-flabel">Phone</div><div class="cc-fval">+49 30 5468 2210</div></div>
+            <div class="cc-field"><div class="cc-flabel">Last contacted</div><div class="cc-fval">6 days ago</div></div>
+            <div class="cc-field"><div class="cc-flabel">Connections</div><div class="cc-conns"><span class="cc-conn">in</span><span class="cc-conn">◍</span><span class="cc-conn">𝕏</span></div></div>
+          </div>
+          <div class="cc-main">
+            <div class="cc-stats">
+              <div class="cc-stat"><div class="cc-slabel">Open pipeline</div><div class="cc-sval o">£210,000</div><div class="cc-ssub">1 open deal</div></div>
+              <div class="cc-stat"><div class="cc-slabel">Won in 2026</div><div class="cc-sval g">£128,000</div><div class="cc-ssub">1 deal</div></div>
+              <div class="cc-stat"><div class="cc-slabel">Win rate</div><div class="cc-sval">100%</div><div class="cc-ssub">1 won · 0 lost</div></div>
+              <div class="cc-stat"><div class="cc-slabel">Avg deal</div><div class="cc-sval">£128,000</div><div class="cc-ssub">won in 2026</div></div>
+            </div>
+            <div class="cc-card">
+              <div class="cc-clabel">AI Summary</div>
+              <div class="cc-ai"><span class="spark">✦</span><p>Klaus is Head of Procurement at Hydraulik Nord and one of our strongest DACH accounts — decisive and detail-led, focused on lead times and calibration documentation over headline price. He renewed the Q2 torque-tooling order (£128k) on the back of reliable delivery and is now weighing a larger annual OEM supply agreement (£210k).</p></div>
+            </div>
+            <div class="cc-card">
+              <div class="cc-clabel">Lead Score</div>
+              <div class="cc-lead">
+                <div class="cc-score"><b>8</b><span>out of 10</span></div>
+                <div class="cc-leadbox">“Repeat, high-value account — a £128k renewal already won and a live £210k annual agreement in negotiation. Consistently engaged with the decision-maker, and dependable lead times are a clear wedge over incumbents. Not yet fully committed on the annual deal, which is all that separates this from a 9.”</div>
+              </div>
+            </div>
+            <div class="cc-card">
+              <div class="cc-clabel">Custom Fields</div>
+              <div class="cc-cf">
+                <div><div class="cc-flabel">Account tier</div><div class="cc-fval">Strategic</div></div>
+                <div><div class="cc-flabel">Region</div><div class="cc-fval">DACH — Germany, Austria &amp; Switzerland</div></div>
+                <div><div class="cc-flabel">Renewal date</div><div class="cc-fval">1 Nov 2026</div></div>
+                <div><div class="cc-flabel">Payment terms</div><div class="cc-fval">Net 30</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="annot band-annot">AI sums up every account
         <svg viewBox="0 0 56 40"><path d="M2 4 C 26 8, 46 16, 52 36"/><path d="M52 36 l -13 2 M52 36 l -3 -12"/></svg>
       </div>
