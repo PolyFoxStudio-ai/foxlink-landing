@@ -58,22 +58,23 @@
 
   /* ── HERO ── */
   .hero{position:relative;background:var(--cream);overflow:hidden}
-  .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:center;padding:70px 0 84px}
+  .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:0.85fr 1.32fr;gap:40px;align-items:center;padding:70px 0 90px}
   .hero h1{font-size:56px;font-weight:800;margin-bottom:22px}
   .hero-sub{font-size:18px;color:var(--muted);max-width:440px;margin-bottom:30px}
   .hero-ctas{display:flex;align-items:center;gap:10px;margin-bottom:26px}
   .hero-trust{display:flex;gap:22px;flex-wrap:wrap}
   .hero-trust span{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:7px}
   .hero-trust span::before{content:'✓';color:var(--orange);font-weight:700}
-  .hero-visual{position:relative}
-  .hero-visual .app-window{transform:perspective(1900px) rotateY(14deg) rotateX(4deg);transform-origin:center}
-  .hero-float{position:absolute;left:-40px;bottom:26px;width:230px;border-radius:12px;box-shadow:0 26px 54px rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.10);z-index:5;transform:rotate(-2deg)}
+  .hero-visual{position:relative;margin-right:-30px}
+  .hero-backdrop{position:absolute;top:34px;right:-26px;width:80%;height:82%;background:var(--navy);border-radius:22px;transform:perspective(1900px) rotateY(14deg) rotateX(4deg);z-index:0}
+  .hero-visual .app-window{position:relative;z-index:1;transform:perspective(1900px) rotateY(14deg) rotateX(4deg);transform-origin:center}
+  .hero-float{position:absolute;left:-40px;bottom:26px;width:250px;border-radius:12px;box-shadow:0 26px 54px rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.10);z-index:5;transform:rotate(-2deg)}
   .hero-annot{right:-6px;bottom:-30px}
   .hero-annot svg{width:60px;height:44px;left:-52px;top:-6px}
 
   /* ── STEPS BAND (additive navy ribbon with wave edges) ── */
-  .band{position:relative;background:var(--navy);color:#fff;padding:120px 0}
-  .band-wave{position:absolute;left:0;width:100%;height:72px;z-index:1;display:block;pointer-events:none}
+  .band{position:relative;background:var(--navy);color:#fff;padding:150px 0}
+  .band-wave{position:absolute;left:0;width:100%;height:112px;z-index:1;display:block;pointer-events:none}
   .band-wave-top{top:-1px}
   .band-wave-bottom{bottom:-1px;transform:scaleY(-1)}
   .band .eyebrow{color:var(--orange);opacity:.9}
@@ -116,8 +117,8 @@
     .hero-inner{padding:44px 0 52px}
     .hero h1{font-size:40px}
     .hero-visual .app-window,.band-visual .app-window{transform:none}
-    .band{padding:84px 0}
-    .band-wave{height:44px}
+    .band{padding:100px 0}
+    .band-wave{height:64px}
     .band h2,.feat h2{font-size:30px}
     .annot{display:none}
     .collage .c-float{position:static;width:70%;margin:14px 0 0 auto}
@@ -151,6 +152,7 @@
       <div class="hero-trust"><span>No credit card</span><span>UK GDPR</span><span>UK-based</span></div>
     </div>
     <div class="hero-visual">
+      <div class="hero-backdrop" aria-hidden="true"></div>
       <div class="app-window">
         <div class="app-shot">
           <img class="app-shot-light" src="/img/foxlink-dashboard.png" alt="The FoxLink dashboard — daily brief and AI-ranked priorities">
@@ -168,8 +170,8 @@
 
 <!-- STEPS BAND -->
 <section class="band">
-  <svg class="band-wave band-wave-top" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true"><path fill="#FAF7F3" d="M0,0 L1440,0 L1440,34 C1150,74 880,8 600,40 C400,63 180,52 0,38 Z"/></svg>
-  <svg class="band-wave band-wave-bottom" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true"><path fill="#FAF7F3" d="M0,0 L1440,0 L1440,34 C1150,74 880,8 600,40 C400,63 180,52 0,38 Z"/></svg>
+  <svg class="band-wave band-wave-top" viewBox="0 0 1440 112" preserveAspectRatio="none" aria-hidden="true"><path fill="#FAF7F3" d="M0,0 L1440,0 L1440,60 C1150,118 880,4 600,64 C400,104 180,86 0,62 Z"/></svg>
+  <svg class="band-wave band-wave-bottom" viewBox="0 0 1440 112" preserveAspectRatio="none" aria-hidden="true"><path fill="#FAF7F3" d="M0,0 L1440,0 L1440,60 C1150,118 880,4 600,64 C400,104 180,86 0,62 Z"/></svg>
   <div class="wrap band-inner">
     <div>
       <div class="eyebrow">How FoxLink works</div>
