@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>FoxLink — the CRM that tells you who to call</title>
+<meta name="description" content="FoxLink is the UK small-business CRM that reads your pipeline every morning and tells you exactly who to call today — with the reason why. Less admin, more closing. From £19/month.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#E8720C; --burnt:#C94A1A; --navy:#1E1A2E;
+    --orange-ink:#B5500C; --cta-hover:#9E4409; --green-ink:#15773F;
+    --cream:#FAF7F3; --cream2:#F3EFE8; --muted:#6B6577; --green:#1f9d55;
+    --line:rgba(30,26,46,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--cream);line-height:1.7;overflow-x:hidden}
+  h1,h2,h3{font-family:'Syne',sans-serif;letter-spacing:-.02em;line-height:1.08}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+  .eyebrow{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-ink);margin-bottom:16px}
+  .accent{color:var(--orange)}
+
+  /* nav */
+  nav{background:rgba(30,26,46,.92);backdrop-filter:blur(8px);padding:0 32px;height:66px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+  .nav-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#fff;letter-spacing:-.02em}
+  .nav-logo em{color:var(--orange);font-style:normal}
+  .nav-links{display:flex;gap:28px}
+  .nav-links a{font-size:14px;color:rgba(255,255,255,.6)}
+  .nav-links a:hover{color:#fff}
+  .nav-actions{display:flex;align-items:center;gap:18px}
+  .nav-login{font-size:14px;color:rgba(255,255,255,.75)}
+  .nav-cta{background:var(--orange-ink);color:#fff;padding:9px 18px;border-radius:8px;font-size:14px;font-weight:600}
+  .nav-cta:hover{background:var(--cta-hover)}
+  @media(max-width:860px){.nav-links{display:none}}
+
+  /* buttons */
+  .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--orange-ink);color:#fff;padding:15px 30px;border-radius:11px;font-weight:600;font-size:15px;box-shadow:0 10px 26px rgba(181,80,12,.32)}
+  .btn-primary:hover{background:var(--cta-hover)}
+  .btn-secondary{display:inline-flex;align-items:center;gap:6px;color:var(--navy);padding:15px 20px;font-weight:600;font-size:15px}
+  .btn-secondary:hover{color:var(--orange)}
+
+  /* ─────────── HERO ─────────── */
+  .hero{position:relative;overflow:hidden;background:
+     radial-gradient(1100px 520px at 88% -8%, rgba(232,114,12,.10), transparent 60%),
+     radial-gradient(900px 500px at 10% 0%, rgba(30,26,46,.05), transparent 55%),
+     var(--cream)}
+  .hero-inner{display:grid;grid-template-columns:1fr 1.02fr;gap:56px;align-items:center;padding:72px 0 92px}
+  .hero-copy{max-width:540px}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px 6px 8px;font-size:12.5px;font-weight:600;color:var(--navy);margin-bottom:22px;box-shadow:0 4px 14px rgba(30,26,46,.05)}
+  .badge .pill{background:rgba(232,114,12,.14);color:#A5390F;font-size:10px;font-weight:700;letter-spacing:.04em;padding:3px 8px;border-radius:99px;text-transform:uppercase}
+  .hero h1{font-size:58px;font-weight:800;line-height:1.03;margin-bottom:20px}
+  .hero-sub{font-size:18.5px;color:var(--muted);max-width:480px;margin-bottom:30px}
+  .hero-ctas{display:flex;align-items:center;gap:8px;margin-bottom:24px}
+  .hero-trust{display:flex;gap:20px;flex-wrap:wrap}
+  .hero-trust span{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:7px}
+  .hero-trust span::before{content:'✓';color:var(--green);font-weight:800}
+
+  /* hero live priorities panel */
+  .hero-visual{position:relative}
+  .lp{position:relative;background:#fff;border-radius:18px;border:1px solid var(--line);box-shadow:0 40px 90px rgba(30,26,46,.20);overflow:hidden;z-index:2}
+  .lp-top{display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid var(--line)}
+  .lp-title{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;display:flex;align-items:center;gap:8px}
+  .lp-title .spark{color:var(--orange)}
+  .lp-status{margin-left:auto;display:flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:var(--muted)}
+  .lp-dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(31,157,85,.5)}
+  .lp.run .lp-dot{animation:pulse 1.8s ease-out infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,157,85,.45)}70%{box-shadow:0 0 0 7px rgba(31,157,85,0)}100%{box-shadow:0 0 0 0 rgba(31,157,85,0)}}
+  .lp-rows{padding:8px 10px 12px}
+  .lp-row{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:12px;opacity:0;transform:translateY(10px)}
+  .lp.run .lp-row{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
+  .lp.run .lp-row:nth-child(1){transition-delay:.15s}
+  .lp.run .lp-row:nth-child(2){transition-delay:.5s}
+  .lp.run .lp-row:nth-child(3){transition-delay:.85s}
+  .lp-row.top{background:rgba(232,114,12,.06);border:1px solid rgba(232,114,12,.18)}
+  .lp-num{flex-shrink:0;width:24px;height:24px;border-radius:50%;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .lp-num.one{background:var(--orange);color:#fff}
+  .lp-num.two,.lp-num.three{background:rgba(232,114,12,.13);color:var(--burnt)}
+  .lp-name{font-size:14px;font-weight:700}
+  .lp-co{font-weight:400;color:var(--muted)}
+  .lp-reason{font-size:12.5px;color:var(--muted);line-height:1.45;margin-top:2px}
+  .lp-score{margin-left:auto;text-align:center;flex-shrink:0}
+  .lp-score b{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--orange);display:block;line-height:1}
+  .lp-score span{font-size:9px;color:var(--muted);letter-spacing:.03em}
+  .hero-annot{position:absolute;right:-6px;top:-46px;font-family:'Caveat',cursive;font-size:23px;color:var(--orange);transform:rotate(-3deg);z-index:3}
+  .hero-annot svg{position:absolute;left:-52px;top:14px;width:52px;height:44px;stroke:var(--orange);fill:none;stroke-width:2.2;stroke-linecap:round}
+
+  /* logos strip */
+  .logos{padding:26px 0 4px;text-align:center}
+  .logos p{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px}
+  .logos-row{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;opacity:.72}
+  .logos-row span{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;color:var(--navy)}
+
+  /* ─────────── WATCH IT THINK ─────────── */
+  .think{padding:96px 0 100px;background:linear-gradient(180deg,var(--cream) 0%,var(--cream2) 100%)}
+  .think-head{text-align:center;max-width:640px;margin:0 auto 46px}
+  .think-head h2{font-size:42px;margin-bottom:14px}
+  .think-head p{font-size:17px;color:var(--muted)}
+  .think-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
+  .think-caps{display:flex;flex-direction:column;gap:10px}
+  .think-cap{display:flex;gap:14px;padding:16px 18px;border-radius:14px;background:#fff;border:1px solid var(--line);opacity:.5;transition:opacity .4s,box-shadow .4s,transform .4s}
+  .think-cap.on{opacity:1;box-shadow:0 16px 36px rgba(30,26,46,.10);transform:translateX(4px)}
+  .think-cap .n{flex-shrink:0;width:30px;height:30px;border-radius:9px;background:rgba(30,26,46,.06);color:var(--muted);font-family:'Syne',sans-serif;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background .4s,color .4s}
+  .think-cap.on .n{background:var(--orange);color:#fff}
+  .think-cap b{font-family:'Syne',sans-serif;font-weight:700;font-size:15.5px;display:block;margin-bottom:1px}
+  .think-cap span{font-size:13.5px;color:var(--muted);line-height:1.45}
+
+  /* the demo app */
+  .think-visual{position:relative}
+  .demo{background:#fff;border-radius:16px;border:1px solid var(--line);box-shadow:0 40px 90px rgba(30,26,46,.18);overflow:hidden}
+  .demo-bar{display:flex;align-items:center;gap:7px;padding:12px 15px;border-bottom:1px solid var(--line);background:#fbfaf8}
+  .demo-bar i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block}
+  .demo-bar .u{margin-left:12px;font-size:12px;color:var(--muted)}
+  .demo-body{padding:18px 20px 22px}
+  .demo-contact{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .demo-av{width:44px;height:44px;border-radius:11px;background:#237068;color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center}
+  .demo-nm{font-family:'Syne',sans-serif;font-weight:800;font-size:17px}
+  .demo-co{font-size:12.5px;color:var(--orange-ink);font-weight:600}
+  .demo-new{margin-left:auto;font-size:10px;font-weight:700;color:var(--green-ink);background:rgba(31,157,85,.12);padding:4px 10px;border-radius:99px;opacity:0;transform:scale(.8);transition:.4s}
+  .demo[data-stage="1"] .demo-new{opacity:1;transform:none}
+
+  /* pipeline stages */
+  .demo-stages{display:flex;gap:6px;margin-bottom:16px}
+  .demo-stage{flex:1;text-align:center;font-size:10.5px;font-weight:600;color:var(--muted);padding:7px 4px;border-radius:8px;background:rgba(30,26,46,.04);position:relative;transition:.4s}
+  .demo-stage.active{background:var(--navy);color:#fff}
+  /* stage moves Qualified -> Quoted at stage>=3 */
+  .demo[data-stage="1"] .st-q,.demo[data-stage="2"] .st-q{background:var(--navy);color:#fff}
+  .demo[data-stage="3"] .st-quo,.demo[data-stage="4"] .st-quo{background:var(--navy);color:#fff}
+
+  .demo-card{border:1px solid var(--line);border-radius:12px;padding:13px 14px;margin-bottom:12px}
+  .demo-card .lbl{font-size:9px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px;margin-bottom:8px}
+  .demo-card .lbl .spark{color:var(--orange);font-size:11px}
+  /* AI summary reveal at stage>=2 */
+  .demo-ai{background:rgba(232,114,12,.06);border:1px solid rgba(232,114,12,.16);border-radius:10px;padding:11px 12px;overflow:hidden;max-height:0;opacity:0;transition:max-height .6s ease,opacity .5s ease,padding .4s}
+  .demo[data-stage="2"] .demo-ai,.demo[data-stage="3"] .demo-ai,.demo[data-stage="4"] .demo-ai{max-height:170px;opacity:1}
+  .demo-ai p{font-size:12.5px;line-height:1.5;color:#4a4557}
+  .demo-typing{display:flex;gap:4px;align-items:center;height:16px}
+  .demo-typing i{width:6px;height:6px;border-radius:50%;background:var(--orange);opacity:.5;animation:blink 1s infinite}
+  .demo-typing i:nth-child(2){animation-delay:.2s}.demo-typing i:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,100%{opacity:.3}50%{opacity:1}}
+  .demo[data-stage="2"] .demo-ai .demo-typing,.demo[data-stage="3"] .demo-ai .demo-typing,.demo[data-stage="4"] .demo-ai .demo-typing{display:none}
+  .demo-ai .demo-txt{display:none}
+  .demo[data-stage="2"] .demo-ai .demo-txt,.demo[data-stage="3"] .demo-ai .demo-txt,.demo[data-stage="4"] .demo-ai .demo-txt{display:block;animation:fade .6s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+
+  /* lead score reveal at stage>=3 */
+  .demo-lead{display:flex;align-items:center;gap:14px;opacity:0;transition:opacity .5s}
+  .demo[data-stage="3"] .demo-lead,.demo[data-stage="4"] .demo-lead{opacity:1}
+  .ring{position:relative;width:56px;height:56px;flex-shrink:0}
+  .ring svg{transform:rotate(-90deg)}
+  .ring .bg{stroke:rgba(30,26,46,.10)}
+  .ring .fg{stroke:var(--orange);stroke-linecap:round;stroke-dasharray:150;stroke-dashoffset:150;transition:stroke-dashoffset 1s ease .1s}
+  .demo[data-stage="3"] .ring .fg,.demo[data-stage="4"] .ring .fg{stroke-dashoffset:30}
+  .ring b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:19px;color:var(--orange)}
+  .demo-lead .txt{font-size:12px;color:var(--muted);line-height:1.4}
+  .demo-lead .txt b{color:var(--navy);font-family:'DM Sans'}
+
+  /* next-action task at stage>=4 */
+  .demo-task{display:flex;align-items:center;gap:11px;background:var(--navy);color:#fff;border-radius:11px;padding:12px 14px;margin-top:4px;opacity:0;transform:translateY(10px);transition:.5s}
+  .demo[data-stage="4"] .demo-task{opacity:1;transform:none}
+  .demo-task .tc{width:26px;height:26px;border-radius:8px;background:var(--orange);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .demo-task .tc svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .demo-task .tt{font-size:13px;font-weight:600}
+  .demo-task .ts{font-size:11px;color:rgba(255,255,255,.6)}
+  .demo-task .go{margin-left:auto;font-size:11px;font-weight:700;color:var(--navy);background:#fff;padding:5px 12px;border-radius:8px}
+  .replay{display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;background:none;border:none;font-family:inherit}
+  .replay:hover{color:var(--orange)}
+  .replay svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+  /* ─────────── FEATURES ─────────── */
+  .feat{padding:92px 0}
+  .feat-head{text-align:center;max-width:600px;margin:0 auto 44px}
+  .feat-head h2{font-size:42px;margin-bottom:14px}
+  .feat-head p{font-size:17px;color:var(--muted)}
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .fcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;transition:transform .25s,box-shadow .25s}
+  .fcard:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(30,26,46,.10)}
+  .fcard .fi{width:46px;height:46px;border-radius:12px;background:rgba(232,114,12,.10);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .fcard .fi svg{width:23px;height:23px;stroke:var(--orange);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .fcard h3{font-size:18px;margin-bottom:7px}
+  .fcard p{font-size:14px;color:var(--muted);line-height:1.55}
+
+  /* ─────────── TRUST ─────────── */
+  .trust{padding:22px 0;background:var(--cream2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .trust-inner{display:flex;justify-content:center;flex-wrap:wrap}
+  .trust-item{display:flex;align-items:center;gap:12px;padding:8px 34px}
+  .trust-item + .trust-item{border-left:1px solid var(--line)}
+  .trust-ic{width:40px;height:40px;border-radius:11px;background:rgba(232,114,12,.10);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .trust-ic svg{width:20px;height:20px;stroke:var(--orange);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .trust-item b{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;display:block;line-height:1.2}
+  .trust-item small{font-size:11.5px;color:var(--muted)}
+
+  /* ─────────── PRICING ─────────── */
+  .price{padding:92px 0}
+  .price-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .price h2{font-size:40px;margin-bottom:14px}
+  .price-sub{font-size:17px;color:var(--muted);margin-bottom:22px;max-width:420px}
+  .price-list{display:flex;flex-direction:column;gap:12px}
+  .price-list div{display:flex;gap:10px;align-items:center;font-size:15px}
+  .price-list svg{width:19px;height:19px;stroke:var(--green);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .pcard{position:relative;background:var(--navy);color:#fff;border-radius:20px;padding:36px 34px;box-shadow:0 40px 90px rgba(30,26,46,.30);overflow:hidden}
+  .pcard::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(232,114,12,.4),transparent 70%)}
+  .pcard .rib{display:inline-block;background:var(--orange);color:#fff;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 12px;border-radius:99px;margin-bottom:18px}
+  .pcard .amt{font-family:'Syne',sans-serif;font-weight:800;font-size:52px;line-height:1}
+  .pcard .amt small{font-size:16px;font-weight:600;color:rgba(255,255,255,.6)}
+  .pcard .pnote{font-size:13px;color:rgba(255,255,255,.6);margin:8px 0 22px}
+  .pcard .btn-primary{width:100%;justify-content:center;position:relative;z-index:1}
+  .pcard .fine{font-size:12px;color:rgba(255,255,255,.5);text-align:center;margin-top:12px}
+
+  /* ─────────── CTA ─────────── */
+  .cta{position:relative;background:var(--navy);color:#fff;text-align:center;padding:88px 0;overflow:hidden}
+  .cta::before{content:'';position:absolute;inset:0;background:radial-gradient(700px 300px at 50% 0%,rgba(232,114,12,.22),transparent 60%)}
+  .cta-in{position:relative;z-index:1}
+  .cta h2{font-size:44px;margin-bottom:14px}
+  .cta p{font-size:18px;color:rgba(255,255,255,.7);margin-bottom:28px}
+
+  /* footer */
+  footer{background:var(--navy);color:rgba(255,255,255,.5);padding:34px 0;border-top:1px solid rgba(255,255,255,.08);font-size:13px}
+  .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  .foot-in a{color:rgba(255,255,255,.55)}.foot-in a:hover{color:#fff}
+
+  /* ─────────── responsive ─────────── */
+  @media(max-width:1080px){
+    .hero-inner{grid-template-columns:1fr .95fr;gap:40px;padding:56px 0 76px}
+    .hero h1{font-size:46px}
+    .think-grid{grid-template-columns:1fr;gap:34px}
+    .think-visual{max-width:560px;margin:0 auto;width:100%}
+  }
+  @media(max-width:860px){
+    .hero-inner,.price-inner{grid-template-columns:1fr;gap:36px}
+    .hero h1{font-size:40px}
+    .hero-annot{display:none}
+    .feat-grid{grid-template-columns:1fr}
+    .think-head h2,.feat-head h2,.price h2,.cta h2{font-size:30px}
+    .trust-item + .trust-item{border-left:none}
+    .trust-item{padding:8px 18px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *{animation:none!important;transition:none!important}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Fox<em>Link</em></a>
+  <div class="nav-links">
+    <a href="#think">How it works</a><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="/trust.html">Trust</a>
+  </div>
+  <div class="nav-actions">
+    <a href="#" class="nav-login">Log in</a>
+    <a href="#" class="nav-cta">Start free trial</a>
+  </div>
+</nav>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="badge"><span class="pill">New</span> AI that works your pipeline for you</span>
+      <h1>The CRM that tells you <span class="accent">who to call.</span></h1>
+      <p class="hero-sub">FoxLink reads your pipeline every morning and hands you a ranked list of who needs you today — with the reason why. Less admin, more closing.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary">Start your free trial →</a>
+        <a href="#think" class="btn-secondary">See it in action</a>
+      </div>
+      <div class="hero-trust"><span>14-day free trial</span><span>No credit card</span><span>UK hosted</span></div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-annot">Ready before your coffee
+        <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M50 6 C 26 10, 8 20, 3 40"/><path d="M3 40 l 13 -2 M3 40 l 1 -13"/></svg>
+      </div>
+      <div class="lp">
+        <div class="lp-top">
+          <span class="lp-title"><span class="spark">✦</span> Today's Priorities</span>
+          <span class="lp-status"><span class="lp-dot"></span> Updated 7:02am</span>
+        </div>
+        <div class="lp-rows">
+          <div class="lp-row top">
+            <span class="lp-num one">1</span>
+            <div><div class="lp-name">Erik Lund <span class="lp-co">· Nordic Tool &amp; Hydraulics</span></div>
+            <div class="lp-reason">£16,500 quote closes in 3 days and he hasn't replied since Tuesday. Chase today.</div></div>
+            <div class="lp-score"><b id="scoreCount">8</b><span>/ 10</span></div>
+          </div>
+          <div class="lp-row">
+            <span class="lp-num two">2</span>
+            <div><div class="lp-name">Haruki Tanaka <span class="lp-co">· Nippon Hydraulics</span></div>
+            <div class="lp-reason">£74,000 deal gone quiet — no contact in 20 days.</div></div>
+            <div class="lp-score"><b>7</b><span>/ 10</span></div>
+          </div>
+          <div class="lp-row">
+            <span class="lp-num three">3</span>
+            <div><div class="lp-name">David Whitmore <span class="lp-co">· Rocky Mountain Fluid</span></div>
+            <div class="lp-reason">New enquiry, high intent — reply while it's hot.</div></div>
+            <div class="lp-score"><b>7</b><span>/ 10</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap logos">
+    <p>Built for UK small business</p>
+    <div class="logos-row"><span>Hydraulics</span><span>Trades</span><span>Agencies</span><span>Consultants</span><span>Wholesale</span></div>
+  </div>
+</section>
+
+<!-- WATCH IT THINK -->
+<section class="think" id="think">
+  <div class="wrap">
+    <div class="think-head">
+      <div class="eyebrow">Watch FoxLink work</div>
+      <h2>From new enquiry to next step —<br>while you get on with your day.</h2>
+      <p>Other CRMs wait for you to do the work. FoxLink does the thinking the moment a lead lands.</p>
+    </div>
+    <div class="think-grid">
+      <div class="think-caps">
+        <div class="think-cap" data-stage="1"><span class="n">1</span><div><b>A new enquiry lands</b><span>Captured and filed against the right company — automatically.</span></div></div>
+        <div class="think-cap" data-stage="2"><span class="n">2</span><div><b>AI reads the thread</b><span>A plain-English summary in seconds, so you're up to speed at a glance.</span></div></div>
+        <div class="think-cap" data-stage="3"><span class="n">3</span><div><b>It scores the lead</b><span>A 1–10 score with the reasoning — so you know who's worth your time.</span></div></div>
+        <div class="think-cap" data-stage="4"><span class="n">4</span><div><b>You get the next step</b><span>A task, drafted and ready. No deciding, no admin — just act.</span></div></div>
+      </div>
+      <div class="think-visual">
+        <div class="demo" data-stage="1" id="demo">
+          <div class="demo-bar"><i></i><i></i><i></i><span class="u">app.foxlink.network</span></div>
+          <div class="demo-body">
+            <div class="demo-contact">
+              <div class="demo-av">EL</div>
+              <div><div class="demo-nm">Erik Lund</div><div class="demo-co">Nordic Tool &amp; Hydraulics AB</div></div>
+              <span class="demo-new">● New lead</span>
+            </div>
+            <div class="demo-stages">
+              <div class="demo-stage">Enquiry</div>
+              <div class="demo-stage st-q">Qualified</div>
+              <div class="demo-stage st-quo">Quoted</div>
+              <div class="demo-stage">Won</div>
+            </div>
+            <div class="demo-card">
+              <div class="lbl"><span class="spark">✦</span> AI Summary</div>
+              <div class="demo-ai">
+                <div class="demo-typing"><i></i><i></i><i></i></div>
+                <p class="demo-txt">Erik enquired about annual torque-tooling supply after a competitor's stockout. Decision-led, values dependable lead times over price. Warm — replied within the hour twice this week.</p>
+              </div>
+            </div>
+            <div class="demo-card">
+              <div class="lbl">Lead score</div>
+              <div class="demo-lead">
+                <div class="ring">
+                  <svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><circle class="bg" cx="28" cy="28" r="24" fill="none" stroke-width="6"/><circle class="fg" cx="28" cy="28" r="24" fill="none" stroke-width="6"/></svg>
+                  <b>8</b>
+                </div>
+                <div class="txt"><b>High priority.</b> Live £16.5k quote, high intent, decision-maker engaged — chase before it cools.</div>
+              </div>
+            </div>
+            <div class="demo-task">
+              <span class="tc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></span>
+              <div><div class="tt">Call Erik about the £16,500 quote</div><div class="ts">Suggested for today · draft email ready</div></div>
+              <span class="go">Do it →</span>
+            </div>
+            <button class="replay" id="replay" aria-label="Replay demo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.5 9A9 9 0 0 0 5.6 5.6L1 10m22 4-4.6 4.4A9 9 0 0 1 3.5 15"/></svg> Replay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="feat" id="features">
+  <div class="wrap">
+    <div class="feat-head">
+      <div class="eyebrow">Everything in one place</div>
+      <h2>A complete CRM, minus the busywork.</h2>
+      <p>The pipeline, contacts and tasks you'd expect — with AI doing the parts you'd rather not.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="fcard"><div class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg></div><h3>Visual pipeline</h3><p>Drag deals from enquiry to won. See what's worth £x and what's slipping, at a glance.</p></div>
+      <div class="fcard"><div class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2a7 7 0 0 0-4-12z"/><path d="M9 21h6"/></svg></div><h3>AI daily brief</h3><p>Every morning, a ranked list of who to chase and why — the deals going quiet, the leads worth your time.</p></div>
+      <div class="fcard"><div class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div><h3>Contacts &amp; companies</h3><p>Every call, email and note against the right person. Nothing lost when someone's off.</p></div>
+      <div class="fcard"><div class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Tasks &amp; follow-ups</h3><p>Auto-created from what's happening in your deals, so the next step is always waiting for you.</p></div>
+      <div class="fcard"><div class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div><h3>Email &amp; web forms</h3><p>Capture enquiries straight into your pipeline and log every conversation without lifting a finger.</p></div>
+      <div class="fcard"><div class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div><h3>Reports &amp; export</h3><p>Know your win rate, forecast and activity. Your data is always yours to take with you.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="wrap trust-inner">
+    <div class="trust-item"><span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><div><b>UK hosted</b><small>Your data stays in the UK</small></div></div>
+    <div class="trust-item"><span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span><div><b>ICO registered</b><small>Registered data controller</small></div></div>
+    <div class="trust-item"><span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><div><b>Never sold on</b><small>We never sell your data</small></div></div>
+    <div class="trust-item"><span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><div><b>Integrates with Zapier</b><small>Connect 6,000+ apps</small></div></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="price" id="pricing">
+  <div class="wrap price-inner">
+    <div>
+      <div class="eyebrow">Simple pricing</div>
+      <h2>One plan. Everything in.</h2>
+      <p class="price-sub">No per-seat maths, no locked-away "enterprise" features. Every FoxLink feature, including the AI, from day one.</p>
+      <div class="price-list">
+        <div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Unlimited contacts, deals &amp; pipelines</div>
+        <div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> AI daily brief, lead scoring &amp; summaries</div>
+        <div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Email capture, web forms &amp; Zapier</div>
+        <div><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> UK support from real people</div>
+      </div>
+    </div>
+    <div class="pcard">
+      <span class="rib">Founding member offer</span>
+      <div class="amt">£19<small> / month</small></div>
+      <div class="pnote">Locked for life as a founding member. Cancel anytime.</div>
+      <a href="#" class="btn-primary">Start your 14-day free trial</a>
+      <div class="fine">No credit card required to start</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap cta-in">
+    <h2>Stop feeding your CRM.<br>Let it work for you.</h2>
+    <p>Set up in minutes. See your first AI brief tomorrow morning.</p>
+    <a href="#" class="btn-primary">Start your free trial →</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span class="nav-logo" style="font-size:18px">Fox<em style="color:var(--orange);font-style:normal">Link</em></span>
+    <div style="display:flex;gap:22px;flex-wrap:wrap">
+      <a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/trust.html">Trust</a><a href="/dpa.html">DPA</a>
+    </div>
+    <span>© 2026 Polyfox Studio Ltd</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* hero panel reveal + score count-up */
+  var lp = document.querySelector('.lp');
+  var score = document.getElementById('scoreCount');
+  if(lp){
+    lp.classList.add('run');
+    if(score && !reduce){
+      var n=6; score.textContent=n;
+      var t=setInterval(function(){ n++; score.textContent=n; if(n>=8) clearInterval(t); }, 300);
+    }
+  }
+
+  /* demo: auto-play the 4 beats when scrolled into view */
+  var demo = document.getElementById('demo');
+  var caps = document.querySelectorAll('.think-cap');
+  function setStage(s){
+    demo.setAttribute('data-stage', s);
+    caps.forEach(function(c){ c.classList.toggle('on', c.dataset.stage == s); });
+  }
+  var timers=[];
+  function play(){
+    timers.forEach(clearTimeout); timers=[];
+    setStage(1);
+    [2,3,4].forEach(function(s,i){ timers.push(setTimeout(function(){ setStage(s); }, (i+1)*1500)); });
+  }
+  if(demo){
+    if(reduce){ setStage(4); caps.forEach(function(c){c.classList.add('on');}); }
+    else {
+      var played=false;
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting && !played){ played=true; play(); } });
+      },{threshold:.45});
+      io.observe(demo);
+      var rb=document.getElementById('replay');
+      if(rb) rb.addEventListener('click', play);
+    }
+  }
+})();
+</script>
+</body>
+</html>
