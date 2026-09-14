@@ -104,6 +104,26 @@
   .logos-row{display:flex;justify-content:center;gap:34px;flex-wrap:wrap}
   .logos-row span{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;color:var(--navy);opacity:.55}
 
+  /* ─────────── SEE / KNOW / ACT ─────────── */
+  .ska{padding:90px 0}
+  .ska-flow{display:flex;align-items:stretch;justify-content:center;gap:0;margin-top:6px}
+  .ska-step{flex:1;background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 26px;transition:transform .25s,box-shadow .25s}
+  .ska-step:hover{transform:translateY(-4px);box-shadow:0 22px 48px rgba(30,26,46,.12)}
+  .ska-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+  .ska-ic{width:48px;height:48px;border-radius:13px;background:rgba(232,114,12,.10);display:flex;align-items:center;justify-content:center}
+  .ska-ic svg{width:24px;height:24px;stroke:var(--orange-ink);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .ska-n{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:var(--muted)}
+  .ska-verb{font-family:'Syne',sans-serif;font-weight:800;font-size:27px;letter-spacing:-.02em;margin-bottom:6px}
+  .ska-sub{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;margin-bottom:8px}
+  .ska-step p{font-size:14px;color:var(--muted);line-height:1.55}
+  .ska-arrow{display:flex;align-items:center;justify-content:center;width:54px;flex-shrink:0}
+  .ska-arrow svg{width:24px;height:24px;stroke:var(--orange-ink);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .ska-step.act{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .ska-step.act .ska-ic{background:rgba(232,114,12,.20)}
+  .ska-step.act .ska-ic svg{stroke:var(--orange)}
+  .ska-step.act .ska-n{color:rgba(255,255,255,.55)}
+  .ska-step.act p{color:rgba(255,255,255,.66)}
+
   /* ─────────── WATCH IT THINK ─────────── */
   .think{padding:90px 0 96px;background:linear-gradient(180deg,var(--cream) 0%,var(--cream2) 100%)}
   .sec-head{text-align:center;max-width:640px;margin:0 auto 46px}
@@ -314,6 +334,9 @@
     .hero h1{font-size:40px}
     .hero-annot{display:none}
     .feat-grid,.sec-grid,.integ-grid{grid-template-columns:1fr}
+    .ska-flow{flex-direction:column}
+    .ska-arrow{width:auto;height:40px}
+    .ska-arrow svg{transform:rotate(90deg)}
     .sec-head h2,.spot h2,.price h2,.cta h2,.fbox h2{font-size:30px}
     .foot-grid{grid-template-columns:1fr 1fr;gap:28px}
     .foot-brand{grid-column:1 / -1}
@@ -386,6 +409,39 @@
   <div class="wrap logos">
     <p>Built for UK small business</p>
     <div class="logos-row"><span>Hydraulics</span><span>Trades</span><span>Agencies</span><span>Consultants</span><span>Wholesale</span></div>
+  </div>
+</section>
+
+<!-- SEE / KNOW / ACT -->
+<section class="ska">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Three moves, every morning</div>
+      <h2>See it. Know it. Act on it.</h2>
+      <p>Most CRMs stop at "see" — a tidy place to store things. FoxLink takes you the whole way to done.</p>
+    </div>
+    <div class="ska-flow">
+      <div class="ska-step">
+        <div class="ska-top"><span class="ska-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></span><span class="ska-n">01</span></div>
+        <h3 class="ska-verb">See</h3>
+        <div class="ska-sub">Everything in one place</div>
+        <p>Your whole pipeline, contacts and history — tidy, shared, and always up to date.</p>
+      </div>
+      <div class="ska-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="ska-step">
+        <div class="ska-top"><span class="ska-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2a7 7 0 0 0-4-12z"/><path d="M9 21h6"/></svg></span><span class="ska-n">02</span></div>
+        <h3 class="ska-verb">Know</h3>
+        <div class="ska-sub">What actually needs you</div>
+        <p>AI reads it all and surfaces who to chase, what's slipping and why — before 7am, every day.</p>
+      </div>
+      <div class="ska-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="ska-step act">
+        <div class="ska-top"><span class="ska-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="ska-n">03</span></div>
+        <h3 class="ska-verb">Act</h3>
+        <div class="ska-sub">In a couple of clicks</div>
+        <p>The next step comes drafted and ready — log a call, send a follow-up, move a deal on.</p>
+      </div>
+    </div>
   </div>
 </section>
 
