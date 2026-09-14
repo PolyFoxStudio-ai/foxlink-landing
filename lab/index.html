@@ -152,15 +152,32 @@
   .feat-item b{font-family:'Syne',sans-serif;font-weight:700;font-size:14.5px;color:var(--navy);display:block}
   .feat-item span{font-size:13px;color:var(--muted);line-height:1.4}
   .feat-link{color:var(--orange);font-weight:600;font-size:15px}
-  /* cluster: central dashboard + four snippets layered around the corners */
-  .collage{position:relative;min-height:430px}
-  .collage .c-main{position:absolute;top:16%;left:50%;transform:translateX(-50%);width:76%;border-radius:12px;box-shadow:0 30px 62px rgba(30,26,46,.30);border:1px solid rgba(30,26,46,.06);z-index:2;display:block}
-  .c-snip{position:absolute;width:29%;aspect-ratio:16/11;overflow:hidden;border-radius:9px;box-shadow:0 14px 32px rgba(30,26,46,.22);border:1px solid rgba(30,26,46,.08);background:#fff;z-index:3}
-  .c-snip img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
-  .c-snip.tl{top:2%;left:-3%}
-  .c-snip.tr{top:6%;right:-3%}
-  .c-snip.bl{bottom:6%;left:-3%}
-  .c-snip.br{bottom:2%;right:-3%}
+  /* cluster: central dashboard + four crisp HTML snippet cards */
+  .collage{position:relative;min-height:440px}
+  .collage .c-main{position:absolute;top:14%;left:50%;transform:translateX(-50%);width:78%;border-radius:12px;box-shadow:0 30px 62px rgba(30,26,46,.30);border:1px solid rgba(30,26,46,.06);z-index:2;display:block}
+  .snip{position:absolute;width:33%;background:#fff;border-radius:11px;box-shadow:0 16px 36px rgba(30,26,46,.16);border:1px solid rgba(30,26,46,.08);padding:12px 13px;text-align:left}
+  .snip.tl,.snip.tr{z-index:1}   /* behind the dashboard */
+  .snip.bl,.snip.br{z-index:3}   /* in front */
+  .snip.tl{top:0;left:-4%}
+  .snip.tr{top:5%;right:-4%}
+  .snip.bl{bottom:3%;left:-6%}
+  .snip.br{bottom:0;right:-6%}
+  .snip-head{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px;margin-bottom:9px}
+  .snip-head .spark{color:var(--orange);text-transform:none;font-size:11px}
+  .snip-head .snip-on{margin-left:auto;font-size:8px;font-weight:700;color:#1f9d55;background:rgba(31,157,85,.12);padding:2px 7px;border-radius:99px;letter-spacing:.02em}
+  /* tasks card */
+  .snip-task{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:11px;color:#3f3a4c}
+  .tk-check{width:14px;height:14px;border-radius:4px;border:1.5px solid rgba(30,26,46,.22);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff}
+  .tk-check.done{background:var(--orange);border-color:var(--orange)}
+  .snip-task.done span{text-decoration:line-through;color:var(--muted)}
+  /* integrations card */
+  .snip-int{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:11px;color:var(--navy)}
+  .int-ic{width:18px;height:18px;border-radius:5px;background:rgba(232,114,12,.12);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0}
+  .int-on{margin-left:auto;font-size:8px;font-weight:700;color:#1f9d55;background:rgba(31,157,85,.12);padding:2px 7px;border-radius:99px}
+  /* note / message cards */
+  .snip-note{font-size:11px;line-height:1.45;color:#3f3a4c}
+  .snip-note b{color:var(--navy)}
+  .snip-from{font-size:9px;color:var(--muted);margin-top:7px}
   .feat-annot{left:calc(100% + 4px);top:34%}
   .feat-annot svg{width:56px;height:44px;left:-48px;top:8px}
 
@@ -185,7 +202,7 @@
     .feat-list{grid-template-columns:1fr}
     .collage{min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .collage .c-main{position:static;width:100%;transform:none;grid-column:1 / -1}
-    .c-snip{position:static;width:100%;aspect-ratio:16/10}
+    .snip{position:static;width:auto}
   }
 </style>
 </head>
@@ -334,10 +351,27 @@
     </div>
     <div class="collage">
       <img class="c-main" src="/lab/img/dashboard-light.png" alt="FoxLink dashboard overview">
-      <div class="c-snip tl"><img src="/lab/img/deals-page.png" alt="FoxLink deals pipeline"></div>
-      <div class="c-snip tr"><img src="/lab/img/contacts-page.png" alt="FoxLink contacts"></div>
-      <div class="c-snip bl"><img src="/lab/img/tasks-page.png" alt="FoxLink tasks"></div>
-      <div class="c-snip br"><img src="/lab/img/reports-page.png" alt="FoxLink reports"></div>
+      <div class="snip tl">
+        <div class="snip-head"><span class="spark">✦</span>AI Insight</div>
+        <div class="snip-note"><b>3 deals</b> worth £142k have gone quiet — worth a nudge this week.</div>
+      </div>
+      <div class="snip tr">
+        <div class="snip-head">New enquiry</div>
+        <div class="snip-note">“Happy with the samples — can you send annual pricing?”</div>
+        <div class="snip-from">Klaus Berger · 2h ago</div>
+      </div>
+      <div class="snip bl">
+        <div class="snip-head">Today's tasks</div>
+        <div class="snip-task done"><span class="tk-check done">✓</span><span>Call Erik Lund</span></div>
+        <div class="snip-task"><span class="tk-check"></span><span>Send quote — Nippon</span></div>
+        <div class="snip-task"><span class="tk-check"></span><span>Follow up Rocky Mtn</span></div>
+      </div>
+      <div class="snip br">
+        <div class="snip-head">Integrations<span class="snip-on">3 active</span></div>
+        <div class="snip-int"><span class="int-ic">✉</span>Email<span class="int-on">On</span></div>
+        <div class="snip-int"><span class="int-ic">⚡</span>Zapier<span class="int-on">On</span></div>
+        <div class="snip-int"><span class="int-ic">◇</span>Webhooks<span class="int-on">On</span></div>
+      </div>
       <div class="annot feat-annot">Your whole business, in one view
         <svg viewBox="0 0 54 40"><path d="M2 4 C 24 8, 44 16, 50 36"/><path d="M50 36 l -12 2 M50 36 l -3 -12"/></svg>
       </div>
