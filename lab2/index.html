@@ -467,22 +467,28 @@
     demo.setAttribute('data-stage', s);
     caps.forEach(function(c){ c.classList.toggle('on', c.dataset.stage == s); });
   }
-  var timers=[];
+  var STEP=2200, HOLD=3600, timers=[], running=false;
+  function clearAll(){ timers.forEach(clearTimeout); timers=[]; }
   function play(){
-    timers.forEach(clearTimeout); timers=[];
+    clearAll();
     setStage(1);
-    [2,3,4].forEach(function(s,i){ timers.push(setTimeout(function(){ setStage(s); }, (i+1)*1500)); });
+    timers.push(setTimeout(function(){ setStage(2); }, STEP));
+    timers.push(setTimeout(function(){ setStage(3); }, STEP*2));
+    timers.push(setTimeout(function(){ setStage(4); }, STEP*3));
+    timers.push(setTimeout(play, STEP*3 + HOLD)); /* auto-replay */
   }
   if(demo){
     if(reduce){ setStage(4); caps.forEach(function(c){c.classList.add('on');}); }
     else {
-      var played=false;
       var io=new IntersectionObserver(function(entries){
-        entries.forEach(function(e){ if(e.isIntersecting && !played){ played=true; play(); } });
-      },{threshold:.45});
+        entries.forEach(function(e){
+          if(e.isIntersecting){ if(!running){ running=true; play(); } }
+          else { running=false; clearAll(); }
+        });
+      },{threshold:.4});
       io.observe(demo);
       var rb=document.getElementById('replay');
-      if(rb) rb.addEventListener('click', play);
+      if(rb) rb.addEventListener('click', function(){ running=true; play(); });
     }
   }
 })();
