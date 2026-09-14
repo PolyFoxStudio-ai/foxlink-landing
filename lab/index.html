@@ -152,11 +152,17 @@
   .feat-item b{font-family:'Syne',sans-serif;font-weight:700;font-size:14.5px;color:var(--navy);display:block}
   .feat-item span{font-size:13px;color:var(--muted);line-height:1.4}
   .feat-link{color:var(--orange);font-weight:600;font-size:15px}
-  .collage{position:relative;min-height:360px}
-  .collage .c-main{width:86%;border-radius:12px;box-shadow:0 26px 54px rgba(30,26,46,.22);border:1px solid rgba(30,26,46,.06);display:block}
-  .collage .c-float{position:absolute;right:0;bottom:-24px;width:46%;border-radius:10px;box-shadow:0 20px 44px rgba(30,26,46,.28);border:1px solid rgba(30,26,46,.06)}
-  .feat-annot{left:40%;top:-30px}
-  .feat-annot svg{width:54px;height:40px;left:-46px;top:6px}
+  /* cluster: central dashboard + four snippets layered around the corners */
+  .collage{position:relative;min-height:430px}
+  .collage .c-main{position:absolute;top:19%;left:50%;transform:translateX(-50%);width:60%;border-radius:12px;box-shadow:0 30px 62px rgba(30,26,46,.30);border:1px solid rgba(30,26,46,.06);z-index:2;display:block}
+  .c-snip{position:absolute;width:41%;aspect-ratio:16/11;overflow:hidden;border-radius:10px;box-shadow:0 18px 40px rgba(30,26,46,.22);border:1px solid rgba(30,26,46,.08);background:#fff;z-index:3}
+  .c-snip img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  .c-snip.tl{top:1%;left:0}
+  .c-snip.tr{top:4%;right:0}
+  .c-snip.bl{bottom:4%;left:0}
+  .c-snip.br{bottom:1%;right:0}
+  .feat-annot{left:calc(100% + 4px);top:34%}
+  .feat-annot svg{width:56px;height:44px;left:-48px;top:8px}
 
   /* trust strip */
   .trust{background:var(--cream);padding:30px 0;border-top:1px solid rgba(30,26,46,.08)}
@@ -177,7 +183,9 @@
     .annot{display:none}
     .cc-stats{grid-template-columns:repeat(2,1fr)}
     .feat-list{grid-template-columns:1fr}
-    .collage .c-float{position:static;width:70%;margin:14px 0 0 auto}
+    .collage{min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .collage .c-main{position:static;width:100%;transform:none;grid-column:1 / -1}
+    .c-snip{position:static;width:100%;aspect-ratio:16/10}
   }
 </style>
 </head>
@@ -325,8 +333,11 @@
       <a href="#" class="feat-link">Explore all features →</a>
     </div>
     <div class="collage">
-      <img class="c-main" src="/lab/img/deals-page.png" alt="FoxLink deals pipeline">
-      <img class="c-float" src="/lab/img/tasks-page.png" alt="FoxLink tasks">
+      <img class="c-main" src="/lab/img/dashboard-light.png" alt="FoxLink dashboard overview">
+      <div class="c-snip tl"><img src="/lab/img/deals-page.png" alt="FoxLink deals pipeline"></div>
+      <div class="c-snip tr"><img src="/lab/img/contacts-page.png" alt="FoxLink contacts"></div>
+      <div class="c-snip bl"><img src="/lab/img/tasks-page.png" alt="FoxLink tasks"></div>
+      <div class="c-snip br"><img src="/lab/img/reports-page.png" alt="FoxLink reports"></div>
       <div class="annot feat-annot">Your whole business, in one view
         <svg viewBox="0 0 54 40"><path d="M2 4 C 24 8, 44 16, 50 36"/><path d="M50 36 l -12 2 M50 36 l -3 -12"/></svg>
       </div>
