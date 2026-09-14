@@ -58,9 +58,10 @@
 
   /* ── HERO ── */
   .hero{position:relative;background:var(--cream);overflow:hidden}
-  .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:0.85fr 1.32fr;gap:40px;align-items:center;padding:70px 0 90px}
-  .hero h1{font-size:56px;font-weight:800;margin-bottom:22px}
-  .hero-sub{font-size:18px;color:var(--muted);max-width:440px;margin-bottom:30px}
+  .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.15fr;gap:52px;align-items:center;padding:76px 0 96px}
+  .hero-copy{max-width:520px}
+  .hero h1{font-size:56px;font-weight:800;line-height:1.05;margin-bottom:22px}
+  .hero-sub{font-size:18px;color:var(--muted);max-width:460px;margin-bottom:30px}
   .hero-ctas{display:flex;align-items:center;gap:10px;margin-bottom:26px}
   .hero-trust{display:flex;gap:22px;flex-wrap:wrap}
   .hero-trust span{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:7px}
@@ -69,7 +70,19 @@
   /* large navy corner wedge behind the screenshot (bleeds off top-right) */
   .hero-corner{position:absolute;top:0;bottom:-40px;right:0;width:54%;background:var(--navy);z-index:0;clip-path:polygon(24% 0, 100% 0, 100% 100%, 0 42%)}
   .hero-visual .app-window{position:relative;z-index:1;transform:perspective(1900px) rotateY(14deg) rotateX(4deg);transform-origin:center}
-  .hero-float{position:absolute;left:-90px;bottom:22px;width:450px;border-radius:12px;box-shadow:0 26px 54px rgba(0,0,0,.42);border:1px solid rgba(30,26,46,.08);z-index:5;transform:rotate(-2deg)}
+  /* Floating "Today's Priorities" card — real HTML so it stays razor-sharp */
+  .hero-float{position:absolute;left:-84px;bottom:20px;width:434px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 26px 54px rgba(0,0,0,.42);border:1px solid rgba(30,26,46,.08);z-index:5;transform:rotate(-2deg)}
+  .pc-head{display:flex;align-items:center;gap:8px;padding:13px 16px}
+  .pc-title{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;color:var(--navy);display:flex;align-items:center;gap:6px}
+  .pc-title .spark{color:var(--orange);font-size:14px}
+  .pc-ai{margin-left:auto;font-size:9px;font-weight:700;letter-spacing:.05em;color:#8a5c00;background:rgba(240,160,48,.20);padding:3px 8px;border-radius:99px}
+  .pc-row{display:flex;gap:11px;align-items:flex-start;padding:11px 16px;border-top:1px solid rgba(30,26,46,.07)}
+  .pc-num{flex-shrink:0;width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .pc-num.one{background:var(--orange);color:#fff}
+  .pc-num.two,.pc-num.three{background:rgba(232,114,12,.13);color:var(--burnt)}
+  .pc-name{font-size:13px;font-weight:700;color:var(--navy)}
+  .pc-co{font-weight:400;color:var(--muted)}
+  .pc-reason{font-size:12px;color:var(--muted);line-height:1.4;margin-top:2px}
   .hero-annot{top:-54px;right:120px}
   .hero-annot svg{width:56px;height:48px;right:-6px;top:24px}
 
@@ -160,7 +173,12 @@
           <img src="/lab/img/hero-pipeline.png" alt="The FoxLink deals pipeline — deals across Enquiry, Qualified, Quoted and Negotiation with values and lead scores">
         </div>
       </div>
-      <img class="hero-float" src="/lab/img/priorities-card.png" alt="" aria-hidden="true">
+      <div class="hero-float">
+        <div class="pc-head"><span class="pc-title"><span class="spark">✦</span> Today's Priorities</span><span class="pc-ai">AI GENERATED</span></div>
+        <div class="pc-row"><span class="pc-num one">1</span><div><div class="pc-name">Erik Lund <span class="pc-co">· Nordic Tool &amp; Hydraulics AB</span></div><div class="pc-reason">Chase decision on £16,500 quote closing 24 Sept — 10 days remaining.</div></div></div>
+        <div class="pc-row"><span class="pc-num two">2</span><div><div class="pc-name">Haruki Tanaka <span class="pc-co">· Nippon Hydraulics K.K.</span></div><div class="pc-reason">Follow up £74,000 quote closing 27 Sept; no contact since 25 August.</div></div></div>
+        <div class="pc-row"><span class="pc-num three">3</span><div><div class="pc-name">David Whitmore <span class="pc-co">· Rocky Mountain Fluid Systems</span></div><div class="pc-reason">Confirm £38,000 crimping-machine quote ahead of 30 Sept close.</div></div></div>
+      </div>
       <div class="annot hero-annot">
         <svg viewBox="0 0 56 48"><path d="M6 4 C 24 10, 44 18, 50 44"/><path d="M50 44 l -12 -1 M50 44 l 1 -12"/></svg>
         Every deal, at a glance
