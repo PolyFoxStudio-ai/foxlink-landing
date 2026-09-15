@@ -30,11 +30,11 @@
 .compare{width:100%;border-collapse:collapse;margin:28px 0;font-size:15px}
 .compare th,.compare td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--cream2)}
 .compare thead th{font-family:'Syne',sans-serif;font-size:14px;color:var(--navy);border-bottom:2px solid var(--navy)}
-.compare thead th:nth-child(2){color:var(--orange)}
+.compare thead th:nth-child(2){color:#A8480C}
 .compare tbody td:first-child{font-weight:600;color:var(--navy);width:34%}
 .compare tbody tr:nth-child(even){background:var(--cream2)}
-.compare .yes{color:var(--burnt);font-weight:600}
-.compare-note{font-size:12px;color:#8a8577;margin:-14px 0 28px}
+.compare .yes{color:#A8480C;font-weight:600}
+.compare-note{font-size:12px;color:#6b6577;margin:-14px 0 28px}
 .dual-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
 .btn-ghost{display:inline-block;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.35);padding:14px 26px;border-radius:9px;font-weight:600;font-size:15px;text-decoration:none;transition:border-color .2s}
 .btn-ghost:hover{border-color:#fff}
@@ -190,7 +190,7 @@
 </footer>
 
 <!-- COOKIE BAR -->
-<div class="cookie-bar" id="cookieBar">
+<div class="cookie-bar" id="cookieBar" role="region" aria-label="Cookie notice">
   <span>This site uses only essential cookies required for it to work. No tracking or advertising cookies are used. <a href="/privacy.html">Privacy Policy</a></span>
   <button class="cookie-ok" onclick="document.getElementById('cookieBar').style.display='none';localStorage.setItem('fl_cookie_ok','1')">OK</button>
 </div>
