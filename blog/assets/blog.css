@@ -223,6 +223,8 @@ footer{background:#17131f;border-top:1px solid rgba(255,255,255,0.06);padding:30
   .author-block{padding:20px 20px;gap:14px}
   .article-cta{padding:36px 24px}
   .article-cta-title{font-size:23px}
+  .btn-cta{display:block;text-align:center}
+  .cookie-ok{width:100%}
 
   footer{padding:20px 20px;flex-direction:column;align-items:flex-start}
   .cookie-bar{padding:14px 20px;flex-direction:column;align-items:flex-start}

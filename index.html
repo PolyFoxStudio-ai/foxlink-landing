@@ -365,6 +365,16 @@
     .sec-head h2,.spot h2,.price h2,.cta h2,.fbox h2{font-size:30px}
     .foot-grid{grid-template-columns:1fr 1fr;gap:28px}
     .foot-brand{grid-column:1 / -1}
+    /* tighter vertical rhythm on phones */
+    .think,.spot,.feat,.sec,.integ,.price,.faq{padding-top:62px;padding-bottom:62px}
+    .cta{padding:64px 0}
+    .founding{padding-bottom:64px}
+    /* full-width, thumb-friendly CTAs */
+    .hero-ctas{flex-direction:column;align-items:stretch;gap:12px}
+    .hero-ctas .btn-primary,.hero-ctas .btn-secondary{justify-content:center}
+    .cta-ctas{flex-direction:column;align-items:stretch}
+    .cta .btn-primary,.cta .btn-ghost{width:100%;justify-content:center}
+    .pcard .amt{white-space:nowrap}
   }
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto}
@@ -752,7 +762,7 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <span class="nav-logo">Fox<em>Link</em></span>
-        <p>The UK small-business CRM that tells you who to call — and does the admin so you don't have to.</p>
+        <p>The UK small-business CRM that tells you who needs you next — and does the admin so you don't have to.</p>
       </div>
       <div class="foot-col">
         <h3>Product</h3>
