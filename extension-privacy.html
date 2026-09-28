@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoxLink for Gmail — Privacy Policy</title>
+<link rel="canonical" href="https://foxlink.network/extension-privacy.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FoxLink">
+<meta property="og:title" content="FoxLink for Gmail — Privacy Policy">
+<meta property="og:url" content="https://foxlink.network/extension-privacy.html">
+<meta property="og:image" content="https://foxlink.network/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://foxlink.network/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--orange:#A8480C;--navy:#1E1A2E;--cream:#FAF7F3;--mid:#6B6580;--rule:rgba(30,26,46,0.09)}
+body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--cream);line-height:1.7}
+nav{background:var(--navy);padding:0 64px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-wm{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;text-decoration:none}
+.nav-wm em{color:var(--orange);font-style:normal}
+.nav-back{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none}
+.nav-back:hover{color:#fff}
+.container{max-width:760px;margin:0 auto;padding:60px 24px 100px}
+h1{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--navy);margin-bottom:8px;letter-spacing:-.02em}
+.meta{font-size:13px;color:var(--mid);margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--rule)}
+h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--navy);margin:40px 0 12px}
+h3{font-size:16px;font-weight:600;color:var(--navy);margin:24px 0 8px}
+p{font-size:15px;color:#444;margin-bottom:16px;line-height:1.75}
+ul{margin:0 0 16px 20px}
+ul li{font-size:15px;color:#444;margin-bottom:6px;line-height:1.65}
+a{color:var(--orange);text-decoration:none}
+    .container p a,.container li a{text-decoration:underline;text-underline-offset:2px}
+a:hover{text-decoration:underline}
+.highlight{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:20px 24px;margin:24px 0}
+.highlight p{margin-bottom:0}
+footer{background:var(--navy);padding:28px 64px;text-align:center}
+footer p{font-size:12px;color:rgba(255,255,255,.3)}
+</style>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/" class="nav-logo">Fox<em>Link</em></a>
+  <div class="nav-links" id="navmenu">
+    <a href="/#think">How it works</a><a href="/#features">Features</a><a href="/#security">Security</a><a href="/#pricing">Pricing</a><a href="/founding.html">Founding&nbsp;10</a><a href="https://app.foxlink.network" class="nav-only-mobile">Log in</a>
+  </div>
+  <div class="nav-actions">
+    <a href="https://app.foxlink.network" class="nav-login">Log in</a>
+    <a href="https://app.foxlink.network/signup" class="nav-cta">Start free trial</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>FoxLink for Gmail — Privacy Policy</h1>
+  <p class="meta">Last updated: 28 September 2026</p>
+
+  <p>FoxLink for Gmail (“the extension”) is published by <strong>Polyfox Studio Ltd</strong>
+  (company no. 17227391), 66 Paul Street, London EC2A 4NA, United Kingdom. It is a
+  companion to your FoxLink CRM account. This policy explains exactly what the
+  extension accesses, what it sends, and what it does not do.</p>
+
+  <div class="highlight">
+    <p><strong>The short version.</strong> The extension reads only what it needs to
+    identify the person you’re emailing — the sender’s email address and name, and the
+    email subject — from the Gmail page you’re viewing. It sends the sender’s email
+    address to your FoxLink account to find the matching contact, and it sends data
+    <em>you explicitly choose to save</em> (an activity, task, deal, calendar event or a
+    contact edit). It does <strong>not</strong> sync your mailbox, read message bodies,
+    scan your inbox in the background, or use the Gmail API. It contains no advertising,
+    tracking or analytics, and never sells your data.</p>
+  </div>
+
+  <h2>What the extension accesses</h2>
+  <ul>
+    <li><strong>On the Gmail page you have open:</strong> the sender’s email address and
+    display name, and the subject line of the open (or highlighted) message. This is read
+    from the page only while you’re viewing it, to match or create a FoxLink contact.
+    Message bodies are not read.</li>
+    <li><strong>Your FoxLink sign-in:</strong> you sign in with your FoxLink credentials
+    via the extension’s popup. Your session token is stored locally in the browser’s
+    extension storage and sent as an authorization header to the FoxLink API. It is never
+    exposed to the Gmail page.</li>
+  </ul>
+
+  <h2>What the extension sends, and to whom</h2>
+  <p>All network requests go to your FoxLink application
+  (<a href="https://app.foxlink.network">app.foxlink.network</a>) and its backend.
+  Specifically:</p>
+  <ul>
+    <li>The sender’s email address, to look up the matching contact and their open deals,
+    workflows and recent activity.</li>
+    <li>Data you choose to create or edit: logged activities (call/note/meeting/email),
+    tasks, deals, calendar events, contact details and links.</li>
+    <li>Your daily brief and task list, retrieved to display the Home and Tasks tabs.</li>
+  </ul>
+  <p>No data is sent to any third party other than the infrastructure that already runs
+  FoxLink — see the <a href="/privacy.html">FoxLink privacy policy</a> and
+  <a href="/subprocessors.html">subprocessors list</a>. FoxLink’s backend is hosted in
+  the EU/UK.</p>
+
+  <h2>Data retention</h2>
+  <p>The extension stores only your session token locally, to keep you signed in. It holds
+  no other data at rest. Anything you save is stored in your FoxLink account under your
+  workspace and is governed by the main FoxLink privacy policy; you can delete it there.
+  Signing out of the extension clears the stored token.</p>
+
+  <h2>Permissions, and why</h2>
+  <ul>
+    <li><strong>storage</strong> — to keep your FoxLink session token so you stay signed in.</li>
+    <li><strong>Access to mail.google.com</strong> — to show the panel inside Gmail and read
+    the sender/subject of the message you’re viewing.</li>
+    <li><strong>Access to app.foxlink.network and the FoxLink backend</strong> — to sign in
+    and to read/write your CRM data on your behalf.</li>
+  </ul>
+
+  <h2>Your rights</h2>
+  <p>FoxLink is operated under UK GDPR. You can access, correct, export or delete your data
+  from within FoxLink, or by contacting us. For data-subject requests or any privacy
+  question, contact <a href="mailto:info@polyfox.studio">info@polyfox.studio</a>.</p>
+
+  <h2>Changes</h2>
+  <p>We’ll update this policy as the extension evolves and revise the date above.</p>
+</div>
+
+<footer class="site-footer">
+  <div class="site-wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="nav-logo">Fox<em>Link</em></span>
+        <p>The UK small-business CRM that tells you who needs you next — and does the admin so you don't have to.</p>
+      </div>
+      <div class="foot-col"><h3>Product</h3><a href="/#think">How it works</a><a href="/#features">Features</a><a href="/#security">Security</a><a href="/#pricing">Pricing</a><a href="/founding.html">Founding 10</a></div>
+      <div class="foot-col"><h3>Company</h3><a href="/blog/">Blog</a><a href="/trust.html">Trust &amp; security</a><a href="mailto:hello@foxlink.network">Contact</a><a href="https://app.foxlink.network">Log in</a></div>
+      <div class="foot-col"><h3>Legal</h3><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/dpa.html">DPA</a><a href="/subprocessors.html">Subprocessors</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Polyfox Studio Ltd · Registered in England &amp; Wales</span><span>Made in the UK 🇬🇧</span></div>
+  </div>
+</footer>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
