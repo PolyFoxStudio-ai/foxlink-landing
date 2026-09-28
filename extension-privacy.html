@@ -84,10 +84,12 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
     display name, and the subject line of the open (or highlighted) message. This is read
     from the page only while you’re viewing it, to match or create a FoxLink contact.
     Message bodies are not read.</li>
-    <li><strong>Your FoxLink sign-in:</strong> you sign in with your FoxLink credentials
-    via the extension’s popup. Your session token is stored locally in the browser’s
-    extension storage and sent as an authorization header to the FoxLink API. It is never
-    exposed to the Gmail page.</li>
+    <li><strong>Your FoxLink sign-in:</strong> you sign in on the FoxLink web app
+    (app.foxlink.network), not in the extension. A small content script on the web app
+    reads the resulting session so the extension can act as you. Your session token is
+    stored locally in the browser’s extension storage and sent as an authorization header
+    to the FoxLink API. It is never exposed to the Gmail page, and the extension never
+    handles your password.</li>
   </ul>
 
   <h2>What the extension sends, and to whom</h2>
