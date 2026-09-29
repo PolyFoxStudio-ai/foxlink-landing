@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FoxLink for Gmail — Privacy Policy</title>
+<title>FoxLink email integrations — Privacy Policy</title>
 <link rel="canonical" href="https://foxlink.network/extension-privacy.html">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="FoxLink">
-<meta property="og:title" content="FoxLink for Gmail — Privacy Policy">
+<meta property="og:title" content="FoxLink email integrations — Privacy Policy">
 <meta property="og:url" content="https://foxlink.network/extension-privacy.html">
 <meta property="og:image" content="https://foxlink.network/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -59,10 +59,10 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
 </nav>
 
 <div class="container">
-  <h1>FoxLink for Gmail — Privacy Policy</h1>
+  <h1>FoxLink email integrations — Privacy Policy</h1>
   <p class="meta">Last updated: 28 September 2026</p>
 
-  <p>FoxLink for Gmail (“the extension”) is published by <strong>Polyfox Studio Ltd</strong>
+  <p>FoxLink for Gmail (a browser extension) and FoxLink for Outlook (an Office add-in) — each referred to below as “the extension” — are published by <strong>Polyfox Studio Ltd</strong>
   (company no. 17227391), 66 Paul Street, London EC2A 4NA, United Kingdom. It is a
   companion to your FoxLink CRM account. This policy explains exactly what the
   extension accesses, what it sends, and what it does not do.</p>
@@ -70,26 +70,25 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
   <div class="highlight">
     <p><strong>The short version.</strong> The extension reads only what it needs to
     identify the person you’re emailing — the sender’s email address and name, and the
-    email subject — from the Gmail page you’re viewing. It sends the sender’s email
-    address to your FoxLink account to find the matching contact, and it sends data
-    <em>you explicitly choose to save</em> (an activity, task, deal, calendar event or a
-    contact edit). It does <strong>not</strong> sync your mailbox, read message bodies,
-    scan your inbox in the background, or use the Gmail API. It contains no advertising,
+    email subject — from the Gmail or Outlook message you’re viewing. It sends the
+    sender’s email address to your FoxLink account to find the matching contact, and it
+    sends data <em>you explicitly choose to save</em> (an activity, task, deal, calendar
+    event or a contact edit). It does <strong>not</strong> sync your mailbox, read message
+    bodies, or scan your inbox in the background. It contains no advertising,
     tracking or analytics, and never sells your data.</p>
   </div>
 
   <h2>What the extension accesses</h2>
   <ul>
-    <li><strong>On the Gmail page you have open:</strong> the sender’s email address and
-    display name, and the subject line of the open (or highlighted) message. This is read
-    from the page only while you’re viewing it, to match or create a FoxLink contact.
+    <li><strong>In the Gmail or Outlook message you have open:</strong> the sender’s email
+    address and display name, and the subject line of the open (or highlighted) message.
+    This is read only while you’re viewing it, to match or create a FoxLink contact.
     Message bodies are not read.</li>
     <li><strong>Your FoxLink sign-in:</strong> you sign in on the FoxLink web app
-    (app.foxlink.network), not in the extension. A small content script on the web app
-    reads the resulting session so the extension can act as you. Your session token is
-    stored locally in the browser’s extension storage and sent as an authorization header
-    to the FoxLink API. It is never exposed to the Gmail page, and the extension never
-    handles your password.</li>
+    (app.foxlink.network), not inside the extension. A small helper reads the resulting
+    session so the extension can act as you. Your session token is stored locally and sent
+    as an authorization header to the FoxLink API. It is never exposed to the Gmail or
+    Outlook page, and the extension never handles your password.</li>
   </ul>
 
   <h2>What the extension sends, and to whom</h2>
@@ -116,9 +115,11 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
 
   <h2>Permissions, and why</h2>
   <ul>
-    <li><strong>storage</strong> — to keep your FoxLink session token so you stay signed in.</li>
-    <li><strong>Access to mail.google.com</strong> — to show the panel inside Gmail and read
-    the sender/subject of the message you’re viewing.</li>
+    <li><strong>Local storage</strong> — to keep your FoxLink session token so you stay signed in.</li>
+    <li><strong>Access to your inbox (Gmail / Outlook)</strong> — to show the panel and read
+    the sender and subject of the message you’re viewing (the Gmail extension reads the
+    open message; the Outlook add-in uses Office’s read-item permission). Message bodies
+    aren’t read in the background.</li>
     <li><strong>Access to app.foxlink.network and the FoxLink backend</strong> — to sign in
     and to read/write your CRM data on your behalf.</li>
   </ul>
