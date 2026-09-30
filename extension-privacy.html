@@ -60,7 +60,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
 
 <div class="container">
   <h1>FoxLink email integrations — Privacy Policy</h1>
-  <p class="meta">Last updated: 28 September 2026</p>
+  <p class="meta">Last updated: 30 September 2026</p>
 
   <p>FoxLink for Gmail (a browser extension) and FoxLink for Outlook (an Office add-in) — each referred to below as “the extension” — are published by <strong>Polyfox Studio Ltd</strong>
   (company no. 17227391), 66 Paul Street, London EC2A 4NA, United Kingdom. It is a
@@ -73,8 +73,10 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
     email subject — from the Gmail or Outlook message you’re viewing. It sends the
     sender’s email address to your FoxLink account to find the matching contact, and it
     sends data <em>you explicitly choose to save</em> (an activity, task, deal, calendar
-    event or a contact edit). It does <strong>not</strong> sync your mailbox, read message
-    bodies, or scan your inbox in the background. It contains no advertising,
+    event or a contact edit). It reads the body of the open message <em>only</em> when you
+    click <strong>Store email</strong> (to save it to the contact) or <strong>Draft
+    reply</strong> (to write an AI reply for you to review). It does <strong>not</strong>
+    sync your mailbox or scan your inbox in the background. It contains no advertising,
     tracking or analytics, and never sells your data.</p>
   </div>
 
@@ -82,8 +84,11 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
   <ul>
     <li><strong>In the Gmail or Outlook message you have open:</strong> the sender’s email
     address and display name, and the subject line of the open (or highlighted) message.
-    This is read only while you’re viewing it, to match or create a FoxLink contact.
-    Message bodies are not read.</li>
+    This is read only while you’re viewing it, to match or create a FoxLink contact.</li>
+    <li><strong>The body of the open message — only when you ask:</strong> clicking
+    <strong>Store email</strong> reads the message text and saves it as an email activity on
+    the contact; clicking <strong>Draft reply</strong> reads it so FoxLink’s AI can draft a
+    reply. Nothing is read from the body otherwise, and no other messages are read.</li>
     <li><strong>Your FoxLink sign-in:</strong> you sign in on the FoxLink web app
     (app.foxlink.network), not inside the extension. A small helper reads the resulting
     session so the extension can act as you. Your session token is stored locally and sent
@@ -99,11 +104,16 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
     <li>The sender’s email address, to look up the matching contact and their open deals,
     workflows and recent activity.</li>
     <li>Data you choose to create or edit: logged activities (call/note/meeting/email),
-    tasks, deals, calendar events, contact details and links.</li>
+    tasks, deals, calendar events, contact details and links — including the text of an
+    email when you click Store email.</li>
+    <li>When you click Draft reply: the open message’s subject, sender name and text, plus
+    the matching contact’s CRM context, to generate the draft. This is processed by our AI
+    provider, Anthropic, as described in the <a href="/privacy.html">FoxLink privacy
+    policy</a>; the draft is shown to you to edit and is never sent without you.</li>
     <li>Your daily brief and task list, retrieved to display the Home and Tasks tabs.</li>
   </ul>
-  <p>No data is sent to any third party other than the infrastructure that already runs
-  FoxLink — see the <a href="/privacy.html">FoxLink privacy policy</a> and
+  <p>No data is sent to any third party other than the infrastructure and AI provider that
+  already run FoxLink — see the <a href="/privacy.html">FoxLink privacy policy</a> and
   <a href="/subprocessors.html">subprocessors list</a>. FoxLink’s backend is hosted in
   the EU/UK.</p>
 
@@ -118,8 +128,8 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
     <li><strong>Local storage</strong> — to keep your FoxLink session token so you stay signed in.</li>
     <li><strong>Access to your inbox (Gmail / Outlook)</strong> — to show the panel and read
     the sender and subject of the message you’re viewing (the Gmail extension reads the
-    open message; the Outlook add-in uses Office’s read-item permission). Message bodies
-    aren’t read in the background.</li>
+    open message; the Outlook add-in uses Office’s read-item permission). The message body
+    is read only when you click Store email or Draft reply — never in the background.</li>
     <li><strong>Access to app.foxlink.network and the FoxLink backend</strong> — to sign in
     and to read/write your CRM data on your behalf.</li>
   </ul>
