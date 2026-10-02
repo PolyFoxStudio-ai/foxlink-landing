@@ -64,7 +64,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
 
 <div class="container" role="main">
   <h1>Sub-processors</h1>
-  <p class="meta">Last updated: August 2026 · Polyfox Studio Ltd · Registered in England &amp; Wales</p>
+  <p class="meta">Last updated: October 2026 · Polyfox Studio Ltd · Registered in England &amp; Wales</p>
 
   <div class="highlight">
     <p><strong>In short:</strong> FoxLink uses a small, deliberate set of trusted service providers to run the product. Your account and CRM data are stored and processed in the United Kingdom. We keep this list current and give notice before it changes.</p>
@@ -80,10 +80,11 @@ footer p{font-size:12px;color:rgba(255,255,255,.3)}
     </thead>
     <tbody>
       <tr><td><strong>Supabase</strong></td><td>Database, authentication and file storage</td><td>All account and CRM data</td><td>EU West (London), UK</td></tr>
-      <tr><td><strong>Vercel</strong></td><td>Application hosting and compute</td><td>Transient request data</td><td>London (lhr1), UK</td></tr>
+      <tr><td><strong>Vercel</strong></td><td>Application hosting and compute; encrypted off-site backup copies of stored files</td><td>Transient request data; copies of uploaded files</td><td>London (lhr1), UK</td></tr>
       <tr><td><strong>Anthropic</strong></td><td>AI-assisted features (on-demand only)</td><td>CRM context sent per request; not used to train models</td><td>United States</td></tr>
       <tr><td><strong>Speechmatics</strong></td><td>Voice-note transcription (on-demand only, when you dictate)</td><td>Audio you record for a note; transcribed, then the job is deleted</td><td>EU (UK company)</td></tr>
       <tr><td><strong>Resend</strong></td><td>Transactional and notification email</td><td>Email addresses and message content</td><td>United States</td></tr>
+      <tr><td><strong>Postmark</strong></td><td>Inbound email processing (emails you forward or BCC to your FoxLink logging address)</td><td>Headers, content and attachments of those emails</td><td>United States</td></tr>
       <tr><td><strong>Upstash</strong></td><td>Rate limiting and usage counters (Redis)</td><td>Workspace / user / API-key identifiers and counters</td><td>EU (London), UK</td></tr>
       <tr><td><strong>Sentry</strong></td><td>Error monitoring and diagnostics</td><td>Diagnostic and error context, which may include limited personal data</td><td>EU (Frankfurt)</td></tr>
       <tr><td><strong>Stripe</strong></td><td>Payment processing</td><td>Billing and contact data (no card data stored by FoxLink)</td><td>United States / EU</td></tr>
